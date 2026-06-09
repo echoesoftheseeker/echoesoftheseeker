@@ -9,8 +9,68 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TheBookRouteImport } from './routes/the-book'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SeekersStayRouteImport } from './routes/seekers-stay'
+import { Route as SeekersSoilRouteImport } from './routes/seekers-soil'
+import { Route as SeekerLetterRouteImport } from './routes/seeker-letter'
+import { Route as LearnBansuriRouteImport } from './routes/learn-bansuri'
+import { Route as JournalRouteImport } from './routes/journal'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BansurisRouteImport } from './routes/bansuris'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TheBookRoute = TheBookRouteImport.update({
+  id: '/the-book',
+  path: '/the-book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeekersStayRoute = SeekersStayRouteImport.update({
+  id: '/seekers-stay',
+  path: '/seekers-stay',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeekersSoilRoute = SeekersSoilRouteImport.update({
+  id: '/seekers-soil',
+  path: '/seekers-soil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeekerLetterRoute = SeekerLetterRouteImport.update({
+  id: '/seeker-letter',
+  path: '/seeker-letter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnBansuriRoute = LearnBansuriRouteImport.update({
+  id: '/learn-bansuri',
+  path: '/learn-bansuri',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalRoute = JournalRouteImport.update({
+  id: '/journal',
+  path: '/journal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BansurisRoute = BansurisRouteImport.update({
+  id: '/bansuris',
+  path: '/bansuris',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +79,172 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bansuris': typeof BansurisRoute
+  '/contact': typeof ContactRoute
+  '/journal': typeof JournalRoute
+  '/learn-bansuri': typeof LearnBansuriRoute
+  '/seeker-letter': typeof SeekerLetterRoute
+  '/seekers-soil': typeof SeekersSoilRoute
+  '/seekers-stay': typeof SeekersStayRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/the-book': typeof TheBookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bansuris': typeof BansurisRoute
+  '/contact': typeof ContactRoute
+  '/journal': typeof JournalRoute
+  '/learn-bansuri': typeof LearnBansuriRoute
+  '/seeker-letter': typeof SeekerLetterRoute
+  '/seekers-soil': typeof SeekersSoilRoute
+  '/seekers-stay': typeof SeekersStayRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/the-book': typeof TheBookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bansuris': typeof BansurisRoute
+  '/contact': typeof ContactRoute
+  '/journal': typeof JournalRoute
+  '/learn-bansuri': typeof LearnBansuriRoute
+  '/seeker-letter': typeof SeekerLetterRoute
+  '/seekers-soil': typeof SeekersSoilRoute
+  '/seekers-stay': typeof SeekersStayRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/the-book': typeof TheBookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/bansuris'
+    | '/contact'
+    | '/journal'
+    | '/learn-bansuri'
+    | '/seeker-letter'
+    | '/seekers-soil'
+    | '/seekers-stay'
+    | '/sitemap.xml'
+    | '/the-book'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/bansuris'
+    | '/contact'
+    | '/journal'
+    | '/learn-bansuri'
+    | '/seeker-letter'
+    | '/seekers-soil'
+    | '/seekers-stay'
+    | '/sitemap.xml'
+    | '/the-book'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/bansuris'
+    | '/contact'
+    | '/journal'
+    | '/learn-bansuri'
+    | '/seeker-letter'
+    | '/seekers-soil'
+    | '/seekers-stay'
+    | '/sitemap.xml'
+    | '/the-book'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BansurisRoute: typeof BansurisRoute
+  ContactRoute: typeof ContactRoute
+  JournalRoute: typeof JournalRoute
+  LearnBansuriRoute: typeof LearnBansuriRoute
+  SeekerLetterRoute: typeof SeekerLetterRoute
+  SeekersSoilRoute: typeof SeekersSoilRoute
+  SeekersStayRoute: typeof SeekersStayRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TheBookRoute: typeof TheBookRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/the-book': {
+      id: '/the-book'
+      path: '/the-book'
+      fullPath: '/the-book'
+      preLoaderRoute: typeof TheBookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seekers-stay': {
+      id: '/seekers-stay'
+      path: '/seekers-stay'
+      fullPath: '/seekers-stay'
+      preLoaderRoute: typeof SeekersStayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seekers-soil': {
+      id: '/seekers-soil'
+      path: '/seekers-soil'
+      fullPath: '/seekers-soil'
+      preLoaderRoute: typeof SeekersSoilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seeker-letter': {
+      id: '/seeker-letter'
+      path: '/seeker-letter'
+      fullPath: '/seeker-letter'
+      preLoaderRoute: typeof SeekerLetterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn-bansuri': {
+      id: '/learn-bansuri'
+      path: '/learn-bansuri'
+      fullPath: '/learn-bansuri'
+      preLoaderRoute: typeof LearnBansuriRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal': {
+      id: '/journal'
+      path: '/journal'
+      fullPath: '/journal'
+      preLoaderRoute: typeof JournalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bansuris': {
+      id: '/bansuris'
+      path: '/bansuris'
+      fullPath: '/bansuris'
+      preLoaderRoute: typeof BansurisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +257,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BansurisRoute: BansurisRoute,
+  ContactRoute: ContactRoute,
+  JournalRoute: JournalRoute,
+  LearnBansuriRoute: LearnBansuriRoute,
+  SeekerLetterRoute: SeekerLetterRoute,
+  SeekersSoilRoute: SeekersSoilRoute,
+  SeekersStayRoute: SeekersStayRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TheBookRoute: TheBookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
