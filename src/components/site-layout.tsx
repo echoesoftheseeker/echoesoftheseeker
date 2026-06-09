@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { Instagram, Youtube, Facebook } from "lucide-react";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -10,8 +11,16 @@ const NAV = [
   { to: "/seekers-soil", label: "Seekers Soil" },
   { to: "/seekers-stay", label: "Seekers Stay" },
   { to: "/the-book", label: "The Book" },
-  { to: "/seeker-letter", label: "Seeker Letter" },
   { to: "/contact", label: "Contact" },
+] as const;
+
+const EXPLORE = NAV.slice(0, 5);
+const MORE = NAV.slice(5);
+
+const SOCIALS = [
+  { href: "https://instagram.com", label: "Instagram", Icon: Instagram },
+  { href: "https://youtube.com", label: "YouTube", Icon: Youtube },
+  { href: "https://facebook.com", label: "Facebook", Icon: Facebook },
 ] as const;
 
 export function SiteHeader() {
@@ -20,29 +29,45 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 lg:px-10">
         <Link to="/" className="flex flex-col leading-none">
           <span className="font-serif text-xl tracking-tight text-ink">Echoes of the Seeker</span>
-          <span className="eyebrow mt-1 text-[0.6rem]">A living journey</span>
+          <span className="mt-1 font-serif text-[0.7rem] italic text-ink/55">A living journey</span>
         </Link>
-        <nav className="hidden items-center gap-6 text-[0.78rem] tracking-wide text-ink/80 xl:flex">
+        <nav className="hidden items-center gap-6 font-serif text-[0.82rem] text-ink/75 xl:flex">
           {NAV.slice(1).map((n) => (
             <Link
               key={n.to}
               to={n.to}
               activeOptions={{ exact: n.to === "/" }}
-              activeProps={{ className: "text-ink underline decoration-bamboo decoration-2 underline-offset-[6px]" }}
+              activeProps={{ className: "text-ink underline decoration-bamboo decoration-1 underline-offset-[6px]" }}
               className="hover:text-ink transition-colors"
             >
               {n.label}
             </Link>
           ))}
         </nav>
-        <Link
-          to="/seeker-letter"
-          className="hidden rounded-full border border-ink/30 px-4 py-2 text-[0.72rem] tracking-[0.18em] uppercase text-ink hover:bg-ink hover:text-paper transition-colors xl:inline-flex"
-        >
-          Seeker Letter
-        </Link>
+        <div className="hidden items-center gap-5 xl:flex">
+          <div className="flex items-center gap-3 text-ink/55">
+            {SOCIALS.map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-bamboo transition-colors"
+              >
+                <Icon size={16} strokeWidth={1.5} />
+              </a>
+            ))}
+          </div>
+          <Link
+            to="/seeker-letter"
+            className="rounded-full bg-ink px-4 py-2 font-serif text-[0.78rem] text-paper hover:bg-forest transition-colors"
+          >
+            Seeker Letter
+          </Link>
+        </div>
         <details className="xl:hidden">
-          <summary className="cursor-pointer list-none rounded border border-ink/30 px-3 py-2 text-xs uppercase tracking-widest">Menu</summary>
+          <summary className="cursor-pointer list-none rounded border border-ink/30 px-3 py-2 text-xs tracking-wide">Menu</summary>
           <div className="absolute right-4 left-4 mt-3 rounded border border-rule bg-paper p-4 shadow-lg">
             <ul className="grid grid-cols-2 gap-3 text-sm">
               {NAV.map((n) => (
@@ -50,7 +75,17 @@ export function SiteHeader() {
                   <Link to={n.to} className="block py-1 text-ink/80 hover:text-ink">{n.label}</Link>
                 </li>
               ))}
+              <li>
+                <Link to="/seeker-letter" className="block py-1 font-medium text-ink hover:text-bamboo">Seeker Letter</Link>
+              </li>
             </ul>
+            <div className="mt-4 flex items-center gap-4 border-t border-rule/70 pt-4 text-ink/60">
+              {SOCIALS.map(({ href, label, Icon }) => (
+                <a key={label} href={href} aria-label={label} target="_blank" rel="noopener noreferrer" className="hover:text-bamboo">
+                  <Icon size={16} strokeWidth={1.5} />
+                </a>
+              ))}
+            </div>
           </div>
         </details>
       </div>
@@ -61,30 +96,43 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="border-t border-rule/70 bg-paper">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-3 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-4 lg:px-10">
         <div>
           <p className="font-serif text-xl text-ink">Echoes of the Seeker</p>
-          <p className="mt-2 text-sm text-ink/60">A living home for an ongoing journey.</p>
+          <p className="mt-2 font-serif text-sm italic text-ink/60">A living home for an ongoing journey.</p>
         </div>
         <div>
-          <p className="eyebrow mb-4">Explore</p>
-          <ul className="space-y-2 text-sm text-ink/80">
-            {NAV.slice(0, 5).map((n) => (
+          <p className="font-serif text-sm text-ink mb-4">Explore</p>
+          <ul className="space-y-2 text-sm text-ink/75">
+            {EXPLORE.map((n) => (
               <li key={n.to}><Link to={n.to} className="hover:text-bamboo">{n.label}</Link></li>
             ))}
           </ul>
         </div>
         <div>
-          <p className="eyebrow mb-4">More</p>
-          <ul className="space-y-2 text-sm text-ink/80">
-            {NAV.slice(5).map((n) => (
+          <p className="font-serif text-sm text-ink mb-4">More</p>
+          <ul className="space-y-2 text-sm text-ink/75">
+            {MORE.map((n) => (
               <li key={n.to}><Link to={n.to} className="hover:text-bamboo">{n.label}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="font-serif text-sm text-ink mb-4">Follow the Journey</p>
+          <ul className="space-y-2 text-sm text-ink/75">
+            {SOCIALS.map(({ href, label, Icon }) => (
+              <li key={label}>
+                <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-bamboo">
+                  <Icon size={14} strokeWidth={1.5} />
+                  {label}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
       </div>
       <div className="border-t border-rule/70">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 text-xs text-ink/60 lg:flex-row lg:items-center lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 text-xs text-ink/55 lg:flex-row lg:items-center lg:px-10">
           <p>© {new Date().getFullYear()} Echoes of the Seeker</p>
           <p>Goa · India</p>
         </div>
