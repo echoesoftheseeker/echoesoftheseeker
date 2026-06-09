@@ -61,12 +61,10 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="border-t border-rule/70 bg-paper">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-4 lg:px-10">
-        <div className="lg:col-span-2">
-          <p className="font-serif text-2xl leading-snug text-ink">
-            "I'm trying to make an echo. Whether it will come back to me, I don't know. But I'm trying to make a sound in the silence."
-          </p>
-          <p className="eyebrow mt-6">— The Seeker</p>
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-3 lg:px-10">
+        <div>
+          <p className="font-serif text-xl text-ink">Echoes of the Seeker</p>
+          <p className="mt-2 text-sm text-ink/60">A living home for an ongoing journey.</p>
         </div>
         <div>
           <p className="eyebrow mb-4">Explore</p>
@@ -87,7 +85,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-rule/70">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 text-xs text-ink/60 lg:flex-row lg:items-center lg:px-10">
-          <p>© {new Date().getFullYear()} Echoes of the Seeker. A living home for an ongoing journey.</p>
+          <p>© {new Date().getFullYear()} Echoes of the Seeker</p>
           <p>Goa · India</p>
         </div>
       </div>
