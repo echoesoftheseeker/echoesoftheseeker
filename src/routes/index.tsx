@@ -11,9 +11,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Echoes of the Seeker — A journey of music, nature, and practice" },
-      { name: "description", content: "A living home for a journey through music, nature, place, practice, and the search for a deeper way of being." },
+      { name: "description", content: "A digital home for an ongoing journey through music, nature, place, practice, and learning." },
       { property: "og:title", content: "Echoes of the Seeker" },
-      { property: "og:description", content: "A journey through music, nature, place, practice, and the search for a deeper way of being." },
+      { property: "og:description", content: "A journey through music, nature, place, practice, and learning." },
       { property: "og:image", content: hero },
     ],
   }),
@@ -23,82 +23,77 @@ export const Route = createFileRoute("/")({
 const PATHS = [
   { to: "/learn-bansuri", title: "Learn Bansuri", desc: "Learning, teaching, and sharing the bansuri.", img: learnImg },
   { to: "/seekers-stay", title: "Seekers Stay", desc: "Places that invite rest, reflection, and connection.", img: stayImg },
-  { to: "/seekers-soil", title: "Seekers Soil", desc: "Growing food, learning from the land, and a quieter self-reliance.", img: soilImg },
+  { to: "/seekers-soil", title: "Seekers Soil", desc: "Growing food, learning from the land, a quieter self-reliance.", img: soilImg },
   { to: "/journal", title: "Journal", desc: "Reflections, observations, essays, and field notes.", img: journalImg },
 ] as const;
 
 function Home() {
   return (
     <Page>
-      {/* Full-screen hero */}
-      <section className="relative h-screen min-h-[680px] w-full overflow-hidden">
+      {/* Full-screen hero — the passage is the message */}
+      <section className="relative h-screen min-h-[640px] w-full overflow-hidden">
         <img
           src={hero}
           alt="A small figure on a misty mountain path, bansuri in hand"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/30 to-ink/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/55 to-ink/80" />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col justify-between px-6 pt-32 pb-16 lg:px-10 lg:pb-24">
-          <div>
-            <p className="text-[0.7rem] font-medium uppercase tracking-[0.32em] text-paper/80">Echoes of the Seeker</p>
-            <h1 className="serif-display mt-6 max-w-3xl text-4xl text-paper md:text-6xl lg:text-7xl">
-              A journey through music, nature, place, practice, and the search for a deeper way of being.
-            </h1>
-          </div>
-
-          <div className="mt-12 max-w-xl">
-            <blockquote className="serif-display space-y-2 text-xl italic text-paper/90 md:text-2xl">
-              <p>I'm trying to make an echo.</p>
-              <p>Whether it will come back to me, I don't know.</p>
-              <p>But I'm trying to make a sound in the silence.</p>
-            </blockquote>
-            <Link
-              to="/about"
-              className="mt-10 inline-flex items-center gap-3 border-b border-paper/70 pb-1 text-xs uppercase tracking-[0.28em] text-paper hover:border-bamboo hover:text-bamboo transition-colors"
-            >
-              Explore the Journey
-              <span aria-hidden>→</span>
-            </Link>
-          </div>
+        <div className="relative z-10 mx-auto flex h-full max-w-4xl flex-col items-center justify-center px-6 text-center lg:px-10">
+          <p className="text-[0.7rem] font-medium uppercase tracking-[0.32em] text-paper/70">Echoes of the Seeker</p>
+          <blockquote className="serif-display mt-12 space-y-4 text-paper">
+            <p className="text-3xl md:text-5xl lg:text-6xl">I'm trying to make an echo.</p>
+            <p className="text-2xl text-paper/85 md:text-4xl lg:text-5xl">Whether it will come back to me, I don't know.</p>
+            <p className="text-2xl italic text-paper md:text-4xl lg:text-5xl">But I'm trying to make a sound in the silence.</p>
+          </blockquote>
+          <Link
+            to="/about"
+            className="mt-16 inline-flex items-center gap-3 border-b border-paper/50 pb-1 font-serif text-base tracking-wide text-paper/90 hover:border-bamboo hover:text-bamboo transition-colors"
+          >
+            Explore the Journey
+            <span aria-hidden>→</span>
+          </Link>
         </div>
       </section>
 
-      {/* Quiet introduction */}
-      <section className="mx-auto max-w-6xl px-6 py-32 lg:px-10 lg:py-44">
-        <div className="grid gap-16 lg:grid-cols-12 lg:gap-24">
+      {/* Introduction */}
+      <section className="mx-auto max-w-6xl px-6 py-28 lg:px-10 lg:py-44">
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-24">
           <div className="lg:col-span-5">
             <img
               src={aboutImg}
               alt="A quiet corner of the seeker's life"
               loading="lazy"
-              className="aspect-[4/5] w-full object-cover"
+              className="aspect-[5/4] w-full object-cover md:aspect-[4/5]"
             />
           </div>
-          <div className="lg:col-span-7 lg:pt-12">
-            <p className="eyebrow mb-8">An introduction</p>
-            <p className="serif-display text-2xl leading-relaxed text-ink md:text-[1.7rem]">
-              This is the digital home of a life being lived slowly — a place where music, land, writing, and inner exploration belong to the same path.
+          <div className="lg:col-span-7 lg:pt-10">
+            <p className="text-[0.7rem] font-medium uppercase tracking-[0.28em] text-ink/55">An introduction</p>
+            <p className="serif-display mt-8 text-2xl leading-relaxed text-ink md:text-[1.7rem]">
+              Echoes of the Seeker is a digital home for an ongoing journey through music, nature, place, practice, and learning.
             </p>
             <p className="mt-8 max-w-xl text-base leading-relaxed text-ink/75">
-              Not a brand, not a business. A living archive of practice and attention, built to grow with the journey for years to come. Wander as you wish.
+              It brings together teaching, hospitality, land stewardship, writing, and reflection as different expressions of the same path.
             </p>
           </div>
         </div>
       </section>
 
-      <div className="mx-auto max-w-5xl px-6 lg:px-10"><div className="rule" /></div>
-
-      {/* Featured paths — four, editorial */}
-      <section className="mx-auto max-w-6xl px-6 py-32 lg:px-10 lg:py-44">
-        <div className="mb-20 max-w-2xl">
-          <p className="eyebrow mb-6">Paths</p>
-          <h2 className="serif-display text-4xl text-ink md:text-5xl">
-            Four branches of the same tree.
-          </h2>
+      {/* Bridge */}
+      <section className="mx-auto max-w-3xl px-6 py-24 text-center lg:px-10 lg:py-36">
+        <p className="serif-display text-2xl text-ink md:text-3xl">Four interconnected paths.</p>
+        <div className="mt-10 flex flex-col items-center gap-3 font-serif text-xl text-ink/80 md:text-2xl">
+          <p>Music.</p>
+          <p>Place.</p>
+          <p>Land.</p>
+          <p>Reflection.</p>
         </div>
+        <p className="mt-10 text-base italic text-ink/65">Different expressions of the same journey.</p>
+      </section>
 
-        <div className="grid grid-cols-1 gap-x-16 gap-y-24 md:grid-cols-2">
+      {/* Featured paths */}
+      <section className="mx-auto max-w-6xl px-6 pb-32 lg:px-10 lg:pb-44">
+        <div className="grid grid-cols-1 gap-x-20 gap-y-28 md:grid-cols-2">
           {PATHS.map((p, i) => (
             <Link key={p.to} to={p.to} className="group block">
               <div className="overflow-hidden bg-secondary">
@@ -121,9 +116,9 @@ function Home() {
 
       {/* Seeker Letter */}
       <section className="border-t border-rule/70">
-        <div className="mx-auto max-w-3xl px-6 py-32 text-center lg:px-10 lg:py-40">
-          <p className="eyebrow mb-6">Seeker Letter</p>
-          <h2 className="serif-display text-3xl text-ink md:text-4xl">
+        <div className="mx-auto max-w-3xl px-6 py-28 text-center lg:px-10 lg:py-40">
+          <p className="text-[0.7rem] font-medium uppercase tracking-[0.28em] text-ink/55">Seeker Letter</p>
+          <h2 className="serif-display mt-6 text-3xl text-ink md:text-4xl">
             Occasional letters from the path.
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-ink/70">
@@ -134,9 +129,9 @@ function Home() {
               type="email"
               required
               placeholder="your@email"
-              className="flex-1 border-b border-ink/30 bg-transparent py-3 text-center text-base outline-none placeholder:text-ink/40 focus:border-bamboo sm:text-left"
+              className="flex-1 border-b border-ink/30 bg-transparent py-3 text-center text-base text-ink outline-none placeholder:text-ink/40 focus:border-bamboo sm:text-left"
             />
-            <button className="text-xs uppercase tracking-[0.28em] text-ink hover:text-bamboo transition-colors">
+            <button className="font-serif text-base text-ink hover:text-bamboo transition-colors">
               Subscribe →
             </button>
           </form>
