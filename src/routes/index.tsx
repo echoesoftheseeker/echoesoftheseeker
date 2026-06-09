@@ -31,24 +31,33 @@ function Home() {
   return (
     <Page>
       {/* Hero */}
-      <section className="relative h-screen min-h-[680px] w-full overflow-hidden">
+      <section className="relative h-screen min-h-[640px] w-full overflow-hidden">
         <img
           src={hero}
           alt="A small figure on a misty mountain path, bansuri in hand"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/65 to-ink/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/70 to-ink/90" />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-4xl flex-col items-center justify-center px-6 text-center lg:px-10">
-          <p className="font-serif text-sm tracking-[0.3em] text-paper/75 md:text-base">Echoes of the Seeker</p>
-          <blockquote className="serif-display mt-24 space-y-7 text-paper md:mt-32">
-            <p className="text-3xl leading-snug md:text-5xl lg:text-6xl">I'm trying to make an echo.</p>
-            <p className="text-2xl leading-snug text-paper/85 md:text-4xl lg:text-5xl">Whether it will come back to me, I don't know.</p>
-            <p className="text-2xl italic leading-snug text-paper md:text-4xl lg:text-5xl">But I'm trying to make a sound in the silence.</p>
+        <div className="relative z-10 mx-auto flex h-full max-w-3xl flex-col items-center justify-center px-6 text-center lg:px-10">
+          <p className="font-serif text-xs tracking-[0.2em] text-paper/80 md:text-sm">Echoes of the Seeker</p>
+          <blockquote
+            className="serif-display mt-20 space-y-8 text-paper md:mt-28 md:space-y-10"
+            style={{ textShadow: "0 1px 24px rgba(0,0,0,0.45)" }}
+          >
+            <p className="text-[1.65rem] leading-[1.35] md:text-5xl md:leading-[1.25] lg:text-[3.5rem]">
+              I'm trying to make an echo.
+            </p>
+            <p className="text-[1.45rem] leading-[1.4] text-paper/90 md:text-4xl md:leading-[1.3] lg:text-[2.75rem]">
+              Whether it will come back to me, I don't know.
+            </p>
+            <p className="text-[1.45rem] italic leading-[1.4] text-paper md:text-4xl md:leading-[1.3] lg:text-[2.75rem]">
+              But I'm trying to make a sound in the silence.
+            </p>
           </blockquote>
           <Link
             to="/about"
-            className="mt-28 inline-flex items-center gap-3 border-b border-paper/50 pb-1 font-serif text-base tracking-wide text-paper/90 hover:border-bamboo hover:text-bamboo transition-colors md:mt-36"
+            className="mt-24 inline-flex items-center gap-3 border-b border-paper/50 pb-1 font-serif text-sm tracking-wide text-paper/90 hover:border-bamboo hover:text-bamboo transition-colors md:mt-32 md:text-base"
           >
             Explore the Journey
             <span aria-hidden>→</span>
@@ -57,9 +66,9 @@ function Home() {
       </section>
 
       {/* Why Echoes? */}
-      <section className="mx-auto max-w-3xl px-6 py-32 text-center lg:px-10 lg:py-48">
-        <h2 className="serif-display text-3xl text-ink md:text-4xl">Why Echoes?</h2>
-        <div className="mt-12 space-y-6 font-serif text-lg leading-relaxed text-ink/80 md:text-xl">
+      <section className="mx-auto max-w-2xl px-6 py-24 text-center md:py-36 lg:px-10 lg:py-52">
+        <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Why Echoes?</h2>
+        <div className="mt-14 space-y-7 font-serif text-[1.15rem] leading-[1.75] text-ink/85 md:text-[1.3rem] md:leading-[1.8]">
           <p>An echo begins with a sound sent into the unknown.</p>
           <p>Whether it returns, changes, or disappears is never certain.</p>
           <p>This project is an attempt to keep listening.</p>
@@ -68,25 +77,25 @@ function Home() {
 
       {/* Introduction */}
       <section className="border-t border-rule/70">
-        <div className="mx-auto max-w-6xl px-6 py-32 lg:px-10 lg:py-48">
-          <div className="grid gap-14 lg:grid-cols-12 lg:gap-24">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-36 lg:px-10 lg:py-52">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-24">
             <div className="lg:col-span-5">
               <img
                 src={aboutImg}
                 alt="A quiet corner of the seeker's life"
                 loading="lazy"
-                className="mx-auto aspect-[4/3] w-1/2 object-cover sm:w-2/5 lg:aspect-[4/5] lg:w-full"
+                className="mx-auto aspect-[4/3] w-2/5 object-cover sm:w-1/3 lg:aspect-[4/5] lg:w-full"
               />
             </div>
-            <div className="lg:col-span-7 lg:pt-8">
-              <h2 className="serif-display text-3xl text-ink md:text-4xl">An Introduction</h2>
-              <div className="mt-10 space-y-6 text-base leading-relaxed text-ink/80 md:text-lg">
+            <div className="lg:col-span-7 lg:pt-6">
+              <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">An Introduction</h2>
+              <div className="mt-10 space-y-6 text-[1.05rem] leading-[1.8] text-ink/85 md:text-[1.15rem] md:leading-[1.85]">
                 <p>Echoes of the Seeker brings together music, land, place, and practice.</p>
                 <p>It is an ongoing exploration of what happens when attention is given to the things that matter.</p>
                 <p>
                   Through teaching, hospitality, growing food, writing, and reflection, different parts of life become different expressions of the same journey.
                 </p>
-                <p className="font-serif italic text-ink/65">Currently based in Goa.</p>
+                <p className="font-serif italic text-ink/70">Currently based in Goa.</p>
               </div>
             </div>
           </div>
@@ -95,19 +104,21 @@ function Home() {
 
       {/* Featured paths */}
       <section className="border-t border-rule/70">
-        <div className="mx-auto max-w-6xl px-6 py-32 lg:px-10 lg:py-48">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:py-36 lg:px-10 lg:py-52">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="serif-display text-3xl text-ink md:text-4xl">Four Interconnected Paths</h2>
-            <div className="mt-12 flex flex-col items-center gap-2 font-serif text-xl text-ink/80 md:text-2xl">
+            <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Four Interconnected Paths</h2>
+            <div className="mt-12 flex flex-col items-center gap-3 font-serif text-xl text-ink/85 md:text-2xl">
               <p>Music.</p>
               <p>Place.</p>
               <p>Land.</p>
               <p>Reflection.</p>
             </div>
-            <p className="mt-12 font-serif text-base italic text-ink/65">Different expressions of the same journey.</p>
+            <p className="mt-14 font-serif text-base italic leading-relaxed text-ink/70 md:text-lg">
+              Different expressions of the same journey.
+            </p>
           </div>
 
-          <div className="mt-28 grid grid-cols-1 gap-x-28 gap-y-36 md:grid-cols-2 lg:mt-36">
+          <div className="mt-24 grid grid-cols-1 gap-x-24 gap-y-28 md:grid-cols-2 lg:mt-32 lg:gap-y-36">
             {PATHS.map((p, i) => (
               <Link key={p.to} to={p.to} className="group block">
                 <div className="overflow-hidden bg-secondary">
@@ -119,10 +130,14 @@ function Home() {
                   />
                 </div>
                 <div className="mt-8 flex items-baseline gap-4">
-                  <span className="font-serif text-sm text-ink/40">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="font-serif text-3xl text-ink transition-colors group-hover:text-forest md:text-4xl">{p.title}</h3>
+                  <span className="font-serif text-sm text-ink/45">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="font-serif text-[1.6rem] leading-tight text-ink transition-colors group-hover:text-forest md:text-[1.9rem]">
+                    {p.title}
+                  </h3>
                 </div>
-                <p className="mt-4 max-w-md pl-10 text-base leading-relaxed text-ink/70">{p.desc}</p>
+                <p className="mt-4 max-w-md pl-10 text-[1rem] leading-[1.75] text-ink/75 md:text-[1.05rem]">
+                  {p.desc}
+                </p>
               </Link>
             ))}
           </div>
@@ -131,14 +146,14 @@ function Home() {
 
       {/* Closing transition + Seeker Letter */}
       <section className="border-t border-rule/70">
-        <div className="mx-auto max-w-3xl px-6 py-32 text-center lg:px-10 lg:py-48">
-          <p className="serif-display text-2xl italic leading-relaxed text-ink/80 md:text-3xl">
+        <div className="mx-auto max-w-3xl px-6 py-24 text-center md:py-36 lg:px-10 lg:py-52">
+          <p className="serif-display text-[1.4rem] italic leading-[1.6] text-ink/85 md:text-[1.75rem] md:leading-[1.55]">
             The journey continues one note, one step, and one season at a time.
           </p>
 
           <div className="mt-24 lg:mt-32">
-            <h2 className="serif-display text-3xl text-ink md:text-4xl">The Seeker Letter</h2>
-            <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-ink/75 md:text-lg">
+            <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">The Seeker Letter</h2>
+            <p className="mx-auto mt-8 max-w-xl text-[1.05rem] leading-[1.8] text-ink/80 md:text-[1.15rem]">
               Occasional reflections, journey updates, book progress, bansuri insights, and notes from the path.
             </p>
             <form className="mx-auto mt-14 flex max-w-md flex-col gap-4 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
