@@ -31,33 +31,32 @@ function Home() {
   return (
     <Page>
       {/* Hero */}
-      <section className="relative h-screen min-h-[640px] w-full overflow-hidden">
+      <section className="relative h-[100svh] min-h-[600px] w-full overflow-hidden">
         <img
           src={hero}
           alt="A small figure on a misty mountain path, bansuri in hand"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/70 to-ink/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/75 to-ink/90" />
 
         <div className="relative z-10 mx-auto flex h-full max-w-3xl flex-col items-center justify-center px-6 text-center lg:px-10">
-          <p className="font-serif text-xs tracking-[0.2em] text-paper/80 md:text-sm">Echoes of the Seeker</p>
           <blockquote
-            className="serif-display mt-20 space-y-8 text-paper md:mt-28 md:space-y-10"
-            style={{ textShadow: "0 1px 24px rgba(0,0,0,0.45)" }}
+            className="serif-display space-y-6 text-paper md:space-y-8"
+            style={{ textShadow: "0 1px 24px rgba(0,0,0,0.5)" }}
           >
-            <p className="text-[1.65rem] leading-[1.35] md:text-5xl md:leading-[1.25] lg:text-[3.5rem]">
+            <p className="text-[2rem] leading-[1.25] tracking-[-0.01em] sm:text-[2.5rem] md:text-5xl md:leading-[1.2] lg:text-[3.75rem]">
               I'm trying to make an echo.
             </p>
-            <p className="text-[1.45rem] leading-[1.4] text-paper/90 md:text-4xl md:leading-[1.3] lg:text-[2.75rem]">
+            <p className="text-[1.6rem] leading-[1.3] text-paper/90 sm:text-[2rem] md:text-4xl md:leading-[1.25] lg:text-[2.875rem]">
               Whether it will come back to me, I don't know.
             </p>
-            <p className="text-[1.45rem] italic leading-[1.4] text-paper md:text-4xl md:leading-[1.3] lg:text-[2.75rem]">
+            <p className="text-[1.6rem] italic leading-[1.3] text-paper sm:text-[2rem] md:text-4xl md:leading-[1.25] lg:text-[2.875rem]">
               But I'm trying to make a sound in the silence.
             </p>
           </blockquote>
           <Link
             to="/about"
-            className="mt-24 inline-flex items-center gap-3 border-b border-paper/50 pb-1 font-serif text-sm tracking-wide text-paper/90 hover:border-bamboo hover:text-bamboo transition-colors md:mt-32 md:text-base"
+            className="mt-20 inline-flex items-center gap-3 border-b border-paper/50 pb-1 font-serif text-sm tracking-wide text-paper/90 hover:border-bamboo hover:text-bamboo transition-colors md:mt-24 md:text-base"
           >
             Explore the Journey
             <span aria-hidden>→</span>
@@ -66,11 +65,11 @@ function Home() {
       </section>
 
       {/* Why Echoes? */}
-      <section className="mx-auto max-w-2xl px-6 py-24 text-center md:py-36 lg:px-10 lg:py-52">
-        <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Why Echoes?</h2>
-        <div className="mt-14 space-y-7 font-serif text-[1.15rem] leading-[1.75] text-ink/85 md:text-[1.3rem] md:leading-[1.8]">
+      <section className="mx-auto max-w-2xl px-6 py-16 text-center md:py-24 lg:px-10 lg:py-32">
+        <h2 className="serif-display text-[1.65rem] tracking-[-0.005em] text-ink md:text-[2.25rem]">Why Echoes?</h2>
+        <div className="mt-10 space-y-6 font-serif text-[1.1rem] leading-[1.7] text-ink/85 md:text-[1.25rem] md:leading-[1.75]">
           <p>An echo begins with a sound sent into the unknown.</p>
-          <p>Whether it returns, changes, or disappears is never certain.</p>
+          <p>Whether it returns is never certain.</p>
           <p>This project is an attempt to keep listening.</p>
         </div>
       </section>
