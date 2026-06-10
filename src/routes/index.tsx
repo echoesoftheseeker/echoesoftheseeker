@@ -103,21 +103,21 @@ function Home() {
 
       {/* Featured paths */}
       <section className="border-t border-rule/70">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-36 lg:px-10 lg:py-52">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-10 lg:py-36">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Four Interconnected Paths</h2>
-            <div className="mt-12 flex flex-col items-center gap-3 font-serif text-xl text-ink/85 md:text-2xl">
+            <h2 className="serif-display text-[1.65rem] tracking-[-0.005em] text-ink md:text-[2.25rem]">Four Interconnected Paths</h2>
+            <div className="mt-10 flex flex-col items-center gap-2 font-serif text-lg text-ink/85 md:text-xl">
               <p>Music.</p>
               <p>Place.</p>
               <p>Land.</p>
               <p>Reflection.</p>
             </div>
-            <p className="mt-14 font-serif text-base italic leading-relaxed text-ink/70 md:text-lg">
+            <p className="mt-10 font-serif text-base italic leading-relaxed text-ink/70 md:text-lg">
               Different expressions of the same journey.
             </p>
           </div>
 
-          <div className="mt-24 grid grid-cols-1 gap-x-24 gap-y-28 md:grid-cols-2 lg:mt-32 lg:gap-y-36">
+          <div className="mt-20 grid grid-cols-1 gap-x-20 gap-y-20 md:grid-cols-2 lg:mt-24 lg:gap-y-28">
             {PATHS.map((p, i) => (
               <Link key={p.to} to={p.to} className="group block">
                 <div className="overflow-hidden bg-secondary">
@@ -128,13 +128,13 @@ function Home() {
                     className="aspect-[5/6] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
                   />
                 </div>
-                <div className="mt-8 flex items-baseline gap-4">
+                <div className="mt-7 flex items-baseline gap-4">
                   <span className="font-serif text-sm text-ink/45">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="font-serif text-[1.6rem] leading-tight text-ink transition-colors group-hover:text-forest md:text-[1.9rem]">
+                  <h3 className="font-serif text-[1.45rem] leading-tight text-ink transition-colors group-hover:text-forest md:text-[1.75rem]">
                     {p.title}
                   </h3>
                 </div>
-                <p className="mt-4 max-w-md pl-10 text-[1rem] leading-[1.75] text-ink/75 md:text-[1.05rem]">
+                <p className="mt-3 max-w-md pl-10 text-[1rem] leading-[1.7] text-ink/75 md:text-[1.05rem]">
                   {p.desc}
                 </p>
               </Link>
@@ -145,17 +145,17 @@ function Home() {
 
       {/* Closing transition + Seeker Letter */}
       <section className="border-t border-rule/70">
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center md:py-36 lg:px-10 lg:py-52">
-          <p className="serif-display text-[1.4rem] italic leading-[1.6] text-ink/85 md:text-[1.75rem] md:leading-[1.55]">
+        <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28 lg:px-10 lg:py-36">
+          <p className="serif-display text-[1.35rem] italic leading-[1.55] text-ink/85 md:text-[1.65rem] md:leading-[1.5]">
             The journey continues one note, one step, and one season at a time.
           </p>
 
-          <div className="mt-24 lg:mt-32">
-            <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">The Seeker Letter</h2>
-            <p className="mx-auto mt-8 max-w-xl text-[1.05rem] leading-[1.8] text-ink/80 md:text-[1.15rem]">
+          <div className="mt-20 lg:mt-24">
+            <h2 className="serif-display text-[1.65rem] tracking-[-0.005em] text-ink md:text-[2.25rem]">The Seeker Letter</h2>
+            <p className="mx-auto mt-7 max-w-xl text-[1.05rem] leading-[1.75] text-ink/80 md:text-[1.15rem]">
               Occasional reflections, journey updates, book progress, bansuri insights, and notes from the path.
             </p>
-            <form className="mx-auto mt-14 flex max-w-md flex-col gap-4 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
+            <form className="mx-auto mt-12 flex max-w-md flex-col gap-4 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="email"
                 required
