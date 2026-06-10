@@ -76,19 +76,19 @@ function Home() {
 
       {/* Introduction */}
       <section className="border-t border-rule/70">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-36 lg:px-10 lg:py-52">
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-24">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-10 lg:py-36">
+          <div className="grid gap-14 lg:grid-cols-12 lg:gap-24">
             <div className="lg:col-span-5">
               <img
                 src={aboutImg}
                 alt="A quiet corner of the seeker's life"
                 loading="lazy"
-                className="mx-auto aspect-[4/3] w-2/5 object-cover sm:w-1/3 lg:aspect-[4/5] lg:w-full"
+                className="mx-auto aspect-[4/5] w-3/4 object-cover sm:w-2/3 md:w-1/2 lg:aspect-[4/5] lg:w-full"
               />
             </div>
-            <div className="lg:col-span-7 lg:pt-6">
-              <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">An Introduction</h2>
-              <div className="mt-10 space-y-6 text-[1.05rem] leading-[1.8] text-ink/85 md:text-[1.15rem] md:leading-[1.85]">
+            <div className="lg:col-span-7 lg:pt-4">
+              <h2 className="serif-display text-[1.65rem] tracking-[-0.005em] text-ink md:text-[2.25rem]">An Introduction</h2>
+              <div className="mt-8 space-y-5 text-[1.05rem] leading-[1.75] text-ink/85 md:text-[1.15rem] md:leading-[1.8]">
                 <p>Echoes of the Seeker brings together music, land, place, and practice.</p>
                 <p>It is an ongoing exploration of what happens when attention is given to the things that matter.</p>
                 <p>
