@@ -66,12 +66,12 @@ function About() {
 
       {/* My Journey */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 lg:px-10 lg:py-32">
-          <p className="eyebrow mb-7">One</p>
+        <div className="mx-auto max-w-2xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+          <p className="eyebrow mb-6">One</p>
           <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">
             My Journey
           </h2>
-          <div className="mt-10 space-y-6 text-[1.05rem] leading-[1.85] text-ink/85 md:text-[1.15rem] md:leading-[1.9]">
+          <div className="mt-8 space-y-5 text-[1.05rem] leading-[1.85] text-ink/85 md:text-[1.15rem] md:leading-[1.9]">
             <p>My name is Akash.</p>
             <p>
               In 2024, I began learning the bansuri. At the time, I thought I was simply learning an instrument. Over time, it
@@ -99,8 +99,8 @@ function About() {
 
       {/* Featured Image */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-5xl px-6 py-16 md:py-24 lg:px-10 lg:py-28">
-          <figure className="mx-auto w-[82%] md:w-full">
+        <div className="mx-auto max-w-5xl px-4 py-10 md:py-16 lg:px-10 lg:py-20">
+          <figure className="mx-auto w-[92%] md:w-full">
             <img
               src={featuredImg}
               alt="A quiet field, somewhere along the way"
@@ -113,17 +113,17 @@ function About() {
 
       {/* A Journey in Progress */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-3xl px-6 py-20 md:py-28 lg:px-10 lg:py-32">
-          <p className="eyebrow mb-7">Two</p>
+        <div className="mx-auto max-w-3xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+          <p className="eyebrow mb-6">Two</p>
           <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">
             A Journey in Progress
           </h2>
-          <ol className="mt-12 space-y-10 border-l border-rule/70 pl-8 md:space-y-12 md:pl-10">
+          <ol className="mt-10 space-y-6 border-l border-rule/70 pl-7 md:space-y-7 md:pl-9">
             {TIMELINE.map((t) => (
               <li key={t.year} className="relative">
-                <span className="absolute -left-[2.3rem] top-3 h-1.5 w-1.5 rounded-full bg-bamboo md:-left-[2.55rem]" />
-                <p className="serif-display text-[1.6rem] text-ink md:text-[2rem]">{t.year}</p>
-                <p className="mt-2 text-[1.02rem] leading-[1.8] text-ink/80 md:text-[1.1rem]">{t.body}</p>
+                <span className="absolute -left-[2.05rem] top-[0.7rem] h-1.5 w-1.5 rounded-full bg-bamboo md:-left-[2.3rem]" />
+                <p className="serif-display text-[1.35rem] text-ink md:text-[1.65rem]">{t.year}</p>
+                <p className="mt-1.5 text-[1rem] leading-[1.75] text-ink/80 md:text-[1.05rem]">{t.body}</p>
               </li>
             ))}
           </ol>
