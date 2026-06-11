@@ -132,22 +132,22 @@ function About() {
 
       {/* What I'm Learning */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-5xl px-6 py-20 md:py-28 lg:px-10 lg:py-32">
+        <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow mb-7">Three</p>
+            <p className="eyebrow mb-6">Three</p>
             <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">
               What I'm Learning
             </h2>
-            <p className="mt-6 font-serif text-[1.05rem] italic leading-[1.6] text-ink/70 md:text-[1.2rem]">
+            <p className="mt-5 font-serif text-[1.05rem] italic leading-[1.6] text-ink/70 md:text-[1.2rem]">
               Not achievements. A few ideas held lightly.
             </p>
           </div>
-          <div className="mt-14 grid grid-cols-1 gap-x-14 gap-y-12 sm:grid-cols-2 md:mt-16">
+          <div className="mt-12 grid grid-cols-1 gap-x-14 gap-y-10 sm:grid-cols-2">
             {LESSONS.map((l, i) => (
-              <div key={l.title} className="border-t border-rule/70 pt-6">
+              <div key={l.title} className="border-t border-rule/70 pt-5">
                 <p className="font-serif text-sm text-ink/45">{String(i + 1).padStart(2, "0")}</p>
-                <h3 className="mt-3 font-serif text-[1.5rem] text-ink md:text-[1.65rem]">{l.title}</h3>
-                <p className="mt-3 text-[1.02rem] leading-[1.75] text-ink/75">{l.body}</p>
+                <h3 className="mt-2.5 font-serif text-[1.5rem] text-ink md:text-[1.65rem]">{l.title}</h3>
+                <p className="mt-2.5 text-[1.02rem] leading-[1.75] text-ink/75">{l.body}</p>
               </div>
             ))}
           </div>
@@ -156,19 +156,19 @@ function About() {
 
       {/* Different Expressions */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-10 lg:py-36">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow mb-7">Four</p>
+            <p className="eyebrow mb-6">Four</p>
             <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">
               Different Expressions of the Same Journey
             </h2>
-            <div className="mt-8 space-y-4 text-[1.05rem] leading-[1.8] text-ink/80 md:text-[1.15rem]">
+            <div className="mt-6 space-y-3 text-[1.05rem] leading-[1.8] text-ink/80 md:text-[1.15rem]">
               <p>At first glance these projects may seem unrelated.</p>
               <p className="font-serif italic text-ink/70">They are simply different expressions of the same journey.</p>
             </div>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-x-20 gap-y-16 md:grid-cols-2 md:mt-20 lg:gap-y-24">
+          <div className="mt-12 grid grid-cols-1 gap-x-20 gap-y-12 md:grid-cols-2 md:mt-14 lg:gap-y-16">
             {CHAPTERS.map((c, i) => (
               <Link key={c.to} to={c.to} className="group block">
                 <div className="overflow-hidden bg-secondary">
@@ -179,13 +179,13 @@ function About() {
                     className="aspect-[5/6] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
                   />
                 </div>
-                <div className="mt-6 flex items-baseline gap-4">
+                <div className="mt-5 flex items-baseline gap-4">
                   <span className="font-serif text-sm text-ink/45">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="font-serif text-[1.4rem] leading-tight text-ink transition-colors group-hover:text-forest md:text-[1.65rem]">
                     {c.title}
                   </h3>
                 </div>
-                <p className="mt-3 max-w-md pl-10 text-[1rem] leading-[1.7] text-ink/75 md:text-[1.05rem]">
+                <p className="mt-2.5 max-w-md pl-10 text-[1rem] leading-[1.7] text-ink/75 md:text-[1.05rem]">
                   {c.desc}
                 </p>
               </Link>
@@ -196,13 +196,13 @@ function About() {
 
       {/* Closing */}
       <section>
-        <div className="mx-auto max-w-2xl px-6 py-28 text-center md:py-36 lg:px-10 lg:py-44">
+        <div className="mx-auto max-w-2xl px-6 py-20 text-center md:py-24 lg:px-10 lg:py-28">
           <p className="serif-display space-y-3 text-[1.5rem] leading-[1.5] text-ink md:text-[2rem] md:leading-[1.45]">
             <span className="block">Freedom comes.</span>
             <span className="block">It always comes.</span>
             <span className="block italic text-ink/80">Sustaining it — that is the work.</span>
           </p>
-          <p className="mt-20 font-serif text-[1.1rem] italic text-ink/60 md:mt-24 md:text-[1.25rem]">
+          <p className="mt-14 font-serif text-[1.1rem] italic text-ink/60 md:mt-16 md:text-[1.25rem]">
             The journey continues.
           </p>
         </div>
