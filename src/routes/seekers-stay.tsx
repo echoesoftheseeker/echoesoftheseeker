@@ -3,8 +3,18 @@ import { useState } from "react";
 import { Page } from "@/components/site-layout";
 import stayHero from "@/assets/stay-hero.jpg";
 import stayMorning from "@/assets/stay-morning.jpg";
-import stayRoom from "@/assets/stay-room.jpg";
 import stayBeach from "@/assets/stay-beach.jpg";
+
+import exteriorSide from "@/assets/stay/exterior-side.jpg.asset.json";
+import exteriorFront from "@/assets/stay/exterior-front.jpg.asset.json";
+import reception from "@/assets/stay/reception.jpg.asset.json";
+import living1 from "@/assets/stay/living-1.jpg.asset.json";
+import living2 from "@/assets/stay/living-2.jpg.asset.json";
+import living3 from "@/assets/stay/living-3.jpg.asset.json";
+import bedroom from "@/assets/stay/bedroom.jpg.asset.json";
+import kitchen1 from "@/assets/stay/kitchen-1.jpg.asset.json";
+import kitchen2 from "@/assets/stay/kitchen-2.jpg.asset.json";
+import balcony from "@/assets/stay/balcony.jpg.asset.json";
 
 export const Route = createFileRoute("/seekers-stay")({
   head: () => ({
@@ -25,6 +35,19 @@ const DAY = [
   { time: "Evening", body: "Sunset walks, conversations, and unhurried time." },
   { time: "Night", body: "Silence, rest, and the sound of the ocean nearby." },
 ] as const;
+
+const GALLERY = [
+  { src: exteriorSide.url, alt: "The building at Sasha's Stay, Ashwem", aspect: "aspect-[4/5]" },
+  { src: living1.url, alt: "Living room with wooden furniture", aspect: "aspect-[4/5]" },
+  { src: balcony.url, alt: "Balcony with a book and morning light", aspect: "aspect-[3/2]" },
+  { src: kitchen1.url, alt: "Kitchen with garden view", aspect: "aspect-[3/2]" },
+  { src: bedroom.url, alt: "Bedroom with soft window light", aspect: "aspect-[3/2]" },
+  { src: living2.url, alt: "Apartment living area", aspect: "aspect-[3/2]" },
+  { src: exteriorFront.url, alt: "Front of the building framed by palms", aspect: "aspect-[4/5]" },
+  { src: kitchen2.url, alt: "A second kitchen space", aspect: "aspect-[4/5]" },
+  { src: living3.url, alt: "Dining and living area", aspect: "aspect-[4/5]" },
+  { src: reception.url, alt: "Reception entrance", aspect: "aspect-[3/2]" },
+];
 
 function Stay() {
   return (
@@ -55,7 +78,7 @@ function Stay() {
 
       {/* Why Seekers Stay */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-2xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+        <div className="mx-auto max-w-2xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
           <p className="eyebrow mb-6">One</p>
           <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">
             Why Seekers Stay
@@ -77,9 +100,9 @@ function Stay() {
         </div>
       </section>
 
-      {/* Sasha's Stay — Ashwem, Goa */}
-      <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+      {/* Sasha's Stay — Introduction */}
+      <section>
+        <div className="mx-auto max-w-5xl px-6 pt-14 md:pt-18 lg:px-10 lg:pt-20">
           <p className="eyebrow mb-6">Two</p>
           <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">
             Sasha's Stay
@@ -87,49 +110,127 @@ function Stay() {
           <p className="mt-3 font-serif text-[1.1rem] italic text-ink/65 md:text-[1.25rem]">
             Ashwem, Goa
           </p>
+          <div className="mt-8 max-w-2xl space-y-5 text-[1.05rem] leading-[1.85] text-ink/85 md:text-[1.1rem]">
+            <p>Sasha's Stay is the first place to become part of Seekers Stay.</p>
+            <p>
+              Located in Ashwem, North Goa, a short walk from the beach, it offers a quieter rhythm than much of the
+              coastline.
+            </p>
+          </div>
+        </div>
 
-          <div className="mt-12 grid gap-10 md:grid-cols-5 md:gap-12">
+        {/* Editorial gallery */}
+        <div className="mx-auto max-w-6xl px-6 pt-12 pb-14 md:pt-14 md:pb-18 lg:px-10 lg:pt-16 lg:pb-20">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:gap-5">
+            {GALLERY.map((img, i) => (
+              <figure key={i} className={i === 2 || i === 6 ? "col-span-2 md:col-span-2" : ""}>
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className={`w-full object-cover ${
+                    i === 2 || i === 6 ? "aspect-[3/2]" : img.aspect
+                  }`}
+                />
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stay Options */}
+      <section className="border-y border-rule/70 bg-secondary/30">
+        <div className="mx-auto max-w-5xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
+          <p className="eyebrow mb-6">Three</p>
+          <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">
+            Stay Options
+          </h2>
+          <p className="mt-6 max-w-2xl text-[1.05rem] leading-[1.85] text-ink/80 md:text-[1.1rem]">
+            Sasha's Stay currently offers two accommodation types, each suited to a different style of stay.
+          </p>
+
+          <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-12">
+            <article className="space-y-5">
+              <figure>
+                <img
+                  src={bedroom.url}
+                  alt="Studio apartment bedroom"
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </figure>
+              <p className="eyebrow">Studio Apartment</p>
+              <p className="font-serif text-[1.05rem] italic text-ink/70">
+                Ideal for solo travelers, couples, remote workers, and shorter stays.
+              </p>
+              <ul className="space-y-2 text-[1rem] leading-[1.75] text-ink/80">
+                <li>— Private studio layout</li>
+                <li>— Kitchenette</li>
+                <li>— Comfortable and self-contained</li>
+                <li>— Suitable for 1–2 guests</li>
+              </ul>
+              <p className="border-t border-rule/70 pt-5 font-serif text-[1rem] italic text-ink/65">
+                A simple space for rest, work, reading, and slow mornings.
+              </p>
+            </article>
+
+            <article className="space-y-5">
+              <figure>
+                <img
+                  src={living2.url}
+                  alt="One-bedroom apartment living area"
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </figure>
+              <p className="eyebrow">One-Bedroom Apartment (1BHK)</p>
+              <p className="font-serif text-[1.05rem] italic text-ink/70">
+                Ideal for longer stays, couples wanting more space, families, or friends traveling together.
+              </p>
+              <ul className="space-y-2 text-[1rem] leading-[1.75] text-ink/80">
+                <li>— Separate bedroom</li>
+                <li>— Living area</li>
+                <li>— Kitchen</li>
+                <li>— More spacious layout</li>
+                <li>— Suitable for longer stays</li>
+              </ul>
+              <p className="border-t border-rule/70 pt-5 font-serif text-[1rem] italic text-ink/65">
+                A little more room to settle into the rhythm of the place.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* A Walk From Here */}
+      <section className="border-b border-rule/70">
+        <div className="mx-auto max-w-5xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
+          <div className="grid gap-10 md:grid-cols-5 md:gap-14">
+            <div className="md:col-span-2 md:self-center">
+              <p className="eyebrow mb-6">Four</p>
+              <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">
+                A Walk From Here
+              </h2>
+              <div className="mt-8 space-y-3 font-serif text-[1.15rem] italic leading-[1.7] text-ink/75 md:text-[1.25rem]">
+                <p>Thirty seconds to the beach.</p>
+                <p>A little longer to slow down.</p>
+              </div>
+            </div>
             <figure className="md:col-span-3">
               <img
-                src={stayRoom}
-                alt="A simple, light-filled room with shuttered windows"
+                src={stayBeach}
+                alt="An empty beach at sunset near Ashwem"
                 loading="lazy"
-                className="aspect-[4/5] w-full object-cover"
+                className="aspect-[4/3] w-full object-cover md:aspect-[16/11]"
               />
             </figure>
-            <div className="space-y-5 self-end text-[1.05rem] leading-[1.85] text-ink/85 md:col-span-2 md:text-[1.1rem]">
-              <p>Sasha's Stay is the first place to become part of Seekers Stay.</p>
-              <p>
-                Located in Ashwem, North Goa, a short walk from the beach, it offers a quieter rhythm than much of the
-                coastline.
-              </p>
-            </div>
-          </div>
-
-          <figure className="mt-14 md:mt-20">
-            <img
-              src={stayBeach}
-              alt="An empty beach at sunset near Ashwem"
-              loading="lazy"
-              className="aspect-[16/10] w-full object-cover"
-            />
-          </figure>
-
-          <div className="mx-auto mt-12 max-w-2xl space-y-5 text-[1.05rem] leading-[1.85] text-ink/85 md:mt-16 md:text-[1.15rem] md:leading-[1.9]">
-            <p>The intention is simple:</p>
-            <p>
-              A comfortable place from which people can explore, rest, work, read, walk, and reconnect with the surrounding
-              landscape.
-            </p>
-            <p>As Seekers Stay evolves, other places may join the journey.</p>
-            <p className="font-serif italic text-ink/70">For now, Sasha's Stay is where the story begins.</p>
           </div>
         </div>
       </section>
 
       {/* A Day Here */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+        <div className="mx-auto max-w-5xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
           <div className="grid gap-12 md:grid-cols-5 md:gap-16">
             <figure className="md:col-span-2">
               <img
@@ -140,7 +241,7 @@ function Stay() {
               />
             </figure>
             <div className="md:col-span-3">
-              <p className="eyebrow mb-6">Three</p>
+              <p className="eyebrow mb-6">Five</p>
               <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">
                 A Day Here
               </h2>
@@ -160,8 +261,8 @@ function Stay() {
 
       {/* The Vision */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-2xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-          <p className="eyebrow mb-6">Four</p>
+        <div className="mx-auto max-w-2xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
+          <p className="eyebrow mb-6">Six</p>
           <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">
             The Vision
           </h2>
@@ -179,7 +280,7 @@ function Stay() {
 
       {/* Closing */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-2xl px-6 py-20 text-center md:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-2xl px-6 py-16 text-center md:py-20 lg:px-10 lg:py-24">
           <p className="serif-display text-[1.5rem] leading-[1.5] text-ink md:text-[2rem] md:leading-[1.45]">
             The places we remember most are often the ones that gave us room to listen.
           </p>
@@ -198,7 +299,7 @@ function InquirySection() {
 
   return (
     <section id="inquire">
-      <div className="mx-auto max-w-2xl px-6 py-20 md:py-24 lg:px-10 lg:py-28">
+      <div className="mx-auto max-w-2xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
         {!open && !submitted && (
           <div className="text-center">
             <button
@@ -245,6 +346,20 @@ function InquirySection() {
             ))}
 
             <label className="block">
+              <span className="eyebrow">Accommodation Type</span>
+              <select
+                name="accommodation"
+                defaultValue=""
+                className="mt-2 w-full border-b border-ink/25 bg-transparent py-3 font-serif text-[1.05rem] text-ink outline-none transition-colors focus:border-bamboo"
+              >
+                <option value="" disabled>Select an option</option>
+                <option value="studio">Studio Apartment</option>
+                <option value="1bhk">One-Bedroom Apartment (1BHK)</option>
+                <option value="unsure">Not Sure Yet</option>
+              </select>
+            </label>
+
+            <label className="block">
               <span className="eyebrow">Message</span>
               <textarea
                 name="message"
@@ -274,6 +389,10 @@ function InquirySection() {
             </p>
           </div>
         )}
+
+        <p className="mt-12 text-center font-serif text-[0.9rem] italic text-ink/45">
+          Sasha's Stay Facebook page coming soon.
+        </p>
       </div>
     </section>
   );

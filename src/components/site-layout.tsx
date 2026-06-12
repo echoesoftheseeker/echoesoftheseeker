@@ -18,9 +18,9 @@ const EXPLORE = NAV.slice(0, 5);
 const MORE = NAV.slice(5);
 
 const SOCIALS = [
-  { href: "https://instagram.com", label: "Instagram", Icon: Instagram },
-  { href: "https://youtube.com", label: "YouTube", Icon: Youtube },
-  { href: "https://facebook.com", label: "Facebook", Icon: Facebook },
+  { href: "https://www.instagram.com/echoesoftheseeker", label: "Instagram", Icon: Instagram },
+  { href: "https://www.youtube.com/@echoesbyakash", label: "YouTube", Icon: Youtube },
+  { href: "https://www.facebook.com/share/1NKTP6Lhrx/", label: "Facebook", Icon: Facebook },
 ] as const;
 
 export function SiteHeader() {
