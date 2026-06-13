@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Page, PageHero, Section } from "@/components/site-layout";
-import bansurisImg from "@/assets/bansuris.jpg";
+import bansurisImg from "@/assets/bansuri-bag.jpg.asset.json";
 
 export const Route = createFileRoute("/bansuris")({
   head: () => ({
@@ -9,7 +9,7 @@ export const Route = createFileRoute("/bansuris")({
       { name: "description", content: "Carefully selected and personally checked bansuris. Inquiry-based only." },
       { property: "og:title", content: "Bansuris — Echoes of the Seeker" },
       { property: "og:description", content: "Every bansuri has its own voice." },
-      { property: "og:image", content: bansurisImg },
+      { property: "og:image", content: bansurisImg.url },
     ],
   }),
   component: Bansuris,
@@ -33,7 +33,12 @@ function Bansuris() {
       />
 
       <section className="mx-auto max-w-5xl px-6 py-16 lg:px-10">
-        <img src={bansurisImg} alt="Bansuri flutes on a wooden table" loading="lazy" className="aspect-[16/10] w-full object-cover" />
+        <img
+          src={bansurisImg.url}
+          alt="A handcrafted bansuri resting on its bag before a quiet green field"
+          loading="lazy"
+          className="aspect-[16/10] w-full object-cover"
+        />
       </section>
 
       <Section eyebrow="Categories" title="By stage of journey.">
@@ -93,3 +98,4 @@ function Bansuris() {
     </Page>
   );
 }
+

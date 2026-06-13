@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page } from "@/components/site-layout";
-import hero from "@/assets/hero-seeker.jpg";
-import learnImg from "@/assets/learn.jpg";
+import hero from "@/assets/hero-beach-seeker.jpg.asset.json";
+import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
 import stayImg from "@/assets/stay.jpg";
 import soilImg from "@/assets/soil.jpg";
 import journalImg from "@/assets/journal.jpg";
@@ -14,14 +14,14 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "A digital home for an ongoing journey through music, nature, place, practice, and learning." },
       { property: "og:title", content: "Echoes of the Seeker" },
       { property: "og:description", content: "A journey through music, nature, place, practice, and learning." },
-      { property: "og:image", content: hero },
+      { property: "og:image", content: hero.url },
     ],
   }),
   component: Home,
 });
 
 const PATHS = [
-  { to: "/learn-bansuri", title: "Learn Bansuri", desc: "Learning, teaching, and sharing the bansuri.", img: learnImg },
+  { to: "/learn-bansuri", title: "Learn Bansuri", desc: "Learning, teaching, and sharing the bansuri.", img: learnImg.url },
   { to: "/seekers-stay", title: "Seekers Stay", desc: "Places that invite rest, reflection, and connection. Currently featuring Sasha's Stay in Ashwem, Goa.", img: stayImg },
   { to: "/seekers-soil", title: "Seekers Soil", desc: "Growing food, learning from the land, and exploring self-reliance.", img: soilImg },
   { to: "/journal", title: "Journal", desc: "Reflections, observations, essays, and field notes.", img: journalImg },
@@ -30,14 +30,13 @@ const PATHS = [
 function Home() {
   return (
     <Page>
-      {/* Hero */}
       <section className="relative h-[100svh] min-h-[600px] w-full overflow-hidden">
         <img
-          src={hero}
-          alt="A small figure on a misty mountain path, bansuri in hand"
+          src={hero.url}
+          alt="A seeker walking barefoot along a quiet Goa shoreline with a flute bag at dusk"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/75 to-ink/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/58 via-ink/42 to-ink/78" />
 
         <div className="relative z-10 mx-auto flex h-full max-w-3xl flex-col items-center justify-center px-6 text-center lg:px-10">
           <blockquote
@@ -56,7 +55,7 @@ function Home() {
           </blockquote>
           <Link
             to="/about"
-            className="mt-20 inline-flex items-center gap-3 border-b border-paper/50 pb-1 font-serif text-sm tracking-wide text-paper/90 hover:border-bamboo hover:text-bamboo transition-colors md:mt-24 md:text-base"
+            className="mt-20 inline-flex items-center gap-3 border-b border-paper/50 pb-1 font-serif text-sm tracking-wide text-paper/90 transition-colors hover:border-bamboo hover:text-bamboo md:mt-24 md:text-base"
           >
             Explore the Journey
             <span aria-hidden>→</span>
@@ -64,7 +63,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Why Echoes? */}
       <section className="mx-auto max-w-2xl px-6 py-16 text-center md:py-24 lg:px-10 lg:py-32">
         <h2 className="serif-display text-[1.65rem] tracking-[-0.005em] text-ink md:text-[2.25rem]">Why Echoes?</h2>
         <div className="mt-10 space-y-6 font-serif text-[1.1rem] leading-[1.7] text-ink/85 md:text-[1.25rem] md:leading-[1.75]">
@@ -74,7 +72,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Introduction */}
       <section className="border-t border-rule/70">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-10 lg:py-36">
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-24">
@@ -101,7 +98,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Featured paths */}
       <section className="border-t border-rule/70">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:px-10 lg:py-36">
           <div className="mx-auto max-w-2xl text-center">
@@ -143,7 +139,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Closing transition + Seeker Letter */}
       <section className="border-t border-rule/70">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28 lg:px-10 lg:py-36">
           <p className="serif-display text-[1.35rem] italic leading-[1.55] text-ink/85 md:text-[1.65rem] md:leading-[1.5]">
@@ -162,7 +157,7 @@ function Home() {
                 placeholder="your@email"
                 className="flex-1 border-b border-ink/30 bg-transparent py-3 text-center text-base text-ink outline-none placeholder:text-ink/40 focus:border-bamboo sm:text-left"
               />
-              <button className="font-serif text-base text-ink hover:text-bamboo transition-colors">
+              <button className="font-serif text-base text-ink transition-colors hover:text-bamboo">
                 Subscribe →
               </button>
             </form>
@@ -172,3 +167,4 @@ function Home() {
     </Page>
   );
 }
+

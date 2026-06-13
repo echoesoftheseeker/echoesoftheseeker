@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page } from "@/components/site-layout";
 import aboutHero from "@/assets/about-hero.jpg";
-import featuredImg from "@/assets/about.jpg";
-import learnImg from "@/assets/learn.jpg";
+import featuredImg from "@/assets/seeker-clouds.jpg.asset.json";
+import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
 import stayImg from "@/assets/stay.jpg";
 import soilImg from "@/assets/soil.jpg";
 import journalImg from "@/assets/journal.jpg";
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "A life being explored through music, land, place, and practice." },
       { property: "og:title", content: "About the Seeker — Echoes of the Seeker" },
       { property: "og:description", content: "A chapter from an unfinished journey." },
-      { property: "og:image", content: aboutHero },
+      { property: "og:image", content: featuredImg.url },
     ],
   }),
   component: About,
@@ -36,7 +36,7 @@ const LESSONS = [
 ] as const;
 
 const CHAPTERS = [
-  { to: "/learn-bansuri", title: "Learn Bansuri", desc: "Learning, teaching, and sharing the bansuri.", img: learnImg },
+  { to: "/learn-bansuri", title: "Learn Bansuri", desc: "Learning, teaching, and sharing the bansuri.", img: learnImg.url },
   { to: "/seekers-stay", title: "Seekers Stay", desc: "Places that invite rest, reflection, and connection. Currently including Sasha's Stay in Ashwem, Goa.", img: stayImg },
   { to: "/seekers-soil", title: "Seekers Soil", desc: "Growing food and learning from the land.", img: soilImg },
   { to: "/journal", title: "Journal", desc: "Field notes, reflections, and observations.", img: journalImg },
@@ -46,7 +46,6 @@ const CHAPTERS = [
 function About() {
   return (
     <Page>
-      {/* Hero */}
       <section className="relative h-[88svh] min-h-[560px] w-full overflow-hidden">
         <img
           src={aboutHero}
@@ -64,7 +63,6 @@ function About() {
         </div>
       </section>
 
-      {/* My Journey */}
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-2xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
           <p className="eyebrow mb-6">One</p>
@@ -97,13 +95,12 @@ function About() {
         </div>
       </section>
 
-      {/* Featured Image */}
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-5xl px-4 py-10 md:py-16 lg:px-10 lg:py-20">
           <figure className="mx-auto w-[92%] md:w-full">
             <img
-              src={featuredImg}
-              alt="A quiet field, somewhere along the way"
+              src={featuredImg.url}
+              alt="A seeker sitting before a sea of clouds at first light"
               loading="lazy"
               className="aspect-[4/5] w-full object-cover md:aspect-[16/10]"
             />
@@ -111,7 +108,6 @@ function About() {
         </div>
       </section>
 
-      {/* A Journey in Progress */}
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-3xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
           <p className="eyebrow mb-6">Two</p>
@@ -130,7 +126,6 @@ function About() {
         </div>
       </section>
 
-      {/* What I'm Learning */}
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
@@ -154,7 +149,6 @@ function About() {
         </div>
       </section>
 
-      {/* Different Expressions */}
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
@@ -194,7 +188,6 @@ function About() {
         </div>
       </section>
 
-      {/* Closing */}
       <section>
         <div className="mx-auto max-w-2xl px-6 py-20 text-center md:py-24 lg:px-10 lg:py-28">
           <p className="serif-display space-y-3 text-[1.5rem] leading-[1.5] text-ink md:text-[2rem] md:leading-[1.45]">
@@ -210,3 +203,4 @@ function About() {
     </Page>
   );
 }
+
