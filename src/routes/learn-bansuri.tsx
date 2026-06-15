@@ -132,26 +132,29 @@ function Learn() {
 
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-18">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
             <figure>
-              <img src={riverImg.url} alt="A quiet moment with a bansuri beside still water" loading="lazy" className="aspect-[4/5] w-full object-cover" />
+              <img src={treeImg.url} alt="A bansuri player seated beneath a wide tree, practicing in the open air" loading="lazy" className="aspect-[4/5] w-full object-cover" />
             </figure>
             <div className="lg:self-center">
               <p className="eyebrow mb-6">Two</p>
               <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">My Approach</h2>
               <div className="mt-8 space-y-5 text-[1.05rem] leading-[1.85] text-ink/85 md:text-[1.12rem]">
-                <p>I am not a traditional guru or conservatory teacher.</p>
-                <p>My approach is simple:</p>
-                <div className="space-y-2 font-serif text-[1.3rem] text-ink md:text-[1.55rem]">
+                <p>I am still a student of the instrument myself.</p>
+                <p>
+                  What I share comes from practice, mistakes, curiosity, and a long love for
+                  the bansuri.
+                </p>
+                <p>The aim is not perfection.</p>
+                <p>
+                  The aim is to develop a meaningful relationship with sound, breath, and
+                  attention.
+                </p>
+                <div className="pt-2 space-y-2 font-serif text-[1.3rem] text-ink md:text-[1.5rem]">
                   <p>Learn slowly.</p>
                   <p>Learn correctly.</p>
                   <p>Learn consistently.</p>
                 </div>
-                <p>The goal is not performance.</p>
-                <p>The goal is relationship.</p>
-                <p>Relationship with breath.</p>
-                <p>Relationship with sound.</p>
-                <p>Relationship with oneself.</p>
               </div>
             </div>
           </div>
@@ -219,9 +222,11 @@ function Learn() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink/62 via-ink/44 to-ink/74" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 py-24 text-center md:py-28 lg:px-10 lg:py-32">
           <p className="eyebrow text-paper/70">Six</p>
-          <h2 className="serif-display mt-6 text-[2rem] text-paper md:text-[3rem]">Every journey begins with a single note.</h2>
+          <h2 className="serif-display mt-6 text-[2rem] text-paper md:text-[3rem]">
+            If the sound of the bansuri has been calling you, perhaps this is a good moment to begin.
+          </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[1.05rem] leading-[1.8] text-paper/86 md:text-[1.15rem]">
-            If the sound of the bansuri calls to you, begin where you are.
+            No urgency. No promises. Only an open invitation to sit with breath and sound.
           </p>
           <div className="mt-10">
             <Link
