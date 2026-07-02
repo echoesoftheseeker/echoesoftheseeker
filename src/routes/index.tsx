@@ -3,7 +3,8 @@ import { Page } from "@/components/site-layout";
 import hero from "@/assets/hero-beach-seeker.jpg.asset.json";
 import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
 import stayImg from "@/assets/stay.jpg";
-import soilImg from "@/assets/soil.jpg";
+import soilAsset from "@/assets/soil/IMG_20260616_100131.jpg.asset.json";
+const soilImg = soilAsset.url;
 import journalImg from "@/assets/journal.jpg";
 import aboutImg from "@/assets/about.jpg";
 
