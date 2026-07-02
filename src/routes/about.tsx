@@ -4,7 +4,8 @@ import aboutHero from "@/assets/about-hero.jpg";
 import featuredImg from "@/assets/seeker-clouds.jpg.asset.json";
 import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
 import stayImg from "@/assets/stay.jpg";
-import soilImg from "@/assets/soil.jpg";
+import soilAsset from "@/assets/soil/IMG_20260610_104900.jpg.asset.json";
+const soilImg = soilAsset.url;
 import journalImg from "@/assets/journal.jpg";
 import bookImg from "@/assets/book.jpg";
 
