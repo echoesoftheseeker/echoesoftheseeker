@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import {
   Waves, Home, Wifi, CookingPot, Leaf, Laptop, Sparkles, Snowflake, Zap,
@@ -689,7 +689,7 @@ function Stay() {
 function ExperienceCard({
   img, imgAlt, title, body, cta, to,
 }: {
-  img: string; imgAlt: string; title: string; body: string[]; cta: string; to: string;
+  img: string; imgAlt: string; title: string; body: string[]; cta: string; to: "/learn-bansuri" | "/seekers-soil";
 }) {
   return (
     <article className="flex h-full flex-col">
@@ -708,13 +708,13 @@ function ExperienceCard({
         ))}
       </div>
       <p className="mt-4 font-serif text-[0.95rem] italic text-ink/60">Available on request.</p>
-      <a
-        href={to}
+      <Link
+        to={to}
         className="mt-6 inline-flex w-fit items-center gap-2 border-b border-ink/25 pb-1 font-serif text-[0.95rem] text-ink transition-colors duration-300 hover:border-bamboo hover:text-forest"
       >
         {cta}
         <span aria-hidden>→</span>
-      </a>
+      </Link>
     </article>
   );
 }
