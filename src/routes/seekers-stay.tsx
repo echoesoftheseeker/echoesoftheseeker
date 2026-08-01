@@ -1,16 +1,20 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useMemo, useState } from "react";
 import {
   Waves, Home, Wifi, CookingPot, Leaf, Laptop, Sparkles, Snowflake, Zap,
   Refrigerator, Flame, UtensilsCrossed, Tv, Sun, BedDouble, WashingMachine,
-  Droplets, Utensils, Clock, CigaretteOff, VolumeX, PartyPopper, Users, Heart,
-  Palmtree, Flower2, MapPin, Plane, MessageCircle, Map as MapIcon, Instagram, Mail,
+  Droplets, Utensils, Clock, Users, Heart, Coffee, ShoppingBasket, Flower2,
+  Palmtree, MapPin, Car, ShowerHead, Check, X, MessageCircle, Map as MapIcon,
+  Instagram, Mail, UtensilsCrossed as Dining,
 } from "lucide-react";
 import { Page } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
 import stayHero from "@/assets/stay-hero.jpg";
 import stayMorning from "@/assets/stay-morning.jpg";
 import stayBeach from "@/assets/stay-beach.jpg";
+import hostAkash from "@/assets/host-akash.jpg.asset.json";
+import bansuriImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
+import microgreensImg from "@/assets/soil/IMG_20260616_100131.jpg.asset.json";
 
 import exteriorSide from "@/assets/stay/exterior-side.jpg.asset.json";
 import exteriorFront from "@/assets/stay/exterior-front.jpg.asset.json";
@@ -23,29 +27,29 @@ import kitchen1 from "@/assets/stay/kitchen-1.jpg.asset.json";
 import kitchen2 from "@/assets/stay/kitchen-2.jpg.asset.json";
 import balcony from "@/assets/stay/balcony.jpg.asset.json";
 
-/* Update these with the live booking details */
-const WHATSAPP_NUMBER = "919999999999";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hello! I'd like to enquire about staying at Seekers Stay, Ashwem.",
-)}`;
+const WHATSAPP_URL =
+  "https://wa.me/917027029889?text=Hi%20I'm%20interested%20in%20staying%20at%20Seekers%20Stay.%20Could%20you%20please%20share%20availability%20and%20pricing%3F";
 const MAPS_URL = "https://maps.google.com/?q=Ashwem+Beach+Goa";
+const MAPS_EMBED_URL =
+  "https://www.google.com/maps?q=Ashwem+Beach,+Goa&output=embed";
 const INSTAGRAM_URL = "https://www.instagram.com/echoesoftheseeker";
 const EMAIL = "hello@echoesoftheseeker.com";
 
 export const Route = createFileRoute("/seekers-stay")({
   head: () => ({
     meta: [
-      { title: "Seekers Stay — Beachside Apartments in Ashwem, Goa" },
+      { title: "Seekers Stay | 1 BHK & Studio Apartments in Ashwem, Goa" },
       {
         name: "description",
         content:
-          "Fully furnished 1 BHK & studio serviced apartments in Ashwem, Goa. A 2-minute walk to the beach, high-speed WiFi, private kitchenette. Short and long stays.",
+          "Stay just minutes from Ashwem Beach in fully furnished 1 BHK and Studio Apartments with kitchen, WiFi, balcony and a peaceful atmosphere. Perfect for workations, families and long stays.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Seekers Stay — Beachside Apartments in Ashwem, Goa" },
+      { property: "og:title", content: "Seekers Stay | 1 BHK & Studio Apartments in Ashwem, Goa" },
       {
         property: "og:description",
-        content: "Fully furnished 1 BHK & studio apartments, a short walk from Ashwem Beach.",
+        content:
+          "Fully furnished 1 BHK and Studio Apartments a 2-minute walk from Ashwem Beach, Goa. Kitchen, WiFi, balcony, parking and weekly housekeeping.",
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -54,24 +58,27 @@ export const Route = createFileRoute("/seekers-stay")({
 });
 
 const WHY = [
-  { Icon: Waves, text: "Just a short walk to Ashwem Beach" },
-  { Icon: Home, text: "Fully furnished serviced apartments" },
-  { Icon: Wifi, text: "High-speed WiFi" },
-  { Icon: CookingPot, text: "Private kitchenette" },
-  { Icon: Leaf, text: "Peaceful residential location" },
-  { Icon: Laptop, text: "Ideal for workations & long stays" },
-  { Icon: Sparkles, text: "Weekly housekeeping included" },
+  { Icon: Waves, text: "Just a 2-minute walk to Ashwem Beach" },
+  { Icon: Home, text: "Fully Furnished Apartments" },
+  { Icon: CookingPot, text: "Private Kitchen" },
+  { Icon: Wifi, text: "Free WiFi" },
+  { Icon: Car, text: "Parking Available" },
+  { Icon: Zap, text: "Power Backup" },
+  { Icon: ShowerHead, text: "Hot Water" },
+  { Icon: Leaf, text: "Peaceful Neighbourhood" },
+  { Icon: Laptop, text: "Perfect for Workations" },
+  { Icon: Sparkles, text: "Weekly Housekeeping" },
 ] as const;
 
 const ONE_BHK = [
-  "Air-conditioned bedroom", "Separate living room", "Fully functional kitchen",
-  "Dining table", "Balcony", "Smart TV", "Refrigerator", "Gas stove",
-  "Basic cookware", "Crockery & cutlery", "High-speed WiFi",
+  "Separate Bedroom", "Living Room", "Private Kitchen", "Dining Area",
+  "Balcony", "Air Conditioning", "Refrigerator", "Television",
+  "Gas Stove", "Basic Cookware", "WiFi",
 ];
 
 const STUDIO = [
-  "Air Conditioning", "Kitchenette", "Refrigerator", "Gas stove",
-  "Television", "Balcony", "Dining area", "WiFi", "Basic cookware",
+  "Open Living & Sleeping Area", "Kitchenette", "Balcony", "Air Conditioning",
+  "Refrigerator", "Television", "Dining Area", "WiFi",
 ];
 
 const GALLERY = [
@@ -85,69 +92,69 @@ const GALLERY = [
   { src: kitchen2.url, alt: "A second kitchen space", cat: "Kitchen" },
   { src: balcony.url, alt: "Balcony with a book and morning light", cat: "Balcony" },
   { src: reception.url, alt: "Reception entrance", cat: "Reception" },
-  { src: stayHero, alt: "The property at golden hour", cat: "Property" },
-  { src: stayMorning, alt: "Morning light on a wooden table", cat: "Property" },
 ];
 
-const CATEGORIES = ["All", "Exterior", "Living Room", "Bedroom", "Kitchen", "Balcony", "Reception", "Property"] as const;
+const CATEGORIES = ["All", "Exterior", "Living Room", "Bedroom", "Kitchen", "Balcony", "Reception"] as const;
 
 const INCLUDED = [
-  { Icon: Wifi, text: "High-Speed WiFi" },
+  { Icon: Wifi, text: "WiFi" },
   { Icon: Snowflake, text: "Air Conditioning" },
-  { Icon: Zap, text: "Electricity Included" },
+  { Icon: CookingPot, text: "Kitchen" },
   { Icon: Refrigerator, text: "Refrigerator" },
   { Icon: Flame, text: "Gas Stove" },
-  { Icon: CookingPot, text: "Kitchen" },
-  { Icon: UtensilsCrossed, text: "Basic Cooking Utensils" },
-  { Icon: Utensils, text: "Crockery & Cutlery" },
-  { Icon: Home, text: "Dining Table" },
+  { Icon: UtensilsCrossed, text: "Cooking Utensils" },
+  { Icon: Utensils, text: "Crockery" },
+  { Icon: Dining, text: "Dining Area" },
   { Icon: Tv, text: "Television" },
   { Icon: Sun, text: "Balcony" },
   { Icon: BedDouble, text: "Fresh Linen" },
+  { Icon: Droplets, text: "Fresh Towels" },
   { Icon: Sparkles, text: "Weekly Housekeeping" },
   { Icon: WashingMachine, text: "Washing Machine (Common Area)" },
   { Icon: Droplets, text: "Water Purifier (Common Area)" },
+  { Icon: Car, text: "Parking" },
+  { Icon: Zap, text: "Power Backup" },
+  { Icon: ShowerHead, text: "Hot Water" },
 ] as const;
 
 const GOOD_TO_KNOW = [
-  { Icon: Clock, label: "Check-in", body: "After 2 PM" },
-  { Icon: Clock, label: "Check-out", body: "Before 10 AM" },
+  { Icon: Clock, label: "Flexible Check-in", body: "Subject to availability." },
+  { Icon: Clock, label: "Check-out", body: "Before 12:00 PM" },
+  { Icon: Utensils, label: "Meals", body: "Breakfast and home-style meals available on request." },
   { Icon: Clock, label: "Late Check-out", body: "Subject to availability." },
-  { Icon: CigaretteOff, label: "Smoking", body: "Only on balconies." },
-  { Icon: PartyPopper, label: "No Parties", body: "A quiet, residential home." },
-  { Icon: VolumeX, label: "No Loud Music", body: "Neighbours sleep early here." },
 ] as const;
 
 const PERFECT_FOR = [
-  { Icon: Waves, text: "Beach Holidays" },
-  { Icon: Laptop, text: "Remote Workers" },
-  { Icon: Users, text: "Families" },
   { Icon: Heart, text: "Couples" },
-  { Icon: Palmtree, text: "Long Stays" },
-  { Icon: Flower2, text: "Slow Travel" },
+  { Icon: Users, text: "Families" },
+  { Icon: Waves, text: "Beach Holidays" },
+  { Icon: Palmtree, text: "Long Stay Guests" },
+  { Icon: Laptop, text: "Digital Nomads" },
+  { Icon: Home, text: "Remote Workers" },
 ] as const;
 
-const NEARBY = [
-  { Icon: MapPin, place: "Ashwem Beach", time: "2 minute walk" },
-  { Icon: Waves, place: "Mandrem Beach", time: "8 minute drive" },
-  { Icon: Waves, place: "Morjim Beach", time: "14 minute drive" },
-  { Icon: Sun, place: "Arambol Beach", time: "15 minute drive" },
-  { Icon: Plane, place: "Manohar International Airport (Mopa)", time: "50 minute drive" },
+const DISCOVER = [
+  { Icon: Coffee, title: "Cafés We Love", items: ["Koleso", "Baba Au Rhum", "Kaia", "Caffè Inaara", "Café Ossa", "Artjuna"] },
+  { Icon: Utensils, title: "Dining Nearby", items: ["La Plage", "Verandah", "Palasha", "Elevar", "Oo! Olivia", "Panache"] },
+  { Icon: Waves, title: "Beaches", items: ["Ashwem Beach", "Mandrem Beach", "Morjim Beach", "Arambol Beach", "Querim Beach"] },
+  { Icon: Flower2, title: "Wellness & Slow Living", items: ["Siolim Village", "Yoga Studios", "Wellness Experiences", "Nature Walks"] },
+  { Icon: ShoppingBasket, title: "Essentials Nearby", items: ["Grocery", "Pharmacy", "ATM", "Scooter Rental", "Taxi Assistance"] },
 ] as const;
 
 const DAY = [
   { time: "Morning", body: "Enjoy coffee on your balcony surrounded by greenery." },
-  { time: "Afternoon", body: "Work comfortably with high-speed WiFi or explore nearby cafés." },
-  { time: "Evening", body: "Take a short walk to Ashwem Beach for sunset." },
-  { time: "Night", body: "Return to a peaceful apartment with everything you need." },
+  { time: "Afternoon", body: "Relax, work remotely or explore Ashwem's cafés." },
+  { time: "Evening", body: "Walk to Ashwem Beach for sunset." },
+  { time: "Night", body: "Return to a peaceful apartment designed to feel like home." },
 ] as const;
 
 const FAQ = [
-  { q: "Is WiFi available?", a: "Yes." },
-  { q: "Is electricity included?", a: "Yes." },
-  { q: "Is kitchen available?", a: "Yes." },
-  { q: "Is housekeeping daily?", a: "Housekeeping is provided once or twice every week." },
-  { q: "Can I stay for a month?", a: "Yes. Long stays are welcome." },
+  { q: "Is WiFi available?", a: "Yes. Every apartment has free WiFi, comfortable for video calls and remote work." },
+  { q: "Is parking available?", a: "Yes. On-site parking is available for cars and two-wheelers." },
+  { q: "Is hot water available?", a: "Yes. Hot water is available in every apartment." },
+  { q: "Is housekeeping included?", a: "Yes. Housekeeping is provided once or twice every week, with fresh linen and towels changed periodically." },
+  { q: "Can I stay long-term?", a: "Yes. Long stays are very welcome, and discounted weekly and monthly rates are available on request." },
+  { q: "Are meals available?", a: "Breakfast and simple home-style meals can be arranged on request." },
 ] as const;
 
 function PrimaryButton({ children, href }: { children: React.ReactNode; href: string }) {
@@ -200,6 +207,7 @@ function Stay() {
         <img
           src={stayHero}
           alt="A quiet coastal home in Ashwem, Goa at golden hour"
+          fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/25 to-ink/75" />
@@ -223,9 +231,7 @@ function Stay() {
               className="mt-5 max-w-xl font-serif text-[1rem] italic leading-[1.6] text-paper/90 md:text-[1.15rem]"
               style={{ textShadow: "0 1px 18px rgba(0,0,0,0.55)" }}
             >
-              Beachside serviced apartments in Ashwem, Goa.
-              <br />
-              Fully furnished 1 BHK &amp; Studio Apartments for short and long stays.
+              Fully furnished 1 BHK &amp; Studio Apartments in Ashwem, Goa for comfortable short and long stays.
             </p>
           </Reveal>
           <Reveal delay={300}>
@@ -240,18 +246,28 @@ function Stay() {
               </SecondaryButton>
             </div>
           </Reveal>
+          <Reveal delay={400}>
+            <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-serif text-[0.9rem] text-paper/85">
+              {["Direct Bookings", "Best Rates", "Personal Assistance"].map((t) => (
+                <li key={t} className="inline-flex items-center gap-2">
+                  <Check size={13} strokeWidth={2} className="text-bamboo" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
 
-      {/* Why Stay With Us */}
+      {/* Why Seekers Stay */}
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-5xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
           <Reveal>
-            <SectionHead index="One" title="Why Stay With Us" />
+            <SectionHead index="One" title="Why Seekers Stay" />
           </Reveal>
           <div className="mt-10 grid gap-px overflow-hidden border border-rule/70 bg-rule/70 sm:grid-cols-2 lg:grid-cols-3">
             {WHY.map(({ Icon, text }, i) => (
-              <Reveal key={text} delay={i * 60}>
+              <Reveal key={text} delay={(i % 3) * 60}>
                 <div className="flex h-full items-start gap-4 bg-paper p-6 transition-colors duration-300 hover:bg-secondary/40">
                   <Icon size={20} strokeWidth={1.4} className="mt-0.5 shrink-0 text-bamboo" />
                   <p className="text-[0.98rem] leading-[1.7] text-ink/85">{text}</p>
@@ -277,8 +293,8 @@ function Stay() {
             <Reveal>
               <StayCard
                 img={living2.url}
-                imgAlt="One-bedroom apartment living area"
-                name="One Bedroom Apartment"
+                imgAlt="One bedroom apartment living area"
+                name="1 BHK Apartment"
                 lede="Ideal for couples, families and long stays."
                 features={ONE_BHK}
                 price="₹2,200"
@@ -298,10 +314,13 @@ function Stay() {
 
           <Reveal>
             <div className="mt-12 border-t border-rule/70 pt-8">
-              <p className="eyebrow mb-4">We currently offer</p>
-              <ul className="flex flex-col gap-2 font-serif text-[1.05rem] italic text-ink/75 sm:flex-row sm:gap-10">
-                <li>3 One Bedroom Apartments</li>
-                <li>2 Studio Apartments</li>
+              <p className="eyebrow mb-4">Available Accommodation</p>
+              <p className="serif-display text-[1.45rem] text-ink md:text-[1.7rem]">
+                6 Fully Furnished Apartments
+              </p>
+              <ul className="mt-4 flex flex-col gap-2 font-serif text-[1.05rem] italic text-ink/75 sm:flex-row sm:gap-10">
+                <li>3 × 1 BHK Apartments</li>
+                <li>3 × Studio Apartments</li>
               </ul>
             </div>
           </Reveal>
@@ -338,7 +357,7 @@ function Stay() {
             <div className="mt-8 space-y-4 text-[1.05rem] leading-[1.85] text-ink/85">
               <p>Housekeeping is provided once or twice every week.</p>
               <p>Fresh linen and towels are changed periodically.</p>
-              <p className="font-serif italic text-ink/70">Additional housekeeping can be arranged on request.</p>
+              <p className="font-serif italic text-ink/70">Additional housekeeping can be arranged upon request.</p>
             </div>
           </Reveal>
         </div>
@@ -350,13 +369,13 @@ function Stay() {
           <Reveal>
             <SectionHead index="Six" title="Good To Know" />
           </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {GOOD_TO_KNOW.map(({ Icon, label, body }, i) => (
-              <Reveal key={label} delay={(i % 3) * 60}>
+              <Reveal key={label} delay={(i % 4) * 60}>
                 <div className="h-full border border-rule/70 bg-paper p-6 transition-colors duration-300 hover:border-bamboo/60">
                   <Icon size={18} strokeWidth={1.4} className="text-bamboo" />
                   <p className="eyebrow mt-4">{label}</p>
-                  <p className="mt-2 font-serif text-[1.15rem] text-ink">{body}</p>
+                  <p className="mt-2 font-serif text-[1.1rem] leading-snug text-ink">{body}</p>
                 </div>
               </Reveal>
             ))}
@@ -383,25 +402,33 @@ function Stay() {
         </div>
       </section>
 
-      {/* Explore Nearby + map */}
+      {/* Discover Ashwem + map */}
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-5xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
           <Reveal>
-            <SectionHead index="Eight" title="Explore Nearby" />
+            <SectionHead
+              index="Eight"
+              title="Discover Ashwem"
+              lede="A few of the places we send guests to, all within a short walk or ride."
+            />
           </Reveal>
-          <ul className="mt-10 divide-y divide-rule/60 border-y border-rule/60">
-            {NEARBY.map(({ Icon, place, time }, i) => (
-              <Reveal key={place} delay={i * 50}>
-                <li className="flex flex-wrap items-center justify-between gap-3 py-5">
-                  <span className="flex items-center gap-3">
-                    <Icon size={17} strokeWidth={1.4} className="text-bamboo" />
-                    <span className="font-serif text-[1.1rem] text-ink">{place}</span>
-                  </span>
-                  <span className="text-[0.88rem] tracking-wide text-ink/60">{time}</span>
-                </li>
+          <div className="mt-10 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {DISCOVER.map(({ Icon, title, items }, i) => (
+              <Reveal key={title} delay={(i % 3) * 60}>
+                <div className="h-full border-t border-rule/70 pt-6">
+                  <div className="flex items-center gap-3">
+                    <Icon size={18} strokeWidth={1.4} className="text-bamboo" />
+                    <h3 className="font-serif text-[1.2rem] text-ink">{title}</h3>
+                  </div>
+                  <ul className="mt-4 space-y-2 text-[0.98rem] leading-[1.7] text-ink/80">
+                    {items.map((it) => (
+                      <li key={it}>— {it}</li>
+                    ))}
+                  </ul>
+                </div>
               </Reveal>
             ))}
-          </ul>
+          </div>
 
           <Reveal>
             <LocationMap />
@@ -443,16 +470,16 @@ function Stay() {
         </div>
       </section>
 
-      {/* Tariff */}
+      {/* Pricing */}
       <section className="border-b border-rule/70 bg-secondary/30">
         <div className="mx-auto max-w-5xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
           <Reveal>
-            <SectionHead index="Ten" title="Starting Prices" />
+            <SectionHead index="Ten" title="Pricing" />
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {[
               { name: "Studio Apartment", price: "From ₹1,800/night" },
-              { name: "One Bedroom Apartment", price: "From ₹2,200/night" },
+              { name: "1 BHK Apartment", price: "From ₹2,200/night" },
             ].map((t, i) => (
               <Reveal key={t.name} delay={i * 90}>
                 <div className="flex h-full flex-col justify-between gap-6 border border-rule/70 bg-paper p-8">
@@ -464,10 +491,88 @@ function Stay() {
           </div>
           <Reveal>
             <div className="mt-8 space-y-2 font-serif text-[0.98rem] italic text-ink/60">
-              <p>Rates vary depending on season, weekends, holidays and stay duration.</p>
-              <p>For weekly and monthly stays, please contact us directly.</p>
+              <p>Rates vary depending on season, weekends, holidays and duration of stay.</p>
+              <p>Long-stay discounts available.</p>
+              <p>Please contact us directly for weekly and monthly pricing.</p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* Meet Your Host */}
+      <section className="border-b border-rule/70">
+        <div className="mx-auto max-w-5xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
+          <div className="grid gap-12 md:grid-cols-5 md:gap-16">
+            <Reveal className="md:col-span-2">
+              <figure>
+                <img
+                  src={hostAkash.url}
+                  alt="Akash, host of Seekers Stay, playing the bansuri by a river in Goa"
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover"
+                />
+              </figure>
+            </Reveal>
+            <div className="md:col-span-3">
+              <Reveal>
+                <SectionHead index="Eleven" title="Meet Your Host — Akash" />
+                <div className="mt-8 space-y-5 text-[1.05rem] leading-[1.85] text-ink/85">
+                  <p>Welcome to Seekers Stay!</p>
+                  <p>I'm Akash, your host.</p>
+                  <p>
+                    I created this space with the idea of offering more than just a comfortable place to
+                    stay — a peaceful base where guests can slow down, explore North Goa and truly feel at home.
+                  </p>
+                  <p>
+                    Whether you're here for a weekend, a workation or a longer stay, I'm always happy to share
+                    local recommendations and help make your visit memorable.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Signature Experiences */}
+      <section className="border-b border-rule/70 bg-secondary/30">
+        <div className="mx-auto max-w-5xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
+          <Reveal>
+            <SectionHead
+              index="Twelve"
+              title="Signature Experiences"
+              lede="Along with a comfortable stay, guests have the opportunity to enjoy experiences inspired by music, nature and slow living."
+            />
+          </Reveal>
+
+          <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-14">
+            <Reveal>
+              <ExperienceCard
+                img={bansuriImg.url}
+                imgAlt="Playing the Indian bamboo flute beside a river"
+                title="Discover the Indian Bamboo Flute"
+                body={[
+                  "Experience the timeless sound of the Indian bamboo flute through relaxed beginner-friendly sessions with Akash.",
+                  "Whether you're simply curious or wish to begin learning, it's a memorable experience available during your stay.",
+                ]}
+                cta="Learn More"
+                to="/learn-bansuri"
+              />
+            </Reveal>
+            <Reveal delay={120}>
+              <ExperienceCard
+                img={microgreensImg.url}
+                imgAlt="Trays of fresh microgreens growing"
+                title="Discover Microgreens"
+                body={[
+                  "Discover how fresh, nutrient-rich microgreens are grown — from seed to harvest.",
+                  "Learn simple growing techniques and explore the world of fresh local greens through Seekers Soil.",
+                ]}
+                cta="Explore Seekers Soil"
+                to="/seekers-soil"
+              />
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -475,7 +580,7 @@ function Stay() {
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-3xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
           <Reveal>
-            <SectionHead index="Eleven" title="Questions" />
+            <SectionHead index="Thirteen" title="Questions" />
           </Reveal>
           <div className="mt-10 divide-y divide-rule/60 border-y border-rule/60">
             {FAQ.map((f, i) => (
@@ -489,6 +594,25 @@ function Stay() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* A Few Gentle Notes */}
+      <section className="border-b border-rule/70">
+        <div className="mx-auto max-w-2xl px-6 py-14 md:py-18 lg:px-10 lg:py-20">
+          <Reveal>
+            <SectionHead index="Fourteen" title="A Few Gentle Notes" />
+            <div className="mt-8 space-y-5 text-[1.05rem] leading-[1.85] text-ink/85">
+              <p>We hope every guest feels at home here.</p>
+              <p>
+                A few simple courtesies — respecting fellow guests, caring for the space and being mindful
+                of the peaceful surroundings — help us keep Seekers Stay welcoming for everyone.
+              </p>
+              <p className="font-serif italic text-ink/70">
+                Detailed house guidelines will be shared after booking.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -507,7 +631,8 @@ function Stay() {
               Ready for your stay in Ashwem?
             </h2>
             <p className="mx-auto mt-6 max-w-xl font-serif text-[1.05rem] italic leading-[1.7] text-paper/85 md:text-[1.15rem]">
-              Whether you're planning a weekend escape or a longer stay in North Goa, we'd love to host you.
+              Whether you're planning a weekend getaway, a workation or a longer stay, we'd love to host you.
+              Book directly with us for the best available rates and personalised assistance.
             </p>
             <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
               <PrimaryButton href={WHATSAPP_URL}>
@@ -528,14 +653,17 @@ function Stay() {
         <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 py-14 md:flex-row md:items-end md:justify-between lg:px-10 lg:py-16">
           <div>
             <p className="serif-display text-[1.5rem] text-ink">Seekers Stay</p>
-            <p className="mt-2 font-serif text-[1rem] italic text-ink/60">Ashwem, Goa</p>
+            <p className="mt-2 inline-flex items-center gap-2 font-serif text-[1rem] italic text-ink/60">
+              <MapPin size={14} strokeWidth={1.5} className="text-bamboo" />
+              Ashwem, Goa
+            </p>
           </div>
           <ul className="flex flex-wrap gap-x-8 gap-y-3 text-[0.95rem] text-ink/75">
             {[
               { Icon: MessageCircle, label: "WhatsApp", href: WHATSAPP_URL },
-              { Icon: MapIcon, label: "Google Maps", href: MAPS_URL },
-              { Icon: Instagram, label: "Instagram", href: INSTAGRAM_URL },
               { Icon: Mail, label: "Email", href: `mailto:${EMAIL}` },
+              { Icon: Instagram, label: "Instagram", href: INSTAGRAM_URL },
+              { Icon: MapIcon, label: "Google Maps", href: MAPS_URL },
             ].map(({ Icon, label, href }) => (
               <li key={label}>
                 <a
@@ -552,7 +680,65 @@ function Stay() {
           </ul>
         </div>
       </section>
+
+      <FloatingWhatsApp />
     </Page>
+  );
+}
+
+function ExperienceCard({
+  img, imgAlt, title, body, cta, to,
+}: {
+  img: string; imgAlt: string; title: string; body: string[]; cta: string; to: "/learn-bansuri" | "/seekers-soil";
+}) {
+  return (
+    <article className="flex h-full flex-col">
+      <figure className="overflow-hidden">
+        <img
+          src={img}
+          alt={imgAlt}
+          loading="lazy"
+          className="aspect-[4/3] w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
+        />
+      </figure>
+      <h3 className="mt-7 font-serif text-[1.35rem] text-ink md:text-[1.5rem]">{title}</h3>
+      <div className="mt-4 space-y-3 text-[1rem] leading-[1.8] text-ink/80">
+        {body.map((p) => (
+          <p key={p}>{p}</p>
+        ))}
+      </div>
+      <p className="mt-4 font-serif text-[0.95rem] italic text-ink/60">Available on request.</p>
+      <Link
+        to={to}
+        className="mt-6 inline-flex w-fit items-center gap-2 border-b border-ink/25 pb-1 font-serif text-[0.95rem] text-ink transition-colors duration-300 hover:border-bamboo hover:text-forest"
+      >
+        {cta}
+        <span aria-hidden>→</span>
+      </Link>
+    </article>
+  );
+}
+
+function FloatingWhatsApp() {
+  return (
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Book on WhatsApp"
+      className="group fixed bottom-5 right-5 z-50 inline-flex items-center gap-3 md:bottom-7 md:right-7"
+    >
+      <span className="pointer-events-none hidden rounded-full bg-ink px-3 py-1.5 font-serif text-[0.85rem] text-paper opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block">
+        Book on WhatsApp
+      </span>
+      <span className="relative flex h-14 w-14 items-center justify-center rounded-full shadow-lg" style={{ backgroundColor: "#25D366" }}>
+        <span
+          className="absolute inset-0 animate-ping rounded-full opacity-40 motion-reduce:hidden"
+          style={{ backgroundColor: "#25D366", animationDuration: "2.8s" }}
+        />
+        <MessageCircle size={26} strokeWidth={1.6} className="relative text-white" />
+      </span>
+    </a>
   );
 }
 
@@ -587,10 +773,24 @@ function StayCard({
 
 function GallerySection() {
   const [cat, setCat] = useState<(typeof CATEGORIES)[number]>("All");
+  const [lightbox, setLightbox] = useState<number | null>(null);
   const shown = useMemo(
     () => (cat === "All" ? GALLERY : GALLERY.filter((g) => g.cat === cat)),
     [cat],
   );
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+      if (e.key === "ArrowRight") setLightbox((n) => ((n ?? 0) + 1) % shown.length);
+      if (e.key === "ArrowLeft") setLightbox((n) => ((n ?? 0) - 1 + shown.length) % shown.length);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightbox, shown.length]);
+
+  const active = lightbox === null ? null : shown[lightbox];
 
   return (
     <section className="border-b border-rule/70">
@@ -603,7 +803,7 @@ function GallerySection() {
             {CATEGORIES.map((c) => (
               <button
                 key={c}
-                onClick={() => setCat(c)}
+                onClick={() => { setCat(c); setLightbox(null); }}
                 className={`rounded-full border px-4 py-1.5 font-serif text-[0.9rem] transition-colors duration-300 ${
                   cat === c
                     ? "border-ink bg-ink text-paper"
@@ -619,61 +819,76 @@ function GallerySection() {
           {shown.map((img, i) => (
             <Reveal key={img.src} delay={(i % 3) * 60}>
               <figure className="overflow-hidden">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="aspect-[4/5] w-full object-cover transition-transform duration-[900ms] ease-out hover:scale-[1.03] md:aspect-[4/3]"
-                />
+                <button
+                  type="button"
+                  onClick={() => setLightbox(i)}
+                  aria-label={`Open image: ${img.alt}`}
+                  className="block w-full overflow-hidden"
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full cursor-zoom-in object-cover transition-transform duration-[900ms] ease-out hover:scale-[1.03] md:aspect-[4/3]"
+                  />
+                </button>
                 <figcaption className="mt-2 text-[0.78rem] tracking-wide text-ink/50">{img.cat}</figcaption>
               </figure>
             </Reveal>
           ))}
         </div>
       </div>
+
+      {active && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-ink/90 p-4"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={() => setLightbox(null)}
+            className="absolute right-5 top-5 text-paper/80 transition-colors hover:text-bamboo"
+          >
+            <X size={26} strokeWidth={1.5} />
+          </button>
+          <figure onClick={(e) => e.stopPropagation()} className="max-h-[88vh] max-w-5xl">
+            <img src={active.src} alt={active.alt} className="max-h-[80vh] w-auto object-contain" />
+            <figcaption className="mt-3 text-center font-serif text-[0.95rem] italic text-paper/75">
+              {active.alt}
+            </figcaption>
+          </figure>
+        </div>
+      )}
     </section>
   );
 }
 
 function LocationMap() {
   return (
-    <figure className="mt-12">
-      <div className="border border-rule/70 bg-paper p-4 md:p-6">
-        <svg viewBox="0 0 640 320" role="img" aria-label="Sketch map showing Seekers Stay a short walk from Ashwem Beach" className="h-auto w-full">
-          <rect x="0" y="0" width="640" height="320" fill="oklch(0.957 0.012 85)" />
-          {/* sea */}
-          <path d="M0 232 C 90 214, 180 246, 268 228 C 360 210, 450 240, 540 224 C 580 217, 615 224, 640 218 L640 320 L0 320 Z" fill="oklch(0.82 0.045 210 / 0.55)" />
-          {/* shore line */}
-          <path d="M0 232 C 90 214, 180 246, 268 228 C 360 210, 450 240, 540 224 C 580 217, 615 224, 640 218" fill="none" stroke="oklch(0.71 0.085 65)" strokeWidth="1.5" />
-          {/* road */}
-          <path d="M40 60 C 160 78, 300 52, 420 84 C 520 110, 580 96, 620 108" fill="none" stroke="oklch(0.82 0.012 80)" strokeWidth="8" strokeLinecap="round" />
-          {/* footpath from stay to beach */}
-          <path d="M300 152 L 292 200 L 300 224" fill="none" stroke="oklch(0.48 0.028 155)" strokeWidth="1.5" strokeDasharray="4 5" />
-          {/* greenery */}
-          {[[110, 150], [160, 178], [430, 150], [480, 180], [530, 156], [80, 190], [390, 190]].map(([cx, cy], i) => (
-            <circle key={i} cx={cx} cy={cy} r={i % 2 ? 9 : 13} fill="oklch(0.48 0.028 155 / 0.28)" />
-          ))}
-          {/* stay marker */}
-          <circle cx="300" cy="146" r="7" fill="oklch(0.34 0.018 240)" />
-          <circle cx="300" cy="146" r="15" fill="none" stroke="oklch(0.34 0.018 240 / 0.3)" strokeWidth="1" />
-          <text x="318" y="142" fontFamily="Cormorant Garamond, serif" fontSize="17" fill="oklch(0.34 0.018 240)">Seekers Stay</text>
-          <text x="318" y="160" fontFamily="Inter, sans-serif" fontSize="10" letterSpacing="1.4" fill="oklch(0.45 0.018 240)">2 MIN WALK</text>
-          {/* beach marker */}
-          <circle cx="300" cy="230" r="5" fill="oklch(0.71 0.085 65)" />
-          <text x="314" y="256" fontFamily="Cormorant Garamond, serif" fontSize="16" fill="oklch(0.34 0.018 240)">Ashwem Beach</text>
-          <text x="46" y="46" fontFamily="Inter, sans-serif" fontSize="10" letterSpacing="1.6" fill="oklch(0.45 0.018 240)">ASHWEM — MANDREM ROAD</text>
-        </svg>
+    <figure className="mt-14">
+      <div className="overflow-hidden rounded-2xl border border-rule/70">
+        <iframe
+          src={MAPS_EMBED_URL}
+          title="Map showing the location of Seekers Stay in Ashwem, Goa"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+          className="h-[320px] w-full border-0 md:h-[420px]"
+        />
       </div>
-      <figcaption className="mt-3 flex flex-wrap items-center justify-between gap-3 text-[0.85rem] text-ink/55">
+      <figcaption className="mt-4 flex flex-wrap items-center justify-between gap-4 text-[0.9rem] text-ink/60">
         <span className="font-serif italic">A short walk between the apartment and the sea.</span>
         <a
           href={MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 transition-colors duration-300 hover:text-bamboo"
+          className="inline-flex items-center gap-2 rounded-full border border-ink/25 px-5 py-2.5 font-serif text-[0.9rem] text-ink transition-colors duration-300 hover:border-bamboo hover:text-forest"
         >
-          <MapIcon size={14} strokeWidth={1.5} />
-          Open in Google Maps
+          <MapIcon size={15} strokeWidth={1.5} />
+          Get Directions
         </a>
       </figcaption>
     </figure>
