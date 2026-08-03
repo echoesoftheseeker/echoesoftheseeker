@@ -71,15 +71,16 @@ const WHY = [
 ] as const;
 
 const ONE_BHK = [
-  "Separate Bedroom", "Living Room", "Private Kitchen", "Dining Area",
+  "Separate Bedroom", "Living Room", "Fully Equipped Kitchen", "Dining Area",
   "Balcony", "Air Conditioning", "TV", "Refrigerator",
   "Gas Stove", "Basic Cookware", "WiFi",
 ];
 
 const STUDIO = [
-  "Open Living & Sleeping Area", "Kitchenette", "Balcony", "Air Conditioning",
+  "Open Studio Layout", "Kitchenette", "Balcony", "Air Conditioning",
   "TV", "Refrigerator", "Dining Area", "WiFi",
 ];
+
 
 const GALLERY = [
   { src: exteriorSide.url, alt: "The building at Seekers Stay, Ashwem", cat: "Exterior" },
@@ -616,7 +617,7 @@ function StayCard({
   img: string; imgAlt: string; name: string; features: string[]; price: string;
 }) {
   return (
-    <article className="flex h-full flex-col space-y-5">
+    <article className="flex h-full flex-col gap-4">
       <figure className="overflow-hidden">
         <img
           src={img}
@@ -629,12 +630,16 @@ function StayCard({
       <p className="font-serif text-[1.15rem] text-ink">
         Starting from {price}/night<span className="text-ink/50">*</span>
       </p>
-      <ul className="grid grid-cols-1 gap-2 text-[0.96rem] leading-[1.7] text-ink/80 sm:grid-cols-2">
+      <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[0.88rem] leading-[1.5] text-ink/80 sm:text-[0.92rem]">
         {features.map((f) => (
-          <li key={f}>— {f}</li>
+          <li key={f} className="flex min-w-0 items-start gap-1.5">
+            <Check size={13} strokeWidth={1.6} className="mt-[0.3rem] shrink-0 text-bamboo" />
+            <span className="min-w-0">{f}</span>
+          </li>
         ))}
       </ul>
     </article>
+
   );
 }
 
