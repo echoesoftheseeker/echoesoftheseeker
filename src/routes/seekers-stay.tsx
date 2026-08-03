@@ -415,7 +415,7 @@ function Stay() {
               <figure>
                 <img
                   src={hostAkash.url}
-                  alt="Akash, host of Seekers Stay"
+                  alt="Akash walking along Ashwem beach at dawn with his bansuri case"
                   loading="lazy"
                   className="aspect-[4/5] w-full object-cover"
                 />
