@@ -470,39 +470,23 @@ function Stay() {
         </div>
       </section>
 
-      {/* Good To Know + Gentle Notes */}
+      {/* Good To Know */}
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-5xl px-6 py-14 lg:px-10 lg:py-18">
-          <div className="grid gap-12 md:grid-cols-2 md:gap-16">
-            <Reveal>
-              <SectionHead index="Nine" title="Good To Know" />
-              <ul className="mt-8 space-y-3">
-                {GOOD_TO_KNOW.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[1rem] leading-[1.7] text-ink/85">
-                    <Clock size={15} strokeWidth={1.4} className="mt-1 shrink-0 text-bamboo" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-            <Reveal delay={120}>
-              <div className="border border-rule/70 bg-secondary/30 p-8">
-                <h3 className="serif-display text-[1.4rem] text-ink md:text-[1.7rem]">A Few Gentle Notes</h3>
-                <div className="mt-6 space-y-4 text-[1.02rem] leading-[1.85] text-ink/85">
-                  <p>We hope every guest feels at home here.</p>
-                  <p>
-                    A few simple courtesies — respecting fellow guests, caring for the apartment and being
-                    mindful of the peaceful surroundings — help us keep Seekers Stay welcoming for everyone.
-                  </p>
-                  <p className="font-serif italic text-ink/70">
-                    Detailed house guidelines are shared after booking.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
+          <Reveal>
+            <SectionHead index="Nine" title="Good To Know" />
+            <ul className="mt-8 grid gap-3 md:grid-cols-2 md:gap-x-12">
+              {GOOD_TO_KNOW.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-[1rem] leading-[1.7] text-ink/85">
+                  <Clock size={15} strokeWidth={1.4} className="mt-1 shrink-0 text-bamboo" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
+
 
       {/* Final CTA */}
       <section className="relative overflow-hidden">
