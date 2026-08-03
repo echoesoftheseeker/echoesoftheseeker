@@ -304,16 +304,17 @@ function Stay() {
           <Reveal>
             <SectionHead index="Four" title="What's Included" />
           </Reveal>
-          <div className="mt-10 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-0 lg:grid-cols-3">
             {INCLUDED.map(({ Icon, text }, i) => (
-              <Reveal key={text} delay={(i % 3) * 60}>
-                <div className="flex items-center gap-3 border-b border-rule/50 pb-4">
-                  <Icon size={17} strokeWidth={1.4} className="shrink-0 text-bamboo" />
-                  <p className="text-[0.96rem] text-ink/85">{text}</p>
+              <Reveal key={text} delay={(i % 3) * 50}>
+                <div className="flex min-w-0 items-start gap-2 border-b border-rule/40 py-2.5">
+                  <Icon size={14} strokeWidth={1.4} className="mt-[0.25rem] shrink-0 text-bamboo" />
+                  <p className="min-w-0 text-[0.88rem] leading-[1.45] text-ink/85 sm:text-[0.94rem]">{text}</p>
                 </div>
               </Reveal>
             ))}
           </div>
+
         </div>
       </section>
 
@@ -327,23 +328,27 @@ function Stay() {
               lede="A few of the places we send guests to, all within a short walk or ride."
             />
           </Reveal>
-          <div className="mt-10 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-7 lg:grid-cols-4">
             {NEARBY.map(({ Icon, title, items }, i) => (
-              <Reveal key={title} delay={(i % 4) * 60}>
-                <div className="h-full border-t border-rule/70 pt-6">
-                  <div className="flex items-center gap-3">
-                    <Icon size={18} strokeWidth={1.4} className="text-bamboo" />
-                    <h3 className="font-serif text-[1.2rem] text-ink">{title}</h3>
+              <Reveal key={title} delay={(i % 4) * 50}>
+                <div className="h-full min-w-0 border-t border-rule/70 pt-4">
+                  <div className="flex min-w-0 items-center gap-2">
+                    <Icon size={15} strokeWidth={1.4} className="shrink-0 text-bamboo" />
+                    <h3 className="truncate font-serif text-[1.05rem] text-ink">{title}</h3>
                   </div>
-                  <ul className="mt-4 space-y-2 text-[0.98rem] leading-[1.7] text-ink/80">
+                  <ul className="mt-2.5 space-y-1 text-[0.86rem] leading-[1.5] text-ink/80 sm:text-[0.92rem]">
                     {items.map((it) => (
-                      <li key={it}>— {it}</li>
+                      <li key={it} className="flex min-w-0 items-start gap-1.5">
+                        <Check size={12} strokeWidth={1.6} className="mt-[0.3rem] shrink-0 text-bamboo/70" />
+                        <span className="min-w-0">{it}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>
               </Reveal>
             ))}
           </div>
+
 
           <Reveal>
             <div className="mt-14">
