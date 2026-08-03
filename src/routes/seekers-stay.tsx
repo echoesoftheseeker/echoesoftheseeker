@@ -366,17 +366,17 @@ function Stay() {
         </div>
       </section>
 
-      {/* Signature Experiences */}
+      {/* Experiences During Your Stay */}
       <section className="border-b border-rule/70 bg-secondary/30">
         <div className="mx-auto max-w-6xl px-6 py-14 lg:px-10 lg:py-18">
           <Reveal>
-            <SectionHead index="Six" title="Signature Experiences" />
+            <SectionHead index="Six" title="Experiences During Your Stay" />
           </Reveal>
           <div className="mt-12 grid gap-10 md:grid-cols-3">
             <Reveal>
               <ExperienceCard
                 img={bansuriImg.url}
-                imgAlt="Playing the Indian bamboo flute beside a river"
+                imgAlt="Akash playing the bansuri on a rock beside still water"
                 title="🎋 Bansuri Sessions"
                 body="Experience the Indian bamboo flute through relaxed beginner-friendly sessions with Akash."
                 cta="Learn More"
