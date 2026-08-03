@@ -11,8 +11,8 @@ import { Page } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
 import stayHero from "@/assets/stay-hero.jpg";
 import stayBeach from "@/assets/stay-beach.jpg";
-import hostAkash from "@/assets/host-akash.jpg.asset.json";
-import bansuriImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
+import hostAkash from "@/assets/host-beach-walk.jpg.asset.json";
+import bansuriImg from "@/assets/bansuri-hero-playing.jpg.asset.json";
 import microgreensImg from "@/assets/soil/IMG_20260616_100131.jpg.asset.json";
 import echoesImg from "@/assets/seeker-clouds.jpg.asset.json";
 
