@@ -14,8 +14,6 @@ const NAV = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
-const EXPLORE = NAV.slice(0, 5);
-const MORE = NAV.slice(5);
 
 const SOCIALS = [
   { href: "https://www.instagram.com/echoesoftheseeker", label: "Instagram", Icon: Instagram },
