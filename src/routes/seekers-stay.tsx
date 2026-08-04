@@ -190,7 +190,7 @@ function Stay() {
           fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/25 to-ink/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/35 to-ink/85" />
         <div className="relative z-10 mx-auto flex h-full max-w-3xl flex-col items-center justify-end px-6 pb-16 text-center lg:px-10 lg:pb-24">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-paper/35 bg-ink/25 px-4 py-1.5 font-serif text-[0.8rem] text-paper/90 backdrop-blur-sm">
