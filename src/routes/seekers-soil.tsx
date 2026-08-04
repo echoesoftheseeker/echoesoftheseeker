@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Page } from "@/components/site-layout";
 import hero from "@/assets/soil/IMG_20260616_100131.jpg.asset.json";
-import greenRack from "@/assets/soil/IMG_20260616_100127.jpg.asset.json";
-import shootsTray from "@/assets/soil/IMG_20260616_100135.jpg.asset.json";
-import overhead1 from "@/assets/soil/IMG_20260610_104900.jpg.asset.json";
-import overhead2 from "@/assets/soil/IMG_20260610_105004.jpg.asset.json";
+import greenTray from "@/assets/soil/IMG_20260616_100127.jpg.asset.json";
+import canopy from "@/assets/soil/IMG_20260610_105004.jpg.asset.json";
 import handTray from "@/assets/soil/IMG_20260610_104931.jpg.asset.json";
+import rootMat from "@/assets/soil/IMG_20260612_083112.jpg.asset.json";
+import rack from "@/assets/soil/IMG_20260617_142509.jpg.asset.json";
+import rackDay from "@/assets/soil/IMG_20260609_190110.jpg.asset.json";
 import packaged from "@/assets/soil/IMG_20260611_184000.jpg.asset.json";
 
 export const Route = createFileRoute("/seekers-soil")({
@@ -16,19 +17,40 @@ export const Route = createFileRoute("/seekers-soil")({
       { name: "description", content: "A quiet study of soil, food, patience, and the small cycles that sustain life." },
       { property: "og:title", content: "Seeker's Soil — Echoes of the Seeker" },
       { property: "og:description", content: "Learning from the land." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:image", content: hero.url },
+      { name: "twitter:image", content: hero.url },
     ],
   }),
   component: Soil,
 });
 
-const TOPICS = [
-  { t: "Microgreens", d: "Tiny plants with surprisingly large lessons. Seeds, light, water, observation, and patience." },
-  { t: "Food Growing", d: "Understanding where food comes from by growing some of it ourselves." },
-  { t: "Self-Reliance", d: "Small acts of participation in our own nourishment." },
-  { t: "Regenerative Practices", d: "Methods that give back more than they take. Soil, compost, biodiversity, and stewardship." },
-  { t: "Experiments", d: "Not everything works. Some lessons arrive through failure. Those are recorded too." },
-  { t: "Seasonal Learning", d: "Different seasons teach different truths. The land is never saying the same thing twice." },
+const CARDS = [
+  {
+    src: hero.url,
+    alt: "Red radish microgreens under the LED grow light",
+    t: "Red Radish",
+    d: "Crimson stems that seem to glow under the light. Sharp, peppery, alive.",
+  },
+  {
+    src: greenTray.url,
+    alt: "Tray of green microgreens under the grow light",
+    t: "Green Microgreens",
+    d: "The everyday tray. Quiet, dense, endlessly instructive.",
+  },
+  {
+    src: handTray.url,
+    alt: "A freshly harvested tray of microgreens held in hand",
+    t: "Fresh Harvest",
+    d: "Cut the same morning it is eaten. Nothing stored, nothing shipped.",
+  },
+] as const;
+
+const PROCESS = [
+  { src: canopy.url, alt: "Dense green canopy of microgreens seen from above", c: "Above — the canopy closes in around day seven." },
+  { src: rootMat.url, alt: "Root mat of a microgreens tray viewed from underneath", c: "Beneath — the root mat, the part no one sees." },
+  { src: handTray.url, alt: "Side profile of a tray showing thick white roots", c: "Side — stems and roots in equal measure." },
 ] as const;
 
 const LESSONS = [
@@ -48,12 +70,10 @@ const OBSERVATIONS = [
 ] as const;
 
 const GALLERY = [
-  { src: overhead1.url, alt: "Overhead view of dense green microgreens", span: "row-span-2" },
-  { src: greenRack.url, alt: "Green microgreens on the growing rack", span: "" },
-  { src: shootsTray.url, alt: "Young shoots reaching toward the light", span: "row-span-2" },
-  { src: handTray.url, alt: "A tray of microgreens held in hand", span: "" },
-  { src: overhead2.url, alt: "Overhead close-up of tender leaves", span: "" },
-  { src: hero.url, alt: "Red-stem microgreens under the grow light", span: "row-span-2" },
+  { src: canopy.url, alt: "Dense green canopy of microgreens" },
+  { src: hero.url, alt: "Red radish microgreens tray" },
+  { src: rackDay.url, alt: "The indoor growing rack with several trays" },
+  { src: packaged.url, alt: "Packaged Seeker's Soil microgreens with a kraft card" },
 ] as const;
 
 function Soil() {
@@ -73,131 +93,108 @@ function Soil() {
   return (
     <Page>
       {/* HERO */}
-      <section className="relative min-h-[88svh] overflow-hidden border-b border-rule/70">
+      <section className="relative min-h-[80svh] overflow-hidden border-b border-rule/70">
         <img
           src={hero.url}
-          alt="Red-stem microgreens flourishing under the grow light"
+          alt="Red radish microgreens flourishing under the grow light"
           className="absolute inset-0 h-full w-full object-cover"
           style={{ filter: "saturate(0.92) contrast(1.02) sepia(0.06)" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/35 to-ink/75" />
-        <div className="relative z-10 mx-auto flex min-h-[88svh] max-w-5xl items-end px-6 py-16 lg:px-10 lg:py-24">
+        <div className="relative z-10 mx-auto flex min-h-[80svh] max-w-5xl items-end px-6 py-14 lg:px-10 lg:py-24">
           <div className="max-w-2xl text-paper">
             <p className="eyebrow text-paper/70">Seeker's Soil</p>
-            <h1 className="serif-display mt-5 text-[2.8rem] leading-[1.05] md:text-[4.5rem]">Learning from the land.</h1>
-            <div className="mt-8 max-w-xl space-y-4 text-[1.05rem] leading-[1.85] text-paper/90 md:text-[1.12rem]">
+            <h1 className="serif-display mt-4 text-[2.6rem] leading-[1.05] md:text-[4.5rem]">Learning from the land.</h1>
+            <div className="mt-6 max-w-xl space-y-3 text-[1.02rem] leading-[1.8] text-paper/90 md:text-[1.12rem]">
               <p>A quiet study of soil, food, patience, and the small cycles that sustain life.</p>
-              <p>
-                What began with trays of microgreens has become an ongoing exploration of growing,
-                observing, harvesting, and learning from the earth itself.
-              </p>
               <p className="font-serif italic text-paper/80">No grand conclusions. Only experiments, seasons, and lessons.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TOPICS */}
+      {/* WHAT'S BEING EXPLORED */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-          <div className="max-w-2xl">
-            <p className="eyebrow mb-6">One</p>
-            <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">What's being explored</h2>
-          </div>
-          <div className="mt-12 grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-            {TOPICS.map((t, i) => (
-              <article key={t.t} className="border-t border-rule/70 pt-5">
-                <p className="font-serif text-sm text-ink/45">No. {String(i + 1).padStart(2, "0")}</p>
-                <h3 className="mt-3 font-serif text-[1.5rem] text-ink">{t.t}</h3>
-                <p className="mt-3 text-[1rem] leading-[1.8] text-ink/78">{t.d}</p>
+        <div className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-10 lg:py-24">
+          <p className="eyebrow mb-4">One</p>
+          <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">What's being explored</h2>
+          <div className="mt-10 grid gap-8 md:mt-14 md:grid-cols-3 md:gap-10">
+            {CARDS.map((c) => (
+              <article key={c.t}>
+                <img src={c.src} alt={c.alt} loading="lazy" className="aspect-[4/5] w-full object-cover" />
+                <h3 className="mt-5 font-serif text-[1.4rem] text-ink">{c.t}</h3>
+                <p className="mt-2 text-[0.98rem] leading-[1.75] text-ink/75">{c.d}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* THE FIRST EXPERIMENTS */}
+      {/* GROWING PROCESS */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-          <p className="eyebrow mb-6">Two</p>
-          <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">The First Experiments</h2>
-
-          <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
-            <figure>
-              <img src={shootsTray.url} alt="A tray of new shoots under the grow light" loading="lazy" className="aspect-[4/5] w-full object-cover" />
-            </figure>
-            <div className="space-y-5 text-[1.05rem] leading-[1.85] text-ink/85 lg:self-center md:text-[1.12rem]">
-              <p>Every tray begins with uncertainty.</p>
-              <p>A handful of seeds disappear beneath the surface.</p>
-              <p>Nothing seems to happen.</p>
-              <p>Then, slowly, life begins to reveal itself.</p>
-            </div>
+        <div className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-10 lg:py-24">
+          <p className="eyebrow mb-4">Two</p>
+          <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">The growing process</h2>
+          <p className="mt-4 max-w-xl text-[1rem] leading-[1.8] text-ink/75">
+            Seeds disappear beneath the surface. Nothing seems to happen. Then, slowly, life reveals itself.
+          </p>
+          <div className="mt-10 grid gap-8 md:mt-14 md:grid-cols-3 md:gap-10">
+            {PROCESS.map((p, i) => (
+              <figure key={i}>
+                <img src={p.src} alt={p.alt} loading="lazy" className="aspect-[3/4] w-full object-cover" />
+                <figcaption className="mt-4 font-serif text-[0.95rem] italic text-ink/65">{p.c}</figcaption>
+              </figure>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-16 grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
-            <div className="space-y-5 text-[1.05rem] leading-[1.85] text-ink/85 lg:order-2 lg:self-center md:text-[1.12rem]">
-              <p>Microgreens became an unexpected teacher.</p>
-              <p>Not because they grow quickly. But because they make every stage visible.</p>
-              <div className="pt-2 font-serif text-[1.3rem] text-ink md:text-[1.5rem] leading-[1.5]">
-                <p>The seed.</p>
-                <p>The sprout.</p>
-                <p>The struggle.</p>
-                <p>The growth.</p>
-                <p>The harvest.</p>
-              </div>
-              <p>Each tray becomes a small lesson in observation and care.</p>
-            </div>
-            <figure className="lg:order-1">
-              <img src={greenRack.url} alt="Green microgreens on the growing rack" loading="lazy" className="aspect-[4/5] w-full object-cover" />
-            </figure>
-          </div>
+      {/* GROWING SPACE */}
+      <section className="border-b border-rule/70">
+        <img
+          src={rack.url}
+          alt="The indoor growing rack lit by LED grow lights at night"
+          loading="lazy"
+          className="h-[52svh] w-full object-cover md:h-[74svh]"
+        />
+        <div className="mx-auto max-w-3xl px-6 py-12 text-center md:py-16 lg:px-10">
+          <p className="eyebrow mb-4">The growing space</p>
+          <p className="font-serif text-[1.25rem] leading-[1.6] text-ink md:text-[1.5rem]">
+            A single rack in a corner of the house. Three shelves, a few lights, and a handful of trays —
+            enough to learn almost everything.
+          </p>
         </div>
       </section>
 
       {/* WHAT THE SOIL TEACHES */}
       <section className="border-b border-rule/70 bg-secondary/30">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-            <figure className="lg:self-start">
-              <img src={overhead1.url} alt="Overhead view of dense green microgreens" loading="lazy" className="aspect-[3/4] w-full object-cover" />
-            </figure>
-            <div>
-              <p className="eyebrow mb-6">Three</p>
-              <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">What the Soil Teaches</h2>
-              <dl className="mt-10 divide-y divide-rule/70">
-                {LESSONS.map((l) => (
-                  <div key={l.t} className="grid gap-2 py-5 md:grid-cols-[0.7fr_1.3fr] md:gap-8">
-                    <dt className="font-serif text-[1.35rem] text-ink">{l.t}</dt>
-                    <dd className="text-[1rem] leading-[1.8] text-ink/78">{l.d}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
+        <div className="mx-auto max-w-4xl px-6 py-14 md:py-20 lg:px-10 lg:py-24">
+          <p className="eyebrow mb-4">Three</p>
+          <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">What the soil teaches</h2>
+          <dl className="mt-8 divide-y divide-rule/70 md:mt-10">
+            {LESSONS.map((l) => (
+              <div key={l.t} className="grid gap-1 py-4 md:grid-cols-[0.6fr_1.4fr] md:gap-8 md:py-5">
+                <dt className="font-serif text-[1.25rem] text-ink md:text-[1.35rem]">{l.t}</dt>
+                <dd className="text-[0.98rem] leading-[1.75] text-ink/78">{l.d}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
-      {/* GALLERY */}
+      {/* QUIET GALLERY */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-          <p className="eyebrow mb-6">Four</p>
-          <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Field Photographs</h2>
-          <p className="mt-4 max-w-2xl text-[1rem] leading-[1.8] text-ink/70">
-            Small studies of germination, growth, and harvest — recorded quietly along the way.
-          </p>
-          <div className="mt-12 grid auto-rows-[180px] grid-cols-2 gap-3 md:auto-rows-[220px] md:grid-cols-3 md:gap-4 lg:auto-rows-[260px]">
+        <div className="mx-auto max-w-6xl px-6 py-14 md:py-20 lg:px-10 lg:py-24">
+          <p className="eyebrow mb-4">Four</p>
+          <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Field photographs</h2>
+          <div className="mt-8 grid grid-cols-2 gap-3 md:mt-12 md:gap-5">
             {GALLERY.map((g, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setLightbox(g.src)}
-                className={`group relative overflow-hidden ${g.span}`}
-              >
+              <button key={i} type="button" onClick={() => setLightbox(g.src)} className="group relative overflow-hidden">
                 <img
                   src={g.src}
                   alt={g.alt}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+                  className="aspect-square w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
                 />
               </button>
             ))}
@@ -207,14 +204,14 @@ function Soil() {
 
       {/* OBSERVATIONS */}
       <section className="border-b border-rule/70">
-        <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-          <p className="eyebrow mb-6">Five</p>
-          <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Observations from the Notebook</h2>
-          <ol className="mt-12 space-y-8 md:space-y-10">
+        <div className="mx-auto max-w-4xl px-6 py-14 md:py-20 lg:px-10 lg:py-24">
+          <p className="eyebrow mb-4">Five</p>
+          <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Observations from the notebook</h2>
+          <ol className="mt-8 space-y-6 md:mt-12 md:space-y-8">
             {OBSERVATIONS.map((o, i) => (
-              <li key={i} className="grid gap-3 border-t border-rule/70 pt-6 md:grid-cols-[auto_1fr] md:gap-10">
+              <li key={i} className="grid gap-2 border-t border-rule/70 pt-5 md:grid-cols-[auto_1fr] md:gap-10">
                 <p className="font-serif text-sm text-ink/45 md:pt-2">Observation {String(i + 1).padStart(2, "0")}</p>
-                <p className="font-serif text-[1.4rem] leading-[1.45] text-ink md:text-[1.6rem]">{o}</p>
+                <p className="font-serif text-[1.25rem] leading-[1.45] text-ink md:text-[1.6rem]">{o}</p>
               </li>
             ))}
           </ol>
@@ -223,12 +220,10 @@ function Soil() {
 
       {/* FROM SOIL TO SOMEONE'S TABLE */}
       <section className="border-b border-rule/70 bg-secondary/30">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24 lg:px-10 lg:py-32">
-          <div className="max-w-2xl">
-            <p className="eyebrow mb-6">Six</p>
-            <h2 className="serif-display text-[1.9rem] tracking-[-0.005em] text-ink md:text-[2.75rem]">From Soil to Someone's Table</h2>
-          </div>
-          <figure className="mt-14 md:mt-20">
+        <div className="mx-auto max-w-5xl px-6 py-16 md:py-24 lg:px-10">
+          <p className="eyebrow mb-4">Six</p>
+          <h2 className="serif-display text-[1.8rem] tracking-[-0.005em] text-ink md:text-[2.75rem]">From soil to someone's table</h2>
+          <figure className="mt-10 md:mt-14">
             <img
               src={packaged.url}
               alt="Two bags of Seeker's Soil microgreens with a hand-stamped kraft card"
@@ -236,32 +231,22 @@ function Soil() {
               className="mx-auto aspect-[4/5] w-full max-w-2xl object-cover md:aspect-[16/11]"
             />
           </figure>
-          <div className="mx-auto mt-14 max-w-2xl space-y-5 text-[1.05rem] leading-[1.85] text-ink/85 md:mt-20 md:text-[1.12rem]">
-            <p>Growing food changes the way nourishment is understood.</p>
-            <p>A tray of greens begins as a handful of seeds.</p>
-            <p>Days later it becomes something capable of nourishing another person.</p>
-            <p>There is quiet satisfaction in witnessing that journey.</p>
+          <div className="mx-auto mt-10 max-w-2xl space-y-4 text-[1.02rem] leading-[1.8] text-ink/85 md:mt-14 md:text-[1.12rem]">
+            <p>A tray of greens begins as a handful of seeds. Days later it becomes something capable of nourishing another person.</p>
             <p>Not because something was sold. But because something living was cared for from beginning to harvest.</p>
             <p className="font-serif italic text-ink/75">The harvest is not the destination. The process is.</p>
           </div>
-          <blockquote className="mx-auto mt-16 max-w-3xl border-t border-rule/70 pt-10 text-center md:mt-20">
-            <p className="serif-display text-[1.6rem] leading-[1.4] text-ink md:text-[2.2rem]">
-              "The seed becomes food. The process becomes a teacher."
-            </p>
-          </blockquote>
         </div>
       </section>
 
       {/* STILL LEARNING */}
       <section>
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center md:py-28 lg:px-10 lg:py-32">
-          <p className="eyebrow mb-6">Seven</p>
-          <h2 className="serif-display text-[2rem] tracking-[-0.005em] text-ink md:text-[2.75rem]">Still Learning</h2>
-          <div className="mx-auto mt-10 max-w-xl space-y-5 text-[1.05rem] leading-[1.85] text-ink/80 md:text-[1.12rem]">
-            <p>Seeker's Soil is not a finished project.</p>
-            <p>It is an ongoing conversation with the land.</p>
+        <div className="mx-auto max-w-3xl px-6 py-16 text-center md:py-24 lg:px-10">
+          <p className="eyebrow mb-4">Seven</p>
+          <h2 className="serif-display text-[1.9rem] tracking-[-0.005em] text-ink md:text-[2.75rem]">Still learning</h2>
+          <div className="mx-auto mt-8 max-w-xl space-y-4 text-[1.02rem] leading-[1.8] text-ink/80 md:text-[1.12rem]">
+            <p>Seeker's Soil is not a finished project. It is an ongoing conversation with the land.</p>
             <p>Some experiments succeed. Others fail. Both are welcome.</p>
-            <p>For now, this remains a place for questions, observations, and small acts of participation in the living world.</p>
           </div>
         </div>
       </section>

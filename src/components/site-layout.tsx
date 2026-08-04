@@ -14,8 +14,6 @@ const NAV = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
-const EXPLORE = NAV.slice(0, 5);
-const MORE = NAV.slice(5);
 
 const SOCIALS = [
   { href: "https://www.instagram.com/echoesoftheseeker", label: "Instagram", Icon: Instagram },
@@ -94,52 +92,69 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
+  const explore = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/journal", label: "Journal" },
+    { to: "/learn-bansuri", label: "Learn Bansuri" },
+  ] as const;
+  const more = [
+    { to: "/seekers-stay", label: "Seekers Stay" },
+    { to: "/seekers-soil", label: "Seeker's Soil" },
+    { to: "/bansuris", label: "Bansuris" },
+    { to: "/contact", label: "Contact" },
+  ] as const;
+
   return (
     <footer className="border-t border-rule/70 bg-paper">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-4 lg:px-10">
-        <div>
-          <p className="font-serif text-xl text-ink">Echoes of the Seeker</p>
-          <p className="mt-2 font-serif text-sm italic text-ink/60">A living home for an ongoing journey.</p>
-        </div>
-        <div>
-          <p className="font-serif text-sm text-ink mb-4">Explore</p>
-          <ul className="space-y-2 text-sm text-ink/75">
-            {EXPLORE.map((n) => (
-              <li key={n.to}><Link to={n.to} className="hover:text-bamboo">{n.label}</Link></li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className="font-serif text-sm text-ink mb-4">More</p>
-          <ul className="space-y-2 text-sm text-ink/75">
-            {MORE.map((n) => (
-              <li key={n.to}><Link to={n.to} className="hover:text-bamboo">{n.label}</Link></li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className="font-serif text-sm text-ink mb-4">Follow the Journey</p>
-          <ul className="space-y-2 text-sm text-ink/75">
-            {SOCIALS.map(({ href, label, Icon }) => (
-              <li key={label}>
-                <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-bamboo">
-                  <Icon size={14} strokeWidth={1.5} />
-                  {label}
+      <div className="mx-auto max-w-6xl px-6 py-10 lg:px-10 lg:py-12">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-8 md:grid-cols-3">
+          <div className="col-span-2 md:col-span-1 md:order-last">
+            <p className="font-serif text-lg text-ink">Echoes of the Seeker</p>
+            <p className="mt-1 font-serif text-sm italic text-ink/60">A living home for an ongoing journey.</p>
+            <div className="mt-4 flex items-center gap-4 text-ink/55">
+              {SOCIALS.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-bamboo transition-colors"
+                >
+                  <Icon size={17} strokeWidth={1.5} />
                 </a>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="mb-3 font-serif text-sm text-ink">Explore</p>
+            <ul className="space-y-1.5 text-sm text-ink/75">
+              {explore.map((n) => (
+                <li key={n.to}><Link to={n.to} className="hover:text-bamboo">{n.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="mb-3 font-serif text-sm text-ink">More</p>
+            <ul className="space-y-1.5 text-sm text-ink/75">
+              {more.map((n) => (
+                <li key={n.to}><Link to={n.to} className="hover:text-bamboo">{n.label}</Link></li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div className="border-t border-rule/70">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 text-xs text-ink/55 lg:flex-row lg:items-center lg:px-10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-5 text-xs text-ink/55 sm:flex-row sm:items-center sm:justify-between lg:px-10">
           <p>© {new Date().getFullYear()} Echoes of the Seeker</p>
-          <p>Goa · India</p>
+          <p className="font-serif italic">A Living Journey.</p>
         </div>
       </div>
     </footer>
   );
 }
+
 
 export function Page({ children }: { children: ReactNode }) {
   return (
