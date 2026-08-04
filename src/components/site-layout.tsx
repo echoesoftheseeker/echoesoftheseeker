@@ -107,12 +107,12 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-rule/70 bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-10 lg:px-10 lg:py-12">
-        <div className="grid grid-cols-2 gap-x-8 gap-y-8 md:grid-cols-3">
+      <div className="mx-auto max-w-6xl px-6 py-6 lg:px-10 lg:py-7">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-5 md:grid-cols-3">
           <div className="col-span-2 md:col-span-1 md:order-last">
-            <p className="font-serif text-lg text-ink">Echoes of the Seeker</p>
-            <p className="mt-1 font-serif text-sm italic text-ink/60">A living home for an ongoing journey.</p>
-            <div className="mt-4 flex items-center gap-4 text-ink/55">
+            <p className="font-serif text-base text-ink">Echoes of the Seeker</p>
+            <p className="mt-0.5 font-serif text-[0.8rem] italic text-ink/60">A living home for an ongoing journey.</p>
+            <div className="mt-2.5 flex items-center gap-4 text-ink/55">
               {SOCIALS.map(({ href, label, Icon }) => (
                 <a
                   key={label}
@@ -122,31 +122,29 @@ export function SiteFooter() {
                   rel="noopener noreferrer"
                   className="hover:text-bamboo transition-colors"
                 >
-                  <Icon size={17} strokeWidth={1.5} />
+                  <Icon size={16} strokeWidth={1.5} />
                 </a>
               ))}
             </div>
           </div>
           <div>
-            <p className="mb-3 font-serif text-sm text-ink">Explore</p>
-            <ul className="space-y-1.5 text-sm text-ink/75">
+            <p className="mb-1.5 font-serif text-[0.82rem] text-ink">Explore</p>
+            <ul className="space-y-0.5 text-[0.82rem] text-ink/75">
               {explore.map((n) => (
                 <li key={n.to}><Link to={n.to} className="hover:text-bamboo">{n.label}</Link></li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="mb-3 font-serif text-sm text-ink">More</p>
-            <ul className="space-y-1.5 text-sm text-ink/75">
+            <p className="mb-1.5 font-serif text-[0.82rem] text-ink">More</p>
+            <ul className="space-y-0.5 text-[0.82rem] text-ink/75">
               {more.map((n) => (
                 <li key={n.to}><Link to={n.to} className="hover:text-bamboo">{n.label}</Link></li>
               ))}
             </ul>
           </div>
         </div>
-      </div>
-      <div className="border-t border-rule/70">
-        <div className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-5 text-xs text-ink/55 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+        <div className="mt-5 flex flex-col gap-0.5 border-t border-rule/70 pt-3 text-[0.72rem] text-ink/55 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Echoes of the Seeker</p>
           <p className="font-serif italic">A Living Journey.</p>
         </div>
