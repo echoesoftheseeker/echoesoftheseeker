@@ -3,10 +3,12 @@ import { Page } from "@/components/site-layout";
 import hero from "@/assets/hero-beach-seeker.jpg.asset.json";
 import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
 import stayImg from "@/assets/stay.jpg";
-import soilAsset from "@/assets/soil/IMG_20260616_100131.jpg.asset.json";
+import soilAsset from "@/assets/soil-trays.jpg.asset.json";
 const soilImg = soilAsset.url;
-import journalImg from "@/assets/journal.jpg";
-import aboutImg from "@/assets/about.jpg";
+import journalAsset from "@/assets/journal-desk.jpg.asset.json";
+const journalImg = journalAsset.url;
+import aboutAsset from "@/assets/intro-bansuri.jpg.asset.json";
+const aboutImg = aboutAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -79,9 +81,9 @@ function Home() {
             <div className="lg:col-span-5">
               <img
                 src={aboutImg}
-                alt="A quiet corner of the seeker's life"
+                alt="Akash sitting on stone steps playing the bansuri in a pink kurta"
                 loading="lazy"
-                className="mx-auto aspect-[4/5] w-3/4 object-cover sm:w-2/3 md:w-1/2 lg:aspect-[4/5] lg:w-full"
+                className="mx-auto aspect-[4/5] w-3/4 object-cover object-[50%_38%] sm:w-2/3 md:w-1/2 lg:aspect-[4/5] lg:w-full"
               />
             </div>
             <div className="lg:col-span-7 lg:pt-4">
