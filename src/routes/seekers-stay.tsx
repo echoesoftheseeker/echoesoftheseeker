@@ -143,7 +143,7 @@ function PrimaryButton({ children, href }: { children: React.ReactNode; href: st
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 font-serif text-[0.95rem] text-paper transition-colors duration-300 hover:bg-forest"
+      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 font-serif text-[0.95rem] text-paper shadow-[0_6px_24px_rgba(0,0,0,0.28)] transition-colors duration-300 hover:bg-forest"
     >
       {children}
     </a>
@@ -156,10 +156,10 @@ function SecondaryButton({ children, href, onLight = false }: { children: React.
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center gap-2 rounded-full border px-7 py-3.5 font-serif text-[0.95rem] transition-colors duration-300 ${
+      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full border px-7 py-3.5 font-serif text-[0.95rem] transition-colors duration-300 ${
         onLight
           ? "border-ink/25 text-ink hover:border-bamboo hover:text-forest"
-          : "border-paper/50 text-paper hover:border-bamboo hover:text-bamboo"
+          : "border-paper/60 bg-paper/15 text-paper backdrop-blur-sm hover:border-paper hover:bg-paper/25"
       }`}
     >
       {children}
@@ -190,7 +190,7 @@ function Stay() {
           fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/35 to-ink/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/40 to-ink/80" />
         <div className="relative z-10 mx-auto flex h-full max-w-3xl flex-col items-center justify-end px-6 pb-16 text-center lg:px-10 lg:pb-24">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-paper/35 bg-ink/25 px-4 py-1.5 font-serif text-[0.8rem] text-paper/90 backdrop-blur-sm">

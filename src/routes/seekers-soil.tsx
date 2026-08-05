@@ -101,7 +101,7 @@ function Soil() {
           className="absolute inset-0 h-full w-full object-cover"
           style={{ filter: "saturate(0.92) contrast(1.02) sepia(0.06)" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/35 to-ink/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/40 to-ink/80" />
         <div className="relative z-10 mx-auto flex min-h-[80svh] max-w-5xl items-end px-6 py-14 lg:px-10 lg:py-24">
           <div className="max-w-2xl text-paper">
             <p className="eyebrow text-paper/70">Seeker's Soil</p>

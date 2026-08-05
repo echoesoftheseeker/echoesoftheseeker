@@ -37,7 +37,7 @@ function Home() {
           alt="A seeker walking barefoot along a quiet Goa shoreline with a flute bag at dusk"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/58 via-ink/42 to-ink/78" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/40 to-ink/80" />
 
         <div className="relative z-10 mx-auto flex h-full max-w-3xl flex-col items-center justify-center px-6 text-center lg:px-10">
           <blockquote
