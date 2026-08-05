@@ -37,17 +37,17 @@ function Journal() {
         lede="Everything eventually feeds into the Journal. Some entries are small — a moment in a field, a line overheard. Others stretch into longer essays, future book excerpts, or letters to no one in particular."
       />
 
-      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-10">
-        <div className="mb-12 flex items-baseline justify-between">
-          <h2 className="serif-display text-3xl md:text-4xl">Field Notes</h2>
+      <section className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+        <div className="mb-10 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between md:mb-12">
+          <h2 className="serif-display text-[1.65rem] tracking-[-0.005em] text-ink md:text-[2.25rem]">Field Notes</h2>
           <p className="eyebrow">Short reflections</p>
         </div>
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-3 md:gap-x-12">
           {FIELD_NOTES.map((n) => (
-            <article key={n.title} className="group">
+            <article key={n.title} className="group flex flex-col">
               <p className="eyebrow mb-3">{n.date}</p>
-              <h3 className="font-serif text-xl text-ink md:text-2xl">{n.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink/70">{n.body}</p>
+              <h3 className="font-serif text-[1.2rem] leading-snug text-ink md:text-[1.35rem]">{n.title}</h3>
+              <p className="mt-3 max-w-prose text-[0.95rem] leading-[1.75] text-ink/70">{n.body}</p>
               <div className="rule mt-6" />
             </article>
           ))}
@@ -55,21 +55,24 @@ function Journal() {
       </section>
 
       <section className="border-t border-rule/70 bg-secondary/40">
-        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-10">
-          <div className="mb-12 flex items-baseline justify-between">
-            <h2 className="serif-display text-3xl md:text-4xl">Essays</h2>
+        <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+          <div className="mb-10 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between md:mb-12">
+            <h2 className="serif-display text-[1.65rem] tracking-[-0.005em] text-ink md:text-[2.25rem]">Essays</h2>
             <p className="eyebrow">Long-form reflections</p>
           </div>
-          <div className="space-y-12">
+          <div className="space-y-10 md:space-y-12">
             {ESSAYS.map((e) => (
-              <article key={e.title} className="grid gap-4 border-b border-rule/60 pb-12 md:grid-cols-[1fr_2fr] md:gap-12">
-                <div>
+              <article
+                key={e.title}
+                className="grid gap-3 border-b border-rule/60 pb-10 last:border-b-0 last:pb-0 md:grid-cols-[1fr_2fr] md:gap-12 md:pb-12"
+              >
+                <div className="md:pt-2">
                   <p className="eyebrow">{e.read}</p>
                 </div>
                 <div>
-                  <h3 className="font-serif text-3xl text-ink md:text-4xl">{e.title}</h3>
-                  <p className="mt-4 max-w-2xl text-ink/75">{e.body}</p>
-                  <span className="mt-4 inline-block text-xs uppercase tracking-[0.22em] text-bamboo">Read essay →</span>
+                  <h3 className="font-serif text-[1.5rem] leading-tight text-ink md:text-[2rem]">{e.title}</h3>
+                  <p className="mt-4 max-w-[62ch] text-[1rem] leading-[1.8] text-ink/75 md:text-[1.05rem]">{e.body}</p>
+                  <span className="mt-5 inline-block text-xs uppercase tracking-[0.22em] text-bamboo">Read essay →</span>
                 </div>
               </article>
             ))}
