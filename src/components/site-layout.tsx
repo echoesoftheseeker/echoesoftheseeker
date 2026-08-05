@@ -154,6 +154,16 @@ export function SiteFooter() {
 }
 
 
+/** Unified hero overlay used on every page hero image. */
+export const heroOverlay = "absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/40 to-ink/80";
+
+const heroBtnBase =
+  "inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 py-3.5 font-serif text-[0.95rem] transition-colors duration-300";
+
+export const heroPrimaryClass = `${heroBtnBase} bg-ink text-paper shadow-[0_6px_24px_rgba(0,0,0,0.28)] hover:bg-forest`;
+
+export const heroSecondaryClass = `${heroBtnBase} border border-paper/60 bg-paper/15 text-paper backdrop-blur-sm hover:border-paper hover:bg-paper/25`;
+
 export function Page({ children }: { children: ReactNode }) {
   return (
     <div className="relative flex min-h-screen flex-col bg-paper text-ink">

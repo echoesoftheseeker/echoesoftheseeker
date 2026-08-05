@@ -1,9 +1,13 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Page } from "@/components/site-layout";
-import heroImg from "@/assets/bansuri-bag.jpg.asset.json";
+import { createFileRoute } from "@tanstack/react-router";
+import { Page, heroOverlay, heroPrimaryClass, heroSecondaryClass } from "@/components/site-layout";
+import { MessageCircle } from "lucide-react";
+import heroImg from "@/assets/bansuri-tree-hero.jpg.asset.json";
 import treeImg from "@/assets/learning-tree.jpg.asset.json";
 import cloudsImg from "@/assets/gallery-clouds.jpg.asset.json";
 import detailImg from "@/assets/gallery-flute-detail.jpg.asset.json";
+
+const WHATSAPP_URL =
+  "https://wa.me/917027029889?text=Hi%2C%20I%27d%20like%20to%20learn%20the%20bansuri.%20Could%20you%20share%20timings%20and%20beginner%20flute%20guidance%3F";
 
 export const Route = createFileRoute("/learn-bansuri")({
   head: () => ({
@@ -11,113 +15,125 @@ export const Route = createFileRoute("/learn-bansuri")({
       { title: "Learn Bansuri — Echoes of the Seeker" },
       {
         name: "description",
-        content: "A contemplative pathway into bansuri practice through breath, listening, and presence.",
+        content:
+          "Learn the bansuri through patient, step-by-step guidance. Online one-to-one lessons in breath, tone and simple melodies.",
       },
       { property: "og:title", content: "Learn Bansuri — Echoes of the Seeker" },
       { property: "og:description", content: "One breath at a time." },
-      { property: "og:image", content: heroImg.url },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Learn,
 });
 
 const FOUNDATIONS = [
-  {
-    title: "Breath",
-    body: "Learning to work with breath rather than force.",
-  },
-  {
-    title: "Listening",
-    body: "Developing sensitivity to sound and silence.",
-  },
-  {
-    title: "Presence",
-    body: "A practice that rewards consistency rather than intensity.",
-  },
+  { title: "Breath", body: "Working with breath rather than force." },
+  { title: "Listening", body: "Sensitivity to sound, and to silence." },
+  { title: "Presence", body: "A practice that rewards return, not intensity." },
+] as const;
+
+const APPROACH = [
+  "Posture",
+  "Breath",
+  "Finger placement",
+  "Tone",
+  "Rhythm",
+  "Simple melodies",
+  "Daily practice",
 ] as const;
 
 const WHO = [
   "Complete beginners",
-  "Adults starting later in life",
-  "Spiritual seekers",
-  "Nature lovers",
-  "Those wanting a mindful practice",
-  "People looking for depth instead of speed",
+  "Adults restarting music",
+  "Anyone seeking a slower, mindful creative practice",
 ] as const;
 
-const OPTIONS = [
-  {
-    title: "Group Learning",
-    points: ["Small batches.", "Personal attention.", "Community learning."],
-  },
-  {
-    title: "One to One",
-    points: ["Personal guidance.", "Flexible pacing.", "Individual support."],
-  },
+const LESSONS = [
+  "One-to-one online sessions",
+  "Small offline sessions when available",
+  "Flexible timings",
+  "Personal guidance",
 ] as const;
 
 const FAQS = [
   {
-    q: "How long does it take to learn?",
-    a: "It depends on how you show up. The bansuri responds to steady practice more than speed, so the real measure is not how fast you progress, but how gently you return to it.",
+    q: "Do I need prior musical experience?",
+    a: "No. Many sincere learners begin without any formal background. Patience and careful listening matter more.",
   },
   {
-    q: "Do I need prior musical experience?",
-    a: "No. Many sincere learners begin without any formal background. What matters most is patience, curiosity, and a willingness to listen carefully.",
+    q: "How often should I practise?",
+    a: "A short daily practice is better than occasional intensity. Fifteen quiet minutes, offered consistently, is enough to begin.",
   },
   {
     q: "Can I learn online?",
-    a: "Yes. With careful guidance and regular practice, online learning can be deeply effective. The focus remains on breath, posture, tone, and consistency.",
+    a: "Yes. With regular practice, online lessons work well. The focus stays on breath, posture, tone and consistency.",
   },
   {
-    q: "Which bansuri should I start with?",
-    a: "That depends on your comfort, hand size, and where you are beginning from. I can help you choose a flute that feels supportive rather than discouraging.",
-  },
-  {
-    q: "How often should I practice?",
-    a: "A short daily practice is better than occasional intensity. Even fifteen to twenty quiet minutes, offered consistently, can begin to change the relationship.",
+    q: "How long does it take?",
+    a: "It depends on how you show up. The measure is not speed, but how gently you keep returning to the instrument.",
   },
 ] as const;
+
+function SectionHead({ index, title }: { index: string; title: string }) {
+  return (
+    <>
+      <p className="eyebrow mb-6">{index}</p>
+      <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">{title}</h2>
+    </>
+  );
+}
 
 function Learn() {
   return (
     <Page>
-      <section className="relative min-h-[88svh] overflow-hidden border-b border-rule/70">
-        <img src={heroImg.url} alt="A handcrafted bansuri resting on its bag before a green field and misty hill" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/48 via-ink/28 to-ink/72" />
-        <div className="relative z-10 mx-auto flex min-h-[88svh] max-w-5xl items-end px-6 py-16 lg:px-10 lg:py-24">
-          <div className="max-w-2xl text-paper">
-            <p className="eyebrow text-paper/70">Learn Bansuri</p>
-            <h1 className="serif-display mt-5 text-[2.8rem] md:text-[4.5rem]">Learn Bansuri</h1>
-            <p className="mt-4 font-serif text-[1.25rem] italic text-paper/88 md:text-[1.5rem]">One breath at a time.</p>
-            <div className="mt-8 max-w-xl space-y-4 text-[1.05rem] leading-[1.8] text-paper/88 md:text-[1.1rem]">
-              <p>The bansuri is more than an instrument.</p>
-              <p>It teaches patience, attention, listening, and presence.</p>
-            </div>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="#learning-options"
-                className="inline-flex min-h-11 items-center justify-center rounded-full bg-paper px-6 py-3 font-serif text-sm text-ink transition-colors hover:bg-secondary"
-              >
-                Begin the Journey
-              </a>
-              <Link
-                to="/contact"
-                className="inline-flex min-h-11 items-center justify-center rounded-full border border-paper/45 px-6 py-3 font-serif text-sm text-paper transition-colors hover:border-paper hover:bg-paper/10"
-              >
-                Message Me
-              </Link>
-            </div>
+      {/* 1 — HERO */}
+      <section className="relative h-[92svh] min-h-[600px] w-full overflow-hidden border-b border-rule/70">
+        <img
+          src={heroImg.url}
+          alt="Akash seated cross-legged beneath a tree, playing the bansuri in the open air"
+          fetchPriority="high"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
+        />
+        <div className={heroOverlay} />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/70 to-transparent" />
+        <div className="relative z-10 mx-auto flex h-full max-w-3xl flex-col items-center justify-end px-6 pb-16 text-center lg:px-10 lg:pb-24">
+          <p className="eyebrow text-paper/75">Learn Bansuri</p>
+          <h1
+            className="serif-display mt-5 text-[2.25rem] tracking-[-0.005em] text-paper sm:text-[2.75rem] md:text-5xl lg:text-[3.75rem]"
+            style={{ textShadow: "0 1px 24px rgba(0,0,0,0.5)" }}
+          >
+            Learn Bansuri
+          </h1>
+          <p
+            className="mt-5 font-serif text-[1.05rem] italic text-paper/90 md:text-[1.25rem]"
+            style={{ textShadow: "0 1px 18px rgba(0,0,0,0.55)" }}
+          >
+            One breath at a time.
+          </p>
+          <p
+            className="mt-5 max-w-xl text-[1rem] leading-[1.8] text-paper/88 md:text-[1.08rem]"
+            style={{ textShadow: "0 1px 18px rgba(0,0,0,0.5)" }}
+          >
+            Learn the bansuri through patient, step-by-step guidance — whether you are holding the
+            instrument for the first time or returning after years.
+          </p>
+          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+            <a href="#learning" className={heroPrimaryClass}>
+              Begin Learning
+            </a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={heroSecondaryClass}>
+              <MessageCircle size={16} strokeWidth={1.6} />
+              Message on WhatsApp
+            </a>
           </div>
         </div>
       </section>
 
+      {/* 2 — WHY */}
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-          <div className="max-w-2xl">
-            <p className="eyebrow mb-6">One</p>
-            <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Why Learn Bansuri</h2>
-          </div>
+          <SectionHead index="One" title="Why learn bansuri" />
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {FOUNDATIONS.map((item, i) => (
               <article key={item.title} className="border-t border-rule/70 pt-5">
@@ -130,86 +146,111 @@ function Learn() {
         </div>
       </section>
 
+      {/* 3 — ABOUT ME */}
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <figure>
-              <img src={treeImg.url} alt="A bansuri player seated beneath a wide tree, practicing in the open air" loading="lazy" className="aspect-[4/5] w-full object-cover" />
+              <img
+                src={treeImg.url}
+                alt="A bansuri player practising beneath a wide tree"
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
             </figure>
             <div className="lg:self-center">
-              <p className="eyebrow mb-6">Two</p>
-              <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">My Approach</h2>
+              <SectionHead index="Two" title="About me" />
               <div className="mt-8 space-y-5 text-[1.05rem] leading-[1.85] text-ink/85 md:text-[1.12rem]">
-                <p>I am still a student of the instrument myself.</p>
+                <p>My name is Akash. I continue to learn, practise and share the bansuri.</p>
                 <p>
-                  What I share comes from practice, mistakes, curiosity, and a long love for
-                  the bansuri.
+                  What I offer comes from practice, mistakes and a long love for the instrument —
+                  not from claiming to have arrived anywhere.
                 </p>
-                <p>The aim is not perfection.</p>
-                <p>
-                  The aim is to develop a meaningful relationship with sound, breath, and
-                  attention.
-                </p>
-                <div className="pt-2 space-y-2 font-serif text-[1.3rem] text-ink md:text-[1.5rem]">
-                  <p>Learn slowly.</p>
-                  <p>Learn correctly.</p>
-                  <p>Learn consistently.</p>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* 4 — APPROACH */}
       <section className="border-b border-rule/70 bg-secondary/30">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+          <SectionHead index="Three" title="Learning approach" />
+          <p className="mt-6 max-w-xl text-[1.02rem] leading-[1.8] text-ink/78">
+            Lessons move gradually, at each student's own pace.
+          </p>
+          <ul className="mt-10 grid grid-cols-2 gap-x-8 gap-y-3 md:grid-cols-4">
+            {APPROACH.map((item) => (
+              <li key={item} className="border-b border-rule/60 pb-3 font-serif text-[1.02rem] text-ink/85">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 5 — WHO */}
+      <section className="border-b border-rule/70">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
             <div>
-              <p className="eyebrow mb-6">Three</p>
-              <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Who This Is For</h2>
-              <ul className="mt-10 grid gap-4 md:grid-cols-2">
+              <SectionHead index="Four" title="Who this is for" />
+              <ul className="mt-10 space-y-4">
                 {WHO.map((item) => (
-                  <li key={item} className="flex items-start gap-3 border-b border-rule/60 pb-4 text-[1rem] leading-[1.7] text-ink/80">
-                    <span className="font-serif text-lg text-bamboo">✓</span>
-                    <span>{item}</span>
+                  <li
+                    key={item}
+                    className="border-b border-rule/60 pb-4 text-[1.05rem] leading-[1.7] text-ink/82"
+                  >
+                    {item}
                   </li>
                 ))}
               </ul>
             </div>
             <figure className="lg:self-end">
-              <img src={detailImg.url} alt="Close detail of a handcrafted bansuri resting in the grass" loading="lazy" className="aspect-[4/5] w-full object-cover" />
+              <img
+                src={detailImg.url}
+                alt="Close detail of a handcrafted bansuri resting in the grass"
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
             </figure>
           </div>
         </div>
       </section>
 
-      <section id="learning-options" className="border-b border-rule/70">
+      {/* 6 — ONLINE LESSONS */}
+      <section id="learning" className="border-b border-rule/70">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-          <p className="eyebrow mb-6">Four</p>
-          <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Learning Options</h2>
-          <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-12">
-            {OPTIONS.map((option) => (
-              <article key={option.title} className="border-t border-rule/70 pt-6">
-                <h3 className="font-serif text-[1.55rem] text-ink">{option.title}</h3>
-                <ul className="mt-6 space-y-3 text-[1rem] leading-[1.75] text-ink/80">
-                  {option.points.map((point) => (
-                    <li key={point}>— {point}</li>
-                  ))}
-                </ul>
-              </article>
+          <SectionHead index="Five" title="Online lessons" />
+          <ul className="mt-10 grid gap-x-10 gap-y-3 sm:grid-cols-2">
+            {LESSONS.map((item) => (
+              <li key={item} className="border-b border-rule/60 pb-3 text-[1.02rem] text-ink/82">
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
+      {/* 7 — BANSURI RECOMMENDATIONS */}
+      <section className="border-b border-rule/70">
+        <div className="mx-auto max-w-3xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+          <SectionHead index="Six" title="Choosing your first bansuri" />
+          <p className="mt-8 text-[1.05rem] leading-[1.85] text-ink/82 md:text-[1.12rem]">
+            Before lessons begin, I help you choose a beginner flute that suits your comfort and hand
+            size — one that feels supportive rather than discouraging.
+          </p>
+        </div>
+      </section>
+
+      {/* 8 — FAQ */}
       <section className="border-b border-rule/70">
         <div className="mx-auto max-w-4xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-          <p className="eyebrow mb-6">Five</p>
-          <h2 className="serif-display text-[1.75rem] tracking-[-0.005em] text-ink md:text-[2.5rem]">Frequent Questions</h2>
+          <SectionHead index="Seven" title="Frequent questions" />
           <dl className="mt-10 divide-y divide-rule/70">
             {FAQS.map((item) => (
               <div key={item.q} className="grid gap-4 py-6 md:grid-cols-[0.95fr_1.35fr] md:gap-8">
-                <dt className="font-serif text-[1.35rem] leading-[1.35] text-ink">{item.q}</dt>
+                <dt className="font-serif text-[1.3rem] leading-[1.35] text-ink">{item.q}</dt>
                 <dd className="text-[1rem] leading-[1.8] text-ink/78">{item.a}</dd>
               </div>
             ))}
@@ -217,28 +258,33 @@ function Learn() {
         </div>
       </section>
 
+      {/* 9 — CTA */}
       <section className="relative overflow-hidden">
-        <img src={cloudsImg.url} alt="Clouds rolling over a quiet mountain at dawn" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/62 via-ink/44 to-ink/74" />
-        <div className="relative z-10 mx-auto max-w-4xl px-6 py-24 text-center md:py-28 lg:px-10 lg:py-32">
-          <p className="eyebrow text-paper/70">Six</p>
-          <h2 className="serif-display mt-6 text-[2rem] text-paper md:text-[3rem]">
-            If the sound of the bansuri has been calling you, perhaps this is a good moment to begin.
+        <img
+          src={cloudsImg.url}
+          alt="Clouds rolling over a quiet mountain at dawn"
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className={heroOverlay} />
+        <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center md:py-28 lg:px-10 lg:py-32">
+          <h2
+            className="serif-display text-[1.9rem] text-paper md:text-[2.75rem]"
+            style={{ textShadow: "0 1px 24px rgba(0,0,0,0.5)" }}
+          >
+            If the bansuri has been calling you, I'd be happy to help you begin.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-[1.05rem] leading-[1.8] text-paper/86 md:text-[1.15rem]">
-            No urgency. No promises. Only an open invitation to sit with breath and sound.
+          <p className="mx-auto mt-6 max-w-xl text-[1.02rem] leading-[1.8] text-paper/88 md:text-[1.1rem]">
+            Message me on WhatsApp to discuss timings, beginner flutes and upcoming sessions.
           </p>
-          <div className="mt-10">
-            <Link
-              to="/contact"
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-paper px-7 py-3 font-serif text-sm text-ink transition-colors hover:bg-secondary"
-            >
-              Start Learning
-            </Link>
+          <div className="mt-10 flex justify-center">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={heroPrimaryClass}>
+              <MessageCircle size={16} strokeWidth={1.6} />
+              Message on WhatsApp
+            </a>
           </div>
         </div>
       </section>
     </Page>
   );
 }
-
