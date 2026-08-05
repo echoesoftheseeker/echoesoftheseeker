@@ -3,10 +3,12 @@ import { Page } from "@/components/site-layout";
 import hero from "@/assets/hero-beach-seeker.jpg.asset.json";
 import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
 import stayImg from "@/assets/stay.jpg";
-import soilAsset from "@/assets/soil/IMG_20260616_100131.jpg.asset.json";
+import soilAsset from "@/assets/soil-trays.jpg.asset.json";
 const soilImg = soilAsset.url;
-import journalImg from "@/assets/journal.jpg";
-import aboutImg from "@/assets/about.jpg";
+import journalAsset from "@/assets/journal-desk.jpg.asset.json";
+const journalImg = journalAsset.url;
+import aboutAsset from "@/assets/intro-bansuri.jpg.asset.json";
+const aboutImg = aboutAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
