@@ -93,7 +93,7 @@ function Learn() {
           src={heroImg.url}
           alt="Akash seated cross-legged beneath a tree, playing the bansuri in the open air"
           fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_12%]"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
         />
         <div className={heroOverlay} />
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/70 to-transparent" />
