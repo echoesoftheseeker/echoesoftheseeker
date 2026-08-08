@@ -76,9 +76,9 @@ function Home() {
           alt="A seeker walking barefoot along a quiet Goa shoreline at dawn, flute bag over one shoulder"
           className="absolute inset-0 h-full w-full animate-[scale-in_2.4s_ease-out] object-cover object-[58%_42%] motion-reduce:animate-none"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/15 to-ink/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/20 to-ink/45" />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-3xl flex-col items-center justify-end px-6 pb-[16svh] text-center lg:px-10">
+        <div className="relative z-10 mx-auto flex h-full max-w-3xl flex-col items-center justify-start px-6 pt-[16svh] text-center lg:px-10">
           <h1
             className="serif-display animate-[fade-in_1.4s_ease-out_0.2s_both] text-[2.35rem] leading-[1.15] tracking-[-0.015em] text-paper motion-reduce:animate-none sm:text-[3rem] md:text-[3.75rem] lg:text-[4.25rem]"
             style={{ textShadow: "0 2px 30px rgba(0,0,0,0.45)" }}
