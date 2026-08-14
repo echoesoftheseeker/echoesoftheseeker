@@ -3,8 +3,8 @@ import { Page } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
 import hero from "@/assets/hero-beach-dawn.jpg.asset.json";
 import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
-import stayAsset from "@/assets/stay/balcony.jpg.asset.json";
-import soilAsset from "@/assets/soil-green-tray.jpg.asset.json";
+import stayAsset from "@/assets/stay/living-room-open.jpg.asset.json";
+import soilAsset from "@/assets/soil-packaged-microgreens.png.asset.json";
 import journalAsset from "@/assets/journal-desk.jpg.asset.json";
 import aboutAsset from "@/assets/intro-bansuri.jpg.asset.json";
 
