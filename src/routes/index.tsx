@@ -48,14 +48,14 @@ const PATHS = [
     title: "Seekers Stay",
     desc: "A quiet place to rest and reflect, in Ashwem, Goa.",
     img: stayImg,
-    position: "object-center",
+    position: "object-[55%_60%]",
   },
   {
     to: "/seekers-soil",
     title: "Seekers Soil",
     desc: "Growing food, learning from the land, self-reliance.",
     img: soilImg,
-    position: "object-[50%_45%]",
+    position: "object-[50%_55%]",
   },
   {
     to: "/journal",
