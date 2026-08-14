@@ -3,8 +3,8 @@ import { Page } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
 import hero from "@/assets/hero-beach-dawn.jpg.asset.json";
 import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
-import stayAsset from "@/assets/stay/balcony.jpg.asset.json";
-import soilAsset from "@/assets/soil-green-tray.jpg.asset.json";
+import stayAsset from "@/assets/stay/living-room-open.jpg.asset.json";
+import soilAsset from "@/assets/soil-packaged-microgreens.png.asset.json";
 import journalAsset from "@/assets/journal-desk.jpg.asset.json";
 import aboutAsset from "@/assets/intro-bansuri.jpg.asset.json";
 
@@ -48,14 +48,14 @@ const PATHS = [
     title: "Seekers Stay",
     desc: "A quiet place to rest and reflect, in Ashwem, Goa.",
     img: stayImg,
-    position: "object-center",
+    position: "object-[55%_60%]",
   },
   {
     to: "/seekers-soil",
     title: "Seekers Soil",
     desc: "Growing food, learning from the land, self-reliance.",
     img: soilImg,
-    position: "object-[50%_45%]",
+    position: "object-[50%_55%]",
   },
   {
     to: "/journal",
