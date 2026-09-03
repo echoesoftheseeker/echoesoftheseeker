@@ -90,19 +90,21 @@ const STUDIO = [
 
 
 const GALLERY = [
+  { src: bedroomBright.url, alt: "Bright bedroom with white linen and two curtained windows", cat: "Bedroom" },
+  { src: livingRoomOpen.url, alt: "Open living room with wooden sofa and checkered cushions", cat: "Living Room" },
+  { src: diningArea.url, alt: "Dining area with a glass-topped wooden table and four chairs", cat: "Dining" },
+  { src: bedroomStudio.url, alt: "Bedroom with a blue blanket and soft window light", cat: "Bedroom" },
+  { src: staircase.url, alt: "Interior staircase lit by a large arched window", cat: "Interior" },
+  { src: teaAmenity.url, alt: "Shelf with cups, cutlery and a basket of tea and coffee", cat: "Kitchen" },
+  { src: bedroomBlue.url, alt: "Bedroom with blue bedspread and a striped rug", cat: "Bedroom" },
+  { src: kitchen1.url, alt: "Kitchen with garden view", cat: "Kitchen" },
+  { src: balcony.url, alt: "Balcony with a book and morning light", cat: "Balcony" },
   { src: exteriorSide.url, alt: "The building at Seekers Stay, Ashwem", cat: "Exterior" },
   { src: exteriorFront.url, alt: "Front of the building framed by palms", cat: "Exterior" },
-  { src: living1.url, alt: "Living room with wooden furniture", cat: "Living Room" },
-  { src: living2.url, alt: "Apartment living area", cat: "Living Room" },
-  { src: living3.url, alt: "Dining and living area", cat: "Living Room" },
-  { src: bedroom.url, alt: "Bedroom with soft window light", cat: "Bedroom" },
-  { src: kitchen1.url, alt: "Kitchen with garden view", cat: "Kitchen" },
-  { src: kitchen2.url, alt: "A second kitchen space", cat: "Kitchen" },
-  { src: balcony.url, alt: "Balcony with a book and morning light", cat: "Balcony" },
   { src: reception.url, alt: "Reception entrance", cat: "Reception" },
 ];
 
-const CATEGORIES = ["All", "Exterior", "Living Room", "Bedroom", "Kitchen", "Balcony", "Reception"] as const;
+const CATEGORIES = ["All", "Bedroom", "Living Room", "Dining", "Kitchen", "Interior", "Balcony", "Exterior", "Reception"] as const;
 
 const INCLUDED = [
   { Icon: Wifi, text: "WiFi" },
