@@ -150,10 +150,10 @@ function Home() {
         <div className="mx-auto max-w-6xl px-6 pb-28 md:pb-40 lg:px-10 lg:pb-48">
           <Reveal>
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="serif-display text-[1.85rem] tracking-[-0.005em] text-ink md:text-[2.6rem]">
+              <h2 className="serif-display text-[2rem] tracking-[-0.005em] text-ink md:text-[2.9rem]">
                 Four Interconnected Paths
               </h2>
-              <div className="mt-12 flex flex-col items-center gap-2.5 font-serif text-lg text-ink/85 md:text-xl">
+              <div className="mt-12 flex flex-col items-center gap-2.5 font-serif text-xl text-ink/85 md:text-2xl">
                 <p>Music.</p>
                 <p>Place.</p>
                 <p>Land.</p>
