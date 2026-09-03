@@ -26,6 +26,13 @@ import bedroom from "@/assets/stay/bedroom.jpg.asset.json";
 import kitchen1 from "@/assets/stay/kitchen-1.jpg.asset.json";
 import kitchen2 from "@/assets/stay/kitchen-2.jpg.asset.json";
 import balcony from "@/assets/stay/balcony.jpg.asset.json";
+import bedroomBright from "@/assets/stay/bedroom-bright.jpg.asset.json";
+import livingRoomOpen from "@/assets/stay/living-room-open.jpg.asset.json";
+import diningArea from "@/assets/stay/dining-area.jpg.asset.json";
+import bedroomStudio from "@/assets/stay/bedroom-studio.jpg.asset.json";
+import staircase from "@/assets/stay/staircase.jpg.asset.json";
+import teaAmenity from "@/assets/stay/tea-amenity.jpg.asset.json";
+import bedroomBlue from "@/assets/stay/bedroom-blue.jpg.asset.json";
 
 const WHATSAPP_URL =
   "https://wa.me/917027029889?text=Hi%20I'm%20interested%20in%20staying%20at%20Seekers%20Stay.%20Could%20you%20please%20share%20availability%20and%20pricing%3F";
