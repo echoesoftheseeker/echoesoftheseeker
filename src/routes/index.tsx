@@ -102,12 +102,12 @@ function Home() {
       </section>
 
       {/* Why Echoes */}
-      <section className="mx-auto max-w-2xl px-6 py-28 text-center md:py-40 lg:px-10 lg:py-48">
+      <section className="mx-auto max-w-2xl px-6 py-24 text-center md:py-32 lg:px-10 lg:py-36">
         <Reveal>
           <h2 className="serif-display text-[1.85rem] tracking-[-0.005em] text-ink md:text-[2.6rem]">Why Echoes?</h2>
         </Reveal>
         <Reveal delay={150}>
-          <div className="mt-12 space-y-7 font-serif text-[1.15rem] leading-[1.85] text-ink/85 md:mt-14 md:text-[1.35rem] md:leading-[1.85]">
+          <div className="mt-10 space-y-7 font-serif text-[1.3rem] leading-[1.8] text-ink/85 md:mt-12 md:text-[1.5rem] md:leading-[1.8]">
             <p>An echo begins with a sound sent into the unknown.</p>
             <p>Whether it returns is never certain.</p>
             <p>This project is an attempt to keep listening.</p>
