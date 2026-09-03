@@ -279,8 +279,8 @@ function Stay() {
           <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-12">
             <Reveal>
               <StayCard
-                img={living2.url}
-                imgAlt="One bedroom apartment living area"
+                img={bedroomBright.url}
+                imgAlt="Bright bedroom in the one bedroom apartment"
                 name="1 BHK Apartment"
                 features={ONE_BHK}
                 price="₹2,200"
@@ -288,8 +288,8 @@ function Stay() {
             </Reveal>
             <Reveal delay={120}>
               <StayCard
-                img={bedroom.url}
-                imgAlt="Studio apartment interior"
+                img={bedroomStudio.url}
+                imgAlt="Studio apartment bedroom with soft window light"
                 name="Studio Apartment"
                 features={STUDIO}
                 price="₹1,800"
