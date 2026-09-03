@@ -19,13 +19,15 @@ import echoesImg from "@/assets/seeker-clouds.jpg.asset.json";
 import exteriorSide from "@/assets/stay/exterior-side.jpg.asset.json";
 import exteriorFront from "@/assets/stay/exterior-front.jpg.asset.json";
 import reception from "@/assets/stay/reception.jpg.asset.json";
-import living1 from "@/assets/stay/living-1.jpg.asset.json";
-import living2 from "@/assets/stay/living-2.jpg.asset.json";
-import living3 from "@/assets/stay/living-3.jpg.asset.json";
-import bedroom from "@/assets/stay/bedroom.jpg.asset.json";
 import kitchen1 from "@/assets/stay/kitchen-1.jpg.asset.json";
-import kitchen2 from "@/assets/stay/kitchen-2.jpg.asset.json";
 import balcony from "@/assets/stay/balcony.jpg.asset.json";
+import bedroomBright from "@/assets/stay/bedroom-bright.jpg.asset.json";
+import livingRoomOpen from "@/assets/stay/living-room-open.jpg.asset.json";
+import diningArea from "@/assets/stay/dining-area.jpg.asset.json";
+import bedroomStudio from "@/assets/stay/bedroom-studio.jpg.asset.json";
+import staircase from "@/assets/stay/staircase.jpg.asset.json";
+import teaAmenity from "@/assets/stay/tea-amenity.jpg.asset.json";
+import bedroomBlue from "@/assets/stay/bedroom-blue.jpg.asset.json";
 
 const WHATSAPP_URL =
   "https://wa.me/917027029889?text=Hi%20I'm%20interested%20in%20staying%20at%20Seekers%20Stay.%20Could%20you%20please%20share%20availability%20and%20pricing%3F";
@@ -83,19 +85,21 @@ const STUDIO = [
 
 
 const GALLERY = [
+  { src: bedroomBright.url, alt: "Bright bedroom with white linen and two curtained windows", cat: "Bedroom" },
+  { src: livingRoomOpen.url, alt: "Open living room with wooden sofa and checkered cushions", cat: "Living Room" },
+  { src: diningArea.url, alt: "Dining area with a glass-topped wooden table and four chairs", cat: "Dining" },
+  { src: bedroomStudio.url, alt: "Bedroom with a blue blanket and soft window light", cat: "Bedroom" },
+  { src: staircase.url, alt: "Interior staircase lit by a large arched window", cat: "Interior" },
+  { src: teaAmenity.url, alt: "Shelf with cups, cutlery and a basket of tea and coffee", cat: "Kitchen" },
+  { src: bedroomBlue.url, alt: "Bedroom with blue bedspread and a striped rug", cat: "Bedroom" },
+  { src: kitchen1.url, alt: "Kitchen with garden view", cat: "Kitchen" },
+  { src: balcony.url, alt: "Balcony with a book and morning light", cat: "Balcony" },
   { src: exteriorSide.url, alt: "The building at Seekers Stay, Ashwem", cat: "Exterior" },
   { src: exteriorFront.url, alt: "Front of the building framed by palms", cat: "Exterior" },
-  { src: living1.url, alt: "Living room with wooden furniture", cat: "Living Room" },
-  { src: living2.url, alt: "Apartment living area", cat: "Living Room" },
-  { src: living3.url, alt: "Dining and living area", cat: "Living Room" },
-  { src: bedroom.url, alt: "Bedroom with soft window light", cat: "Bedroom" },
-  { src: kitchen1.url, alt: "Kitchen with garden view", cat: "Kitchen" },
-  { src: kitchen2.url, alt: "A second kitchen space", cat: "Kitchen" },
-  { src: balcony.url, alt: "Balcony with a book and morning light", cat: "Balcony" },
   { src: reception.url, alt: "Reception entrance", cat: "Reception" },
 ];
 
-const CATEGORIES = ["All", "Exterior", "Living Room", "Bedroom", "Kitchen", "Balcony", "Reception"] as const;
+const CATEGORIES = ["All", "Bedroom", "Living Room", "Dining", "Kitchen", "Interior", "Balcony", "Exterior", "Reception"] as const;
 
 const INCLUDED = [
   { Icon: Wifi, text: "WiFi" },
@@ -275,8 +279,8 @@ function Stay() {
           <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-12">
             <Reveal>
               <StayCard
-                img={living2.url}
-                imgAlt="One bedroom apartment living area"
+                img={bedroomBright.url}
+                imgAlt="Bright bedroom in the one bedroom apartment"
                 name="1 BHK Apartment"
                 features={ONE_BHK}
                 price="₹2,200"
@@ -284,8 +288,8 @@ function Stay() {
             </Reveal>
             <Reveal delay={120}>
               <StayCard
-                img={bedroom.url}
-                imgAlt="Studio apartment interior"
+                img={bedroomStudio.url}
+                imgAlt="Studio apartment bedroom with soft window light"
                 name="Studio Apartment"
                 features={STUDIO}
                 price="₹1,800"
