@@ -17,6 +17,7 @@ import microgreensImg from "@/assets/soil/IMG_20260616_100131.jpg.asset.json";
 import echoesImg from "@/assets/seeker-clouds.jpg.asset.json";
 
 import exteriorSide from "@/assets/stay/exterior-side.jpg.asset.json";
+void exteriorSide;
 import exteriorFront from "@/assets/stay/exterior-front.jpg.asset.json";
 import reception from "@/assets/stay/reception.jpg.asset.json";
 import kitchen1 from "@/assets/stay/kitchen-1.jpg.asset.json";
@@ -119,7 +120,7 @@ const INCLUDED = [
   { Icon: Droplets, text: "Fresh Towels" },
   { Icon: Sparkles, text: "Weekly Housekeeping" },
   { Icon: WashingMachine, text: "Common Washing Machine" },
-  { Icon: WashingMachine, text: "Laundry facility — available at a nominal charge." },
+  
   { Icon: Droplets, text: "Water Purifier" },
   { Icon: Car, text: "Parking" },
   { Icon: Zap, text: "Power Backup" },
@@ -203,7 +204,7 @@ function Stay() {
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-paper/35 bg-ink/25 px-4 py-1.5 font-serif text-[0.8rem] text-paper/90 backdrop-blur-sm">
               <Leaf size={13} strokeWidth={1.5} className="text-bamboo" />
-              Just a 2-minute walk to Ashwem Beach
+              Just 1 minute from Ashwem Beach
             </span>
           </Reveal>
           <Reveal delay={100}>
@@ -275,7 +276,7 @@ function Stay() {
               <p className="eyebrow mb-3">Available Accommodation</p>
               <ul className="flex flex-col gap-2 font-serif text-[1.05rem] italic text-ink/75 sm:flex-row sm:gap-10">
                 <li>3 × 1 BHK Apartments</li>
-                <li>3 × Studio Apartments</li>
+                <li>2 × Studio Apartments</li>
               </ul>
             </div>
           </Reveal>
