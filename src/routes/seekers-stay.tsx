@@ -28,6 +28,9 @@ import bedroomStudio from "@/assets/stay/bedroom-studio.jpg.asset.json";
 import staircase from "@/assets/stay/staircase.jpg.asset.json";
 import teaAmenity from "@/assets/stay/tea-amenity.jpg.asset.json";
 import bedroomBlue from "@/assets/stay/bedroom-blue.jpg.asset.json";
+import bathroom from "@/assets/stay/bathroom.jpg.asset.json";
+import bedroomKitchenette from "@/assets/stay/bedroom-kitchenette.jpg.asset.json";
+import fishingBoats from "@/assets/stay/nearby-fishing-boats.jpg.asset.json";
 
 const WHATSAPP_URL =
   "https://wa.me/917027029889?text=Hi%20I'm%20interested%20in%20staying%20at%20Seekers%20Stay.%20Could%20you%20please%20share%20availability%20and%20pricing%3F";
@@ -44,7 +47,7 @@ export const Route = createFileRoute("/seekers-stay")({
       {
         name: "description",
         content:
-          "Fully furnished 1 BHK and Studio Apartments a 2-minute walk from Ashwem Beach, Goa. Private kitchen, WiFi, balcony, parking and weekly housekeeping.",
+          "Fully furnished 1 BHK and Studio Apartments just 1 minute from Ashwem Beach, Goa. Private kitchen, WiFi, balcony, parking and weekly housekeeping.",
       },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Seekers Stay | 1 BHK & Studio Apartments in Ashwem, Goa" },
@@ -60,7 +63,7 @@ export const Route = createFileRoute("/seekers-stay")({
 });
 
 const WHY = [
-  { Icon: Waves, text: "2-minute walk to Ashwem Beach" },
+  { Icon: Waves, text: "Just 1 minute from Ashwem Beach" },
   { Icon: Home, text: "Fully Furnished Apartments" },
   { Icon: CookingPot, text: "Private Kitchen" },
   { Icon: Wifi, text: "Free WiFi" },
@@ -86,20 +89,20 @@ const STUDIO = [
 
 const GALLERY = [
   { src: bedroomBright.url, alt: "Bright bedroom with white linen and two curtained windows", cat: "Bedroom" },
+  { src: bedroomKitchenette.url, alt: "Studio bedroom with a kettle, mini fridge and folded towels", cat: "Bedroom" },
+  { src: bedroomBlue.url, alt: "Bedroom with blue bedspread and a striped rug", cat: "Bedroom" },
   { src: livingRoomOpen.url, alt: "Open living room with wooden sofa and checkered cushions", cat: "Living Room" },
   { src: diningArea.url, alt: "Dining area with a glass-topped wooden table and four chairs", cat: "Dining" },
-  { src: bedroomStudio.url, alt: "Bedroom with a blue blanket and soft window light", cat: "Bedroom" },
-  { src: staircase.url, alt: "Interior staircase lit by a large arched window", cat: "Interior" },
-  { src: teaAmenity.url, alt: "Shelf with cups, cutlery and a basket of tea and coffee", cat: "Kitchen" },
-  { src: bedroomBlue.url, alt: "Bedroom with blue bedspread and a striped rug", cat: "Bedroom" },
   { src: kitchen1.url, alt: "Kitchen with garden view", cat: "Kitchen" },
+  { src: teaAmenity.url, alt: "Shelf with cups, cutlery and a basket of tea and coffee", cat: "Kitchen" },
+  { src: bathroom.url, alt: "Bathroom with a glass shower partition and daylight window", cat: "Bathroom" },
+  { src: staircase.url, alt: "Interior staircase lit by a large arched window", cat: "Interior" },
   { src: balcony.url, alt: "Balcony with a book and morning light", cat: "Balcony" },
-  { src: exteriorSide.url, alt: "The building at Seekers Stay, Ashwem", cat: "Exterior" },
   { src: exteriorFront.url, alt: "Front of the building framed by palms", cat: "Exterior" },
   { src: reception.url, alt: "Reception entrance", cat: "Reception" },
 ];
 
-const CATEGORIES = ["All", "Bedroom", "Living Room", "Dining", "Kitchen", "Interior", "Balcony", "Exterior", "Reception"] as const;
+const CATEGORIES = ["All", "Bedroom", "Living Room", "Dining", "Kitchen", "Bathroom", "Interior", "Balcony", "Exterior", "Reception"] as const;
 
 const INCLUDED = [
   { Icon: Wifi, text: "WiFi" },
@@ -116,6 +119,7 @@ const INCLUDED = [
   { Icon: Droplets, text: "Fresh Towels" },
   { Icon: Sparkles, text: "Weekly Housekeeping" },
   { Icon: WashingMachine, text: "Common Washing Machine" },
+  { Icon: WashingMachine, text: "Laundry facility — available at a nominal charge." },
   { Icon: Droplets, text: "Water Purifier" },
   { Icon: Car, text: "Parking" },
   { Icon: Zap, text: "Power Backup" },
@@ -132,7 +136,7 @@ const NEARBY = [
 const GOOD_TO_KNOW = [
   "Flexible check-in (subject to availability)",
   "Check-out before 12 PM",
-  "Breakfast & home-style meals available on request",
+  "Laundry facility — available at a nominal charge.",
   "Weekly housekeeping",
   "Parking available",
   "Power backup",
