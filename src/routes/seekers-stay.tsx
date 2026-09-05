@@ -337,6 +337,19 @@ function Stay() {
               lede="A few of the places we send guests to, all within a short walk or ride."
             />
           </Reveal>
+          <Reveal delay={80}>
+            <figure className="mt-8">
+              <img
+                src={fishingBoats.url}
+                alt="Fishing boats resting on the sand at Ashwem, palms and mist along the shoreline"
+                loading="lazy"
+                className="aspect-[16/9] w-full object-cover object-[60%_60%]"
+              />
+              <figcaption className="mt-3 font-serif text-[0.9rem] italic text-ink/65">
+                Fishing boats on the sand, a short walk from the door.
+              </figcaption>
+            </figure>
+          </Reveal>
           <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-7 lg:grid-cols-4">
             {NEARBY.map(({ Icon, title, items }, i) => (
               <Reveal key={title} delay={(i % 4) * 50}>
