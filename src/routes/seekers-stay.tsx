@@ -88,7 +88,7 @@ const STUDIO = [
 ];
 
 
-const GALLERY = [
+const GALLERY: { src: string; alt: string; cat: string; pos?: string }[] = [
   { src: bedroomBright.url, alt: "Bright bedroom with white linen and two curtained windows", cat: "Bedroom" },
   { src: bedroomKitchenette.url, alt: "Studio bedroom with a kettle, mini fridge and folded towels", cat: "Bedroom" },
   { src: bedroomBlue.url, alt: "Bedroom with blue bedspread and a striped rug", cat: "Bedroom" },
@@ -96,7 +96,7 @@ const GALLERY = [
   { src: diningArea.url, alt: "Dining area with a glass-topped wooden table and four chairs", cat: "Dining" },
   { src: kitchen1.url, alt: "Kitchen with garden view", cat: "Kitchen" },
   { src: teaAmenity.url, alt: "Shelf with cups, cutlery and a basket of tea and coffee", cat: "Kitchen" },
-  { src: bathroom.url, alt: "Bathroom with a glass shower partition and daylight window", cat: "Bathroom" },
+  { src: bathroom.url, alt: "Bathroom with a glass shower partition and daylight window", cat: "Bathroom", pos: "object-[62%_28%]" },
   { src: staircase.url, alt: "Interior staircase lit by a large arched window", cat: "Interior" },
   { src: balcony.url, alt: "Balcony with a book and morning light", cat: "Balcony" },
   { src: exteriorFront.url, alt: "Front of the building framed by palms", cat: "Exterior" },
