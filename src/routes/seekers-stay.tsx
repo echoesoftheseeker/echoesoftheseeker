@@ -728,7 +728,7 @@ function GallerySection() {
                     src={img.src}
                     alt={img.alt}
                     loading="lazy"
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-[900ms] ease-out hover:scale-[1.03]"
+                    className={`aspect-[4/3] w-full object-cover ${img.pos ?? "object-center"} transition-transform duration-[900ms] ease-out hover:scale-[1.03]`}
                   />
                 </button>
               </figure>
