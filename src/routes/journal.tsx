@@ -64,6 +64,12 @@ const FIELD_NOTES = [
   },
 ];
 
+const ESSAYS = [
+  { title: "On Listening as a Practice", read: "8 min read", body: "Music begins long before sound. It begins in attention. A note about how a single tone, held over weeks, has changed the way I notice the wind, footsteps, and silence between sentences." },
+  { title: "What the Land Has Been Teaching Me", read: "12 min read", body: "Microgreens, monsoon, and the slow argument with control. Notes from a year of stepping toward food I could grow myself." },
+  { title: "Goa, Slowly", read: "10 min read", body: "Not the Goa of postcards. The Goa of an old well, a neighbour's mango, and afternoons too hot for anything but the bansuri." },
+];
+
 function Journal() {
   return (
     <Page>

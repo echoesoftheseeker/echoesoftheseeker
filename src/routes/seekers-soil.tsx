@@ -24,13 +24,13 @@ const WA_EXPERIENCE =
 export const Route = createFileRoute("/seekers-soil")({
   head: () => ({
     meta: [
-      { title: "Seeker's Soil — Microgreens Grown in Goa" },
+      { title: "Seekers Soil — Microgreens Grown in Goa" },
       {
         name: "description",
         content:
           "A visual journal of growing microgreens in Goa — fresh weekly harvests, beginner workshops, and slow living experiences at Seekers Stay.",
       },
-      { property: "og:title", content: "Seeker's Soil — Microgreens Grown in Goa" },
+      { property: "og:title", content: "Seekers Soil — Microgreens Grown in Goa" },
       { property: "og:description", content: "Fresh harvests, workshops, and slow living experiences." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -104,7 +104,7 @@ function Soil() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/40 to-ink/80" />
         <div className="relative z-10 mx-auto flex min-h-[80svh] max-w-5xl items-end px-6 py-14 lg:px-10 lg:py-24">
           <div className="max-w-2xl text-paper">
-            <p className="eyebrow text-paper/70">Seeker's Soil</p>
+            <p className="eyebrow text-paper/70">Seekers Soil</p>
             <h1 className="serif-display mt-4 text-[2.6rem] leading-[1.05] md:text-[4.5rem]">Learning from the land.</h1>
             <p className="mt-6 max-w-xl text-[1.02rem] leading-[1.8] text-paper/90 md:text-[1.12rem]">
               Microgreens grown slowly in Goa. Seed to harvest, documented.
@@ -174,7 +174,7 @@ function Soil() {
           <figure>
             <img
               src={packaged.url}
-              alt="Two bags of Seeker's Soil microgreens with a hand-stamped kraft card"
+              alt="Two bags of Seekers Soil microgreens with a hand-stamped kraft card"
               loading="lazy"
               className="aspect-[4/5] w-full object-cover md:aspect-[4/3]"
             />
@@ -291,7 +291,7 @@ function Soil() {
       <section>
         <div className="mx-auto max-w-3xl px-6 py-12 text-center md:py-16 lg:px-10">
           <p className="font-serif text-[1.15rem] italic leading-[1.7] text-ink/75 md:text-[1.35rem]">
-            Seeker's Soil is not a finished project. Some experiments succeed, others fail. Both are welcome.
+            Seekers Soil is not a finished project. Some experiments succeed, others fail. Both are welcome.
           </p>
         </div>
       </section>
