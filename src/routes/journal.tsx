@@ -57,7 +57,7 @@ const FIELD_NOTES = [
   {
     img: pilgrimageAsset.url,
     alt: "A wrapped figure with a walking staff standing above a sea of clouds at first light",
-    position: "object-[45%_50%]",
+    position: "object-[32%_35%]",
     title: "Pilgrimage I",
     caption: "Above the clouds",
     body: "The climb ended somewhere above the weather. Cold, quiet, and worth every hour of the dark.",
