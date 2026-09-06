@@ -6,6 +6,7 @@ import driftwoodAsset from "@/assets/journal/journal-driftwood.jpg.asset.json";
 import potteryAsset from "@/assets/journal/journal-pottery.jpg.asset.json";
 import lookingOutAsset from "@/assets/journal/journal-looking-out.jpg.asset.json";
 import pilgrimageAsset from "@/assets/journal/journal-pilgrimage.jpg.asset.json";
+import afterRainAsset from "@/assets/journal/journal-after-rain.jpg.asset.json";
 const journalImg = journalAsset.url;
 
 export const Route = createFileRoute("/journal")({
@@ -29,6 +30,14 @@ const FIELD_NOTES = [
     title: "The Walk",
     caption: "Ashwem",
     body: "Most mornings begin this way. The footprints stay for a while, then the sea takes them back.",
+  },
+  {
+    img: afterRainAsset.url,
+    alt: "Raindrops on a window, palm trees and the sea beyond, sun low through a grey sky",
+    position: "object-[50%_40%]",
+    title: "After Rain",
+    caption: "Ashwem",
+    body: "The rain left as suddenly as it came. Everything stood wet and shining, and the sea went back to being the sea.",
   },
   {
     img: driftwoodAsset.url,
