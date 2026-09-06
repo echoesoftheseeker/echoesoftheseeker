@@ -1,15 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Page, PageHero } from "@/components/site-layout";
 import journalAsset from "@/assets/journal-desk.jpg.asset.json";
+import walkAsset from "@/assets/journal/journal-walk.jpg.asset.json";
+import driftwoodAsset from "@/assets/journal/journal-driftwood.jpg.asset.json";
+import potteryAsset from "@/assets/journal/journal-pottery.jpg.asset.json";
+import lookingOutAsset from "@/assets/journal/journal-looking-out.jpg.asset.json";
+import pilgrimageAsset from "@/assets/journal/journal-pilgrimage.jpg.asset.json";
 const journalImg = journalAsset.url;
 
 export const Route = createFileRoute("/journal")({
   head: () => ({
     meta: [
       { title: "Journal — Echoes of the Seeker" },
-      { name: "description", content: "Field notes, essays, and reflections from the path." },
+      { name: "description", content: "A visual field journal — photographs, field notes, essays and reflections from the path." },
       { property: "og:title", content: "Journal — Echoes of the Seeker" },
-      { property: "og:description", content: "Reflections, observations, essays, and field notes." },
+      { property: "og:description", content: "Photographs, reflections, observations, essays, and field notes." },
       { property: "og:image", content: journalImg },
     ],
   }),
@@ -17,9 +22,46 @@ export const Route = createFileRoute("/journal")({
 });
 
 const FIELD_NOTES = [
-  { date: "Goa · Today", title: "A heron stood in the paddy field at dawn", body: "It didn't move for the longest time. Then it did. That was the whole lesson." },
-  { date: "Practice · This week", title: "Returning to the same raga, again", body: "Each time the same scale opens a different door. The notes are unchanged. I am not." },
-  { date: "Walk · Yesterday", title: "Mango leaves, the colour of old paper", body: "Pressed between two pages of the notebook. A way of remembering without writing." },
+  {
+    img: walkAsset.url,
+    alt: "A figure walking along the wet edge of a beach at low sun, a line of footprints behind him",
+    position: "object-[50%_45%]",
+    title: "The Walk",
+    caption: "Ashwem",
+    body: "Most mornings begin this way. The footprints stay for a while, then the sea takes them back.",
+  },
+  {
+    img: driftwoodAsset.url,
+    alt: "A large piece of bleached driftwood lying on wet sand with the sea behind it",
+    position: "object-[50%_55%]",
+    title: "Things the Sea Leaves Behind",
+    caption: "Ashwem",
+    body: "Driftwood, arriving from somewhere with no name. Shaped entirely by what it passed through.",
+  },
+  {
+    img: potteryAsset.url,
+    alt: "Sitting at a potter's wheel, hands wet with clay, mountains and sky through the window",
+    position: "object-[55%_40%]",
+    title: "Learning With the Hands",
+    caption: "At the wheel",
+    body: "The clay answers only to attention. Too much force and it leaves the centre. Too little and nothing rises.",
+  },
+  {
+    img: lookingOutAsset.url,
+    alt: "Standing on a rock ledge looking out over a lake surrounded by dry hills",
+    position: "object-[50%_45%]",
+    title: "Looking Out",
+    caption: "March 2025",
+    body: "Water held quietly between hills. Standing there, there was nothing to add to it.",
+  },
+  {
+    img: pilgrimageAsset.url,
+    alt: "A wrapped figure with a walking staff standing above a sea of clouds at first light",
+    position: "object-[32%_35%]",
+    title: "Pilgrimage I",
+    caption: "Above the clouds",
+    body: "The climb ended somewhere above the weather. Cold, quiet, and worth every hour of the dark.",
+  },
 ];
 
 const ESSAYS = [
@@ -40,19 +82,27 @@ function Journal() {
       <section className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
         <div className="mb-10 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between md:mb-12">
           <h2 className="serif-display text-[1.65rem] tracking-[-0.005em] text-ink md:text-[2.25rem]">Field Notes</h2>
-          <p className="eyebrow">Short reflections</p>
+          <p className="eyebrow">Photographs & short reflections</p>
         </div>
-        <div className="grid gap-10 md:grid-cols-3 md:gap-x-12">
+        <div className="grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {FIELD_NOTES.map((n) => (
-            <article key={n.title} className="group flex flex-col">
-              <p className="eyebrow mb-3">{n.date}</p>
+            <article key={n.title} className="flex flex-col">
+              <div className="overflow-hidden bg-secondary">
+                <img
+                  src={n.img}
+                  alt={n.alt}
+                  loading="lazy"
+                  className={`aspect-[4/5] w-full object-cover ${n.position}`}
+                />
+              </div>
+              <p className="eyebrow mt-5 mb-2">{n.caption}</p>
               <h3 className="font-serif text-[1.2rem] leading-snug text-ink md:text-[1.35rem]">{n.title}</h3>
               <p className="mt-3 max-w-prose text-[0.95rem] leading-[1.75] text-ink/70">{n.body}</p>
-              <div className="rule mt-6" />
             </article>
           ))}
         </div>
       </section>
+
 
       <section className="border-t border-rule/70 bg-secondary/40">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">

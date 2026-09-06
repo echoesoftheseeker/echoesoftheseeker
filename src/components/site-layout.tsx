@@ -100,7 +100,7 @@ export function SiteFooter() {
   ] as const;
   const more = [
     { to: "/seekers-stay", label: "Seekers Stay" },
-    { to: "/seekers-soil", label: "Seeker's Soil" },
+    { to: "/seekers-soil", label: "Seekers Soil" },
     { to: "/bansuris", label: "Bansuris" },
     { to: "/contact", label: "Contact" },
   ] as const;
