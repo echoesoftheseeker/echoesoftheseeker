@@ -343,7 +343,7 @@ function Stay() {
                 src={fishingBoats.url}
                 alt="Fishing boats resting on the sand at Ashwem, palms and mist along the shoreline"
                 loading="lazy"
-                className="aspect-[16/9] w-full object-cover object-[60%_60%]"
+                className="aspect-[16/9] w-full object-cover object-[62%_82%]"
               />
               <figcaption className="mt-3 font-serif text-[0.9rem] italic text-ink/65">
                 Fishing boats on the sand, a short walk from the door.
