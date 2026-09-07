@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page } from "@/components/site-layout";
 import bookImg from "@/assets/book-chai-bansuri.jpg.asset.json";
+import meditationImg from "@/assets/book/book-meditation-pond.jpg.asset.json";
 
 export const Route = createFileRoute("/the-book")({
   head: () => ({
@@ -9,7 +10,8 @@ export const Route = createFileRoute("/the-book")({
       { name: "description", content: "A manuscript still being lived. Notes from a journey through seeking, simplicity, music, travel, and ordinary days." },
       { property: "og:title", content: "The Book — Echoes of the Seeker" },
       { property: "og:description", content: "A manuscript still being lived." },
-      { property: "og:image", content: bookImg.url },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Book,
@@ -69,6 +71,18 @@ function Book() {
           <p>Some pages already exist.</p>
           <p>Many are still being lived.</p>
         </div>
+      </section>
+
+      <section className="border-t border-rule/70">
+        <figure className="mx-auto max-w-4xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+          <img
+            src={meditationImg.url}
+            alt="Akash meditating beside a pond with misty mountains beyond"
+            loading="lazy"
+            className="h-auto w-full"
+          />
+          <figcaption className="mt-4 font-serif text-sm italic text-ink/60">A manuscript still being lived.</figcaption>
+        </figure>
       </section>
 
       {/* Themes */}
