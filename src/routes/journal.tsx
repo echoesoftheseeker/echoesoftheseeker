@@ -114,7 +114,7 @@ function Journal() {
                 <div>
                   <h3 className="font-serif text-[1.5rem] leading-tight text-ink md:text-[2rem]">{essay.title}</h3>
                   <p className="mt-4 max-w-[62ch] text-[1rem] leading-[1.8] text-ink/75 md:text-[1.05rem]">{essay.excerpt}</p>
-                  <Link to="/journal/$slug" params={{ slug: essay.slug }} className="eyebrow mt-5 inline-block text-bamboo transition-colors hover:text-forest">Read essay →</Link>
+                  <Link to="/essays/$slug" params={{ slug: essay.slug }} className="eyebrow mt-5 inline-block text-bamboo transition-colors hover:text-forest">Read essay →</Link>
                 </div>
               </article>
             ))}
