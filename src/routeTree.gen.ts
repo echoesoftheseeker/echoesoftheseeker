@@ -20,7 +20,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BansurisRouteImport } from './routes/bansuris'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
+import { Route as EssaysSlugRouteImport } from './routes/essays.$slug'
 
 const TheBookRoute = TheBookRouteImport.update({
   id: '/the-book',
@@ -77,10 +77,10 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const JournalSlugRoute = JournalSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => JournalRoute,
+const EssaysSlugRoute = EssaysSlugRouteImport.update({
+  id: '/essays/$slug',
+  path: '/essays/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -88,28 +88,28 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/bansuris': typeof BansurisRoute
   '/contact': typeof ContactRoute
-  '/journal': typeof JournalRouteWithChildren
+  '/journal': typeof JournalRoute
   '/learn-bansuri': typeof LearnBansuriRoute
   '/seeker-letter': typeof SeekerLetterRoute
   '/seekers-soil': typeof SeekersSoilRoute
   '/seekers-stay': typeof SeekersStayRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/the-book': typeof TheBookRoute
-  '/journal/$slug': typeof JournalSlugRoute
+  '/essays/$slug': typeof EssaysSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/bansuris': typeof BansurisRoute
   '/contact': typeof ContactRoute
-  '/journal': typeof JournalRouteWithChildren
+  '/journal': typeof JournalRoute
   '/learn-bansuri': typeof LearnBansuriRoute
   '/seeker-letter': typeof SeekerLetterRoute
   '/seekers-soil': typeof SeekersSoilRoute
   '/seekers-stay': typeof SeekersStayRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/the-book': typeof TheBookRoute
-  '/journal/$slug': typeof JournalSlugRoute
+  '/essays/$slug': typeof EssaysSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -117,14 +117,14 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/bansuris': typeof BansurisRoute
   '/contact': typeof ContactRoute
-  '/journal': typeof JournalRouteWithChildren
+  '/journal': typeof JournalRoute
   '/learn-bansuri': typeof LearnBansuriRoute
   '/seeker-letter': typeof SeekerLetterRoute
   '/seekers-soil': typeof SeekersSoilRoute
   '/seekers-stay': typeof SeekersStayRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/the-book': typeof TheBookRoute
-  '/journal/$slug': typeof JournalSlugRoute
+  '/essays/$slug': typeof EssaysSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -140,7 +140,7 @@ export interface FileRouteTypes {
     | '/seekers-stay'
     | '/sitemap.xml'
     | '/the-book'
-    | '/journal/$slug'
+    | '/essays/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -154,7 +154,7 @@ export interface FileRouteTypes {
     | '/seekers-stay'
     | '/sitemap.xml'
     | '/the-book'
-    | '/journal/$slug'
+    | '/essays/$slug'
   id:
     | '__root__'
     | '/'
@@ -168,7 +168,7 @@ export interface FileRouteTypes {
     | '/seekers-stay'
     | '/sitemap.xml'
     | '/the-book'
-    | '/journal/$slug'
+    | '/essays/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -176,13 +176,14 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BansurisRoute: typeof BansurisRoute
   ContactRoute: typeof ContactRoute
-  JournalRoute: typeof JournalRouteWithChildren
+  JournalRoute: typeof JournalRoute
   LearnBansuriRoute: typeof LearnBansuriRoute
   SeekerLetterRoute: typeof SeekerLetterRoute
   SeekersSoilRoute: typeof SeekersSoilRoute
   SeekersStayRoute: typeof SeekersStayRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TheBookRoute: typeof TheBookRoute
+  EssaysSlugRoute: typeof EssaysSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -264,39 +265,29 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/journal/$slug': {
-      id: '/journal/$slug'
-      path: '/$slug'
-      fullPath: '/journal/$slug'
-      preLoaderRoute: typeof JournalSlugRouteImport
-      parentRoute: typeof JournalRoute
+    '/essays/$slug': {
+      id: '/essays/$slug'
+      path: '/essays/$slug'
+      fullPath: '/essays/$slug'
+      preLoaderRoute: typeof EssaysSlugRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface JournalRouteChildren {
-  JournalSlugRoute: typeof JournalSlugRoute
-}
-
-const JournalRouteChildren: JournalRouteChildren = {
-  JournalSlugRoute: JournalSlugRoute,
-}
-
-const JournalRouteWithChildren =
-  JournalRoute._addFileChildren(JournalRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BansurisRoute: BansurisRoute,
   ContactRoute: ContactRoute,
-  JournalRoute: JournalRouteWithChildren,
+  JournalRoute: JournalRoute,
   LearnBansuriRoute: LearnBansuriRoute,
   SeekerLetterRoute: SeekerLetterRoute,
   SeekersSoilRoute: SeekersSoilRoute,
   SeekersStayRoute: SeekersStayRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TheBookRoute: TheBookRoute,
+  EssaysSlugRoute: EssaysSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
