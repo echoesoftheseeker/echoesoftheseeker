@@ -128,9 +128,18 @@ function Journal() {
           />
         </figure>
       </section>
-
-
-
+      {BOOK_EXCERPT.length > 0 && (
+        <section className="border-t border-rule/70">
+          <div className="mx-auto max-w-2xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+            <p className="eyebrow">From the Book</p>
+            <p className="mt-3 font-serif text-[1.1rem] italic text-ink/65">A manuscript still being lived.</p>
+            <div className="mt-8 space-y-5 font-serif text-[1.15rem] leading-[1.8] text-ink/80 md:text-[1.3rem]">
+              {BOOK_EXCERPT.map((p, i) => <p key={i}>{p}</p>)}
+            </div>
+            <Link to="/the-book" className="eyebrow mt-8 inline-block text-bamboo transition-colors hover:text-forest">Read more about the book →</Link>
+          </div>
+        </section>
+      )}
 
       <section className="border-t border-rule/70 bg-secondary/40">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
