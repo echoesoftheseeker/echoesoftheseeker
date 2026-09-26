@@ -8,6 +8,7 @@ import potteryAsset from "@/assets/journal/journal-pottery.jpg.asset.json";
 import lookingOutAsset from "@/assets/journal/journal-looking-out.jpg.asset.json";
 import pilgrimageAsset from "@/assets/journal/journal-pilgrimage.jpg.asset.json";
 import afterRainAsset from "@/assets/journal/journal-after-rain.jpg.asset.json";
+import roadsAsset from "@/assets/journal/roads-ive-ridden.png.asset.json";
 const journalImg = journalAsset.url;
 
 export const Route = createFileRoute("/journal")({
@@ -87,13 +88,38 @@ function Journal() {
           {FIELD_NOTES.map((n) => (
             <article key={n.title} className="flex flex-col">
               <img src={n.img} alt={n.alt} loading="lazy" className="h-auto w-full" />
-              {n.caption && <p className="eyebrow mt-5 mb-2 whitespace-pre-line leading-relaxed">{n.caption}</p>}
-              <h3 className="font-serif text-[1.2rem] leading-snug text-ink md:text-[1.35rem]">{n.title}</h3>
+              {n.caption && <p className="eyebrow mt-3 mb-1.5 whitespace-pre-line leading-relaxed sm:mt-5 sm:mb-2">{n.caption}</p>}
+              <h3 className={`font-serif text-[1.2rem] leading-snug text-ink md:text-[1.35rem] ${n.caption ? "" : "mt-3 sm:mt-5"}`}>{n.title}</h3>
               <p className="mt-3 max-w-prose whitespace-pre-line text-[0.95rem] leading-[1.75] text-ink/70">{n.body}</p>
             </article>
           ))}
         </div>
       </section>
+
+      <section className="border-t border-rule/70">
+        <div className="mx-auto max-w-2xl px-6 pt-16 md:pt-20 lg:px-10 lg:pt-24">
+          <p className="eyebrow">The Traveller</p>
+          <div className="mt-6 space-y-5 text-[1.02rem] leading-[1.85] text-ink/80 md:text-[1.1rem]">
+            <p className="font-serif text-[1.35rem] leading-snug text-ink md:text-[1.6rem]">
+              I have always understood places through the road that leads to them.
+            </p>
+            <p>Some journeys were on motorcycles. Some by car. Some began with a flight and continued on a rented bike or a local road.</p>
+            <p>I've crossed mountains, forests, deserts and coastlines. I've travelled towards temples, lakes, villages and borders. Sometimes I was looking for a place. Sometimes I was simply looking for what the journey might change in me.</p>
+            <p>I don't think of myself as a traveller who collects destinations.</p>
+            <p className="font-serif italic text-ink/75">I think of travel as another way of paying attention.</p>
+          </div>
+        </div>
+        <figure className="mx-auto max-w-7xl px-3 py-14 sm:px-6 md:py-20 lg:px-10 lg:py-24">
+          <img
+            src={roadsAsset.url}
+            alt="The Roads I've Ridden — Akash seated beside his motorcycle on a Ladakh road, with a map of journeys across India and Myanmar"
+            loading="lazy"
+            className="h-auto w-full"
+          />
+        </figure>
+      </section>
+
+
 
 
       <section className="border-t border-rule/70 bg-secondary/40">
