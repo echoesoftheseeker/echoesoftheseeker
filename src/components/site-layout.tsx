@@ -5,13 +5,10 @@ import { Instagram, Youtube, Facebook } from "lucide-react";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
-  { to: "/journal", label: "Journal" },
-  { to: "/learn-bansuri", label: "Learn Bansuri" },
-  { to: "/bansuris", label: "Bansuris" },
-  { to: "/seekers-soil", label: "Seekers Soil" },
-  { to: "/seekers-stay", label: "Seekers Stay" },
-  { to: "/the-book", label: "The Book" },
-  { to: "/contact", label: "Contact" },
+  { to: "/learn-bansuri", label: "Bansuri" },
+  { to: "/seekers-stay", label: "Stay" },
+  { to: "/seekers-soil", label: "Soil" },
+  { to: "/the-book", label: "Book" },
 ] as const;
 
 
@@ -101,7 +98,9 @@ export function SiteFooter() {
   const more = [
     { to: "/seekers-stay", label: "Seekers Stay" },
     { to: "/seekers-soil", label: "Seekers Soil" },
+    { to: "/the-book", label: "The Book" },
     { to: "/bansuris", label: "Bansuris" },
+    { to: "/seeker-letter", label: "Seeker Letter" },
     { to: "/contact", label: "Contact" },
   ] as const;
 
