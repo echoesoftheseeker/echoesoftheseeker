@@ -58,7 +58,7 @@ const FIELD_NOTES = [
     img: lookingOutAsset.url,
     alt: "Standing on a rock ledge looking out over a lake surrounded by dry hills",
     title: "Looking Out",
-    caption: "Rih Dil · Myanmar\nMarch 2025",
+    caption: "Reh Dil Lake · Myanmar\nMarch 2025",
     body: "Water held quietly between hills.\n\nStanding there, there was nothing to add to it.\n\nOnly the strange feeling that sometimes looking is enough.",
   },
   {
@@ -68,7 +68,17 @@ const FIELD_NOTES = [
     caption: "Velliangiri Hills · Coimbatore",
     body: "The climb ended somewhere above the weather.\n\nCold, quiet, and worth every hour of the dark.\n\nSome journeys are difficult to explain once they are over.",
   },
+  {
+    img: "",
+    alt: "",
+    title: "Pilgrimage II",
+    caption: "Gurgaon → Goa · by motorcycle\n2026",
+    body: "More than 3,000 km alone on the V-Strom, from Gurgaon down to Goa.\n\nMaheshwar, then Omkareshwar. Ellora, then Grishneshwar. Trimbakeshwar. Bhimashankar. Then the long descent through Amboli towards the sea.\n\nFive Jyotirlingas along the way — Mahakaleshwar at Ujjain, Omkareshwar, Grishneshwar near Ellora, Trimbakeshwar near Nashik, and Bhimashankar.\n\nThe temples were the reason for leaving.\n\nThe road in between was where most of the pilgrimage happened.",
+  },
 ];
+
+// Paste the genuine manuscript passage here (Surya Kund / Krishna tune). Section stays hidden while empty.
+const BOOK_EXCERPT: string[] = [];
 
 function Journal() {
   return (
@@ -87,7 +97,7 @@ function Journal() {
         <div className="grid items-start gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {FIELD_NOTES.map((n) => (
             <article key={n.title} className="flex flex-col">
-              <img src={n.img} alt={n.alt} loading="lazy" className="h-auto w-full" />
+              {n.img ? <img src={n.img} alt={n.alt} loading="lazy" className="h-auto w-full" /> : <div className="h-px w-10 bg-bamboo/70" aria-hidden />}
               {n.caption && <p className="eyebrow mt-3 mb-1.5 whitespace-pre-line leading-relaxed sm:mt-5 sm:mb-2">{n.caption}</p>}
               <h3 className={`font-serif text-[1.2rem] leading-snug text-ink md:text-[1.35rem] ${n.caption ? "" : "mt-3 sm:mt-5"}`}>{n.title}</h3>
               <p className="mt-3 max-w-prose whitespace-pre-line text-[0.95rem] leading-[1.75] text-ink/70">{n.body}</p>
