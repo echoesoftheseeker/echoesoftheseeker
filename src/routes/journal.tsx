@@ -58,7 +58,7 @@ const FIELD_NOTES = [
     img: lookingOutAsset.url,
     alt: "Standing on a rock ledge looking out over a lake surrounded by dry hills",
     title: "Looking Out",
-    caption: "Rih Dil · Myanmar\nMarch 2025",
+    caption: "Reh Dil Lake · Myanmar\nMarch 2025",
     body: "Water held quietly between hills.\n\nStanding there, there was nothing to add to it.\n\nOnly the strange feeling that sometimes looking is enough.",
   },
   {
@@ -68,7 +68,17 @@ const FIELD_NOTES = [
     caption: "Velliangiri Hills · Coimbatore",
     body: "The climb ended somewhere above the weather.\n\nCold, quiet, and worth every hour of the dark.\n\nSome journeys are difficult to explain once they are over.",
   },
+  {
+    img: "",
+    alt: "",
+    title: "Pilgrimage II",
+    caption: "Gurgaon → Goa · by motorcycle\n2026",
+    body: "More than 3,000 km alone on the V-Strom, from Gurgaon down to Goa.\n\nMaheshwar, then Omkareshwar. Ellora, then Grishneshwar. Trimbakeshwar. Bhimashankar. Then the long descent through Amboli towards the sea.\n\nFive Jyotirlingas along the way — Mahakaleshwar at Ujjain, Omkareshwar, Grishneshwar near Ellora, Trimbakeshwar near Nashik, and Bhimashankar.\n\nThe temples were the reason for leaving.\n\nThe road in between was where most of the pilgrimage happened.",
+  },
 ];
+
+// Paste the genuine manuscript passage here (Surya Kund / Krishna tune). Section stays hidden while empty.
+const BOOK_EXCERPT: string[] = [];
 
 function Journal() {
   return (
@@ -87,7 +97,7 @@ function Journal() {
         <div className="grid items-start gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {FIELD_NOTES.map((n) => (
             <article key={n.title} className="flex flex-col">
-              <img src={n.img} alt={n.alt} loading="lazy" className="h-auto w-full" />
+              {n.img ? <img src={n.img} alt={n.alt} loading="lazy" className="h-auto w-full" /> : <div className="h-px w-10 bg-bamboo/70" aria-hidden />}
               {n.caption && <p className="eyebrow mt-3 mb-1.5 whitespace-pre-line leading-relaxed sm:mt-5 sm:mb-2">{n.caption}</p>}
               <h3 className={`font-serif text-[1.2rem] leading-snug text-ink md:text-[1.35rem] ${n.caption ? "" : "mt-3 sm:mt-5"}`}>{n.title}</h3>
               <p className="mt-3 max-w-prose whitespace-pre-line text-[0.95rem] leading-[1.75] text-ink/70">{n.body}</p>
@@ -118,9 +128,18 @@ function Journal() {
           />
         </figure>
       </section>
-
-
-
+      {BOOK_EXCERPT.length > 0 && (
+        <section className="border-t border-rule/70">
+          <div className="mx-auto max-w-2xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
+            <p className="eyebrow">From the Book</p>
+            <p className="mt-3 font-serif text-[1.1rem] italic text-ink/65">A manuscript still being lived.</p>
+            <div className="mt-8 space-y-5 font-serif text-[1.15rem] leading-[1.8] text-ink/80 md:text-[1.3rem]">
+              {BOOK_EXCERPT.map((p, i) => <p key={i}>{p}</p>)}
+            </div>
+            <Link to="/the-book" className="eyebrow mt-8 inline-block text-bamboo transition-colors hover:text-forest">Read more about the book →</Link>
+          </div>
+        </section>
+      )}
 
       <section className="border-t border-rule/70 bg-secondary/40">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
@@ -145,6 +164,21 @@ function Journal() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-rule/70">
+        <div className="mx-auto max-w-xl px-6 py-16 text-center md:py-20 lg:px-10 lg:py-24">
+          <p className="eyebrow">The Seeker Letter</p>
+          <p className="mt-4 font-serif text-[1.5rem] leading-snug text-ink md:text-[1.9rem]">A quiet letter from the road.</p>
+          <p className="mt-4 text-[0.98rem] leading-[1.75] text-ink/70">Occasional notes on music, travel, nature, practice, and the things I'm still learning.</p>
+          <form className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-end" onSubmit={(e) => e.preventDefault()}>
+            <label className="flex-1 text-left">
+              <span className="sr-only">Your email address</span>
+              <input type="email" required placeholder="Your email address" className="w-full border-b border-ink/30 bg-transparent py-3 outline-none placeholder:text-ink/40 focus:border-bamboo" />
+            </label>
+            <button className="rounded-full bg-ink px-6 py-3 text-xs uppercase tracking-[0.22em] text-paper transition-colors hover:bg-forest">Join the Seeker Letter →</button>
+          </form>
         </div>
       </section>
     </Page>
