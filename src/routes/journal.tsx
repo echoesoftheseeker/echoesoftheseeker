@@ -166,6 +166,21 @@ function Journal() {
           </div>
         </div>
       </section>
+
+      <section className="border-t border-rule/70">
+        <div className="mx-auto max-w-xl px-6 py-16 text-center md:py-20 lg:px-10 lg:py-24">
+          <p className="eyebrow">The Seeker Letter</p>
+          <p className="mt-4 font-serif text-[1.5rem] leading-snug text-ink md:text-[1.9rem]">A quiet letter from the road.</p>
+          <p className="mt-4 text-[0.98rem] leading-[1.75] text-ink/70">Occasional notes on music, travel, nature, practice, and the things I'm still learning.</p>
+          <form className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-end" onSubmit={(e) => e.preventDefault()}>
+            <label className="flex-1 text-left">
+              <span className="sr-only">Your email address</span>
+              <input type="email" required placeholder="Your email address" className="w-full border-b border-ink/30 bg-transparent py-3 outline-none placeholder:text-ink/40 focus:border-bamboo" />
+            </label>
+            <button className="rounded-full bg-ink px-6 py-3 text-xs uppercase tracking-[0.22em] text-paper transition-colors hover:bg-forest">Join the Seeker Letter →</button>
+          </form>
+        </div>
+      </section>
     </Page>
   );
 }
