@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Page } from "@/components/site-layout";
+import { Page, heroPrimaryClass, heroSecondaryClass } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
 import hero from "@/assets/hero-beach-dawn.jpg.asset.json";
 import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
@@ -91,9 +91,19 @@ function Home() {
           >
             A journey through music, nature, mindful living, and the search for a deeper way of being.
           </p>
+          <p
+            className="mx-auto mt-5 max-w-lg animate-[fade-in_1.4s_ease-out_0.8s_both] text-[0.9rem] leading-[1.7] text-paper/85 motion-reduce:animate-none md:text-[0.98rem]"
+            style={{ textShadow: "0 1px 16px rgba(0,0,0,0.45)" }}
+          >
+            Bansuri teacher, host, and grower in Ashvem, Goa — sharing music, simple stays, growing, and a book in the making.
+          </p>
+          <div className="mt-10 flex animate-[fade-in_1.4s_ease-out_0.9s_both] flex-col items-center gap-3 motion-reduce:animate-none sm:flex-row sm:justify-center">
+            <Link to="/learn-bansuri" className={heroPrimaryClass}>Book a Bansuri lesson</Link>
+            <Link to="/seekers-stay" className={heroSecondaryClass}>Stay in Ashwem</Link>
+          </div>
           <Link
             to="/about"
-            className="mt-14 inline-flex animate-[fade-in_1.4s_ease-out_1s_both] items-center gap-3 border-b border-paper/50 pb-1.5 font-serif text-sm tracking-wide text-paper/90 transition-colors duration-500 hover:border-bamboo hover:text-bamboo motion-reduce:animate-none md:mt-16 md:text-base"
+            className="mt-8 inline-flex animate-[fade-in_1.4s_ease-out_1s_both] items-center gap-3 border-b border-paper/50 pb-1.5 font-serif text-sm tracking-wide text-paper/90 transition-colors duration-500 hover:border-bamboo hover:text-bamboo motion-reduce:animate-none md:text-base"
           >
             Begin the Journey
             <span aria-hidden>→</span>
