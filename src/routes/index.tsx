@@ -7,6 +7,7 @@ import stayAsset from "@/assets/stay/living-room-open.jpg.asset.json";
 import soilAsset from "@/assets/soil-packaged-microgreens.png.asset.json";
 import journalAsset from "@/assets/journal-desk.jpg.asset.json";
 import aboutAsset from "@/assets/intro-bansuri.jpg.asset.json";
+import bookAsset from "@/assets/book-chai-bansuri.jpg.asset.json";
 
 const stayImg = stayAsset.url;
 const soilImg = soilAsset.url;
@@ -58,10 +59,10 @@ const PATHS = [
     position: "object-[50%_55%]",
   },
   {
-    to: "/journal",
-    title: "Journal",
-    desc: "Reflections, observations, essays, and field notes.",
-    img: journalImg,
+    to: "/the-book",
+    title: "The Book",
+    desc: "A manuscript still being lived.",
+    img: bookAsset.url,
     position: "object-center",
   },
 ] as const;
@@ -95,7 +96,7 @@ function Home() {
             className="mx-auto mt-5 max-w-lg animate-[fade-in_1.4s_ease-out_0.8s_both] text-[0.9rem] leading-[1.7] text-paper/85 motion-reduce:animate-none md:text-[0.98rem]"
             style={{ textShadow: "0 1px 16px rgba(0,0,0,0.45)" }}
           >
-            Bansuri teacher, host, and grower in Ashvem, Goa — sharing music, simple stays, growing, and a book in the making.
+            Bansuri teacher, host, and grower in Ashwem, Goa — sharing music, simple stays, growing, and a book in the making.
           </p>
           <div className="mt-10 flex animate-[fade-in_1.4s_ease-out_0.9s_both] flex-col items-center gap-3 motion-reduce:animate-none sm:flex-row sm:justify-center">
             <Link to="/learn-bansuri" className={heroPrimaryClass}>Book a Bansuri lesson</Link>
@@ -200,6 +201,30 @@ function Home() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Journal */}
+      <section className="border-t border-rule/60">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:gap-16 md:py-32 lg:px-10 lg:py-36">
+          <Reveal>
+            <img
+              src={journalImg}
+              alt="A journal open on a wooden desk beside a cup of tea"
+              loading="lazy"
+              className="h-auto w-full"
+            />
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="eyebrow">The Journal</p>
+            <h2 className="serif-display mt-5 text-[2rem] text-ink md:text-[2.9rem]">Notes from the path.</h2>
+            <p className="mt-7 max-w-md text-[1.02rem] leading-[1.85] text-ink/75 md:text-[1.1rem]">
+              Reflections, observations, essays, and field notes from a life still unfolding.
+            </p>
+            <Link to="/journal" className="eyebrow mt-8 inline-block text-bamboo transition-colors hover:text-forest">
+              Enter the Journal →
+            </Link>
+          </Reveal>
         </div>
       </section>
 

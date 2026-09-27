@@ -30,42 +30,42 @@ const FIELD_NOTES = [
     img: walkAsset.url,
     alt: "A figure walking along the wet edge of a beach at low sun, a line of footprints behind him",
     title: "The Walk",
-    caption: "Alleppey · Kerala",
+    caption: "Alleppey · December 2023",
     body: "Most mornings begin this way.\n\nThere is something about walking without needing to arrive anywhere.\n\nThe sea keeps erasing the evidence behind me.\n\nPerhaps that is part of the practice too — moving forward without needing the path to remain.",
   },
   {
     img: afterRainAsset.url,
     alt: "Raindrops on a window, palm trees and the sea beyond, sun low through a grey sky",
     title: "After Rain",
-    caption: "",
+    caption: "Ashwem · August 2026",
     body: "The rain left as suddenly as it came. Everything stood wet and shining, and the sea went back to being the sea.",
   },
   {
     img: driftwoodAsset.url,
     alt: "A large piece of bleached driftwood lying on wet sand with the sea behind it",
     title: "Things the Sea Leaves Behind",
-    caption: "",
+    caption: "August 2024",
     body: "Driftwood, arriving from somewhere with no name.\n\nShaped entirely by what it passed through.\n\nI sometimes wonder if people are not so different.",
   },
   {
     img: potteryAsset.url,
     alt: "Sitting at a potter's wheel, hands wet with clay, mountains and sky through the window",
     title: "Learning With the Hands",
-    caption: "Shillaru · Shimla",
+    caption: "Shilaroo · July 2023",
     body: "The clay answers only to attention.\n\nToo much force and it leaves the centre.\n\nToo little and nothing rises.\n\nThere are things the hands understand before the mind does.",
   },
   {
     img: lookingOutAsset.url,
     alt: "Standing on a rock ledge looking out over a lake surrounded by dry hills",
     title: "Looking Out",
-    caption: "Reh Dil Lake · Myanmar\nMarch 2025",
+    caption: "Reh Dil Lake · Myanmar · March 2025",
     body: "Water held quietly between hills.\n\nStanding there, there was nothing to add to it.\n\nOnly the strange feeling that sometimes looking is enough.",
   },
   {
     img: pilgrimageAsset.url,
     alt: "A wrapped figure with a walking staff standing above a sea of clouds at first light",
     title: "Pilgrimage I",
-    caption: "Velliangiri Hills · Coimbatore",
+    caption: "Velliangiri Hills · February 2020",
     body: "The climb ended somewhere above the weather.\n\nCold, quiet, and worth every hour of the dark.\n\nSome journeys are difficult to explain once they are over.",
   },
   {
@@ -76,9 +76,6 @@ const FIELD_NOTES = [
     body: "More than 3,000 km alone on the V-Strom, from Gurgaon down to Goa.\n\nMaheshwar, then Omkareshwar. Ellora, then Grishneshwar. Trimbakeshwar. Bhimashankar. Then the long descent through Amboli towards the sea.\n\nFive Jyotirlingas along the way — Mahakaleshwar at Ujjain, Omkareshwar, Grishneshwar near Ellora, Trimbakeshwar near Nashik, and Bhimashankar.\n\nThe temples were the reason for leaving.\n\nThe road in between was where most of the pilgrimage happened.",
   },
 ];
-
-// Paste the genuine manuscript passage here (Surya Kund / Krishna tune). Section stays hidden while empty.
-const BOOK_EXCERPT: string[] = [];
 
 function Journal() {
   return (
@@ -128,19 +125,6 @@ function Journal() {
           />
         </figure>
       </section>
-      {BOOK_EXCERPT.length > 0 && (
-        <section className="border-t border-rule/70">
-          <div className="mx-auto max-w-2xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
-            <p className="eyebrow">From the Book</p>
-            <p className="mt-3 font-serif text-[1.1rem] italic text-ink/65">A manuscript still being lived.</p>
-            <div className="mt-8 space-y-5 font-serif text-[1.15rem] leading-[1.8] text-ink/80 md:text-[1.3rem]">
-              {BOOK_EXCERPT.map((p, i) => <p key={i}>{p}</p>)}
-            </div>
-            <Link to="/the-book" className="eyebrow mt-8 inline-block text-bamboo transition-colors hover:text-forest">Read more about the book →</Link>
-          </div>
-        </section>
-      )}
-
       <section className="border-t border-rule/70 bg-secondary/40">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20 lg:px-10 lg:py-24">
           <div className="mb-10 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between md:mb-12">

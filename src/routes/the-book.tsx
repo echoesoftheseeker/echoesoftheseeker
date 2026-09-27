@@ -34,6 +34,16 @@ const NOTES = [
 
 const TIMELINE = ["Beginning", "Journeys", "Experiments", "Lessons", "Manuscript", "Book"];
 
+const MANUSCRIPT_EXCERPTS = [
+  [
+    "I played the Krishna tune. The same one the South Indian visitors had responded to in Surya Kund.",
+    "Drishana stopped what she was doing. She looked at the flute. She began to sway.",
+    "I thought about a boy in Alwar who had wanted music since childhood and been denied it. I thought about the guitar his nani had promised and never delivered. I thought about the father who would have broken it anyway. I thought about the Bansuri bought on the day his dog's ashes went into the Ganga.",
+    "I kept playing.",
+    "Drishana kept swaying.",
+  ],
+] as const;
+
 function Book() {
   return (
     <Page>
@@ -85,8 +95,33 @@ function Book() {
         </figure>
       </section>
 
+      {/* From the manuscript */}
+      <section className="border-t border-rule/70">
+        <div className="mx-auto max-w-2xl px-6 py-20 lg:px-10 lg:py-28">
+          <p className="eyebrow">From the Manuscript</p>
+          <h2 className="mt-4 font-serif text-[1.4rem] italic text-ink/70 md:text-[1.65rem]">
+            A few pages from a story still being written.
+          </h2>
+          {MANUSCRIPT_EXCERPTS.map((excerpt, excerptIndex) => (
+            <blockquote
+              key={excerptIndex}
+              className="mt-10 border-l border-bamboo/70 pl-6 font-serif text-[1.1rem] leading-[1.85] text-ink/85 md:pl-8 md:text-[1.25rem]"
+            >
+              {excerpt.map((paragraph, paragraphIndex) => (
+                <p key={paragraph} className={paragraphIndex > 0 ? "mt-5" : ""}>
+                  {paragraphIndex === 0 ? `“${paragraph}` : paragraphIndex === excerpt.length - 1 ? `${paragraph}”` : paragraph}
+                </p>
+              ))}
+            </blockquote>
+          ))}
+          <a href="#what-it-explores" className="eyebrow mt-9 inline-block text-bamboo transition-colors hover:text-forest">
+            Read more about the book →
+          </a>
+        </div>
+      </section>
+
       {/* Themes */}
-      <section className="border-t border-rule/70 bg-secondary/30">
+      <section id="what-it-explores" className="scroll-mt-24 border-t border-rule/70 bg-secondary/30">
         <div className="mx-auto max-w-5xl px-6 py-20 lg:px-10 lg:py-28">
           <p className="eyebrow mb-6">What It Explores</p>
           <h2 className="serif-display text-3xl text-ink md:text-5xl">What The Book Explores</h2>
