@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MessageCircle, Check } from "lucide-react";
 import { Page } from "@/components/site-layout";
-import hero from "@/assets/soil/IMG_20260616_100131.jpg.asset.json";
+import hero from "@/assets/soil/soil-hero-railing.jpg.asset.json";
 import seedTray from "@/assets/soil/IMG_20260607_084113.jpg.asset.json";
 import germination from "@/assets/soil/IMG_20260607_084158.jpg.asset.json";
 import youngSprouts from "@/assets/soil/IMG_20260607_230604.jpg.asset.json";
@@ -10,9 +10,9 @@ import canopyYoung from "@/assets/soil/IMG_20260607_171010.jpg.asset.json";
 import canopyTop from "@/assets/soil/IMG_20260610_105004.jpg.asset.json";
 import matureTray from "@/assets/soil/IMG_20260616_100135.jpg.asset.json";
 import rootMat from "@/assets/soil/IMG_20260612_083112.jpg.asset.json";
-import harvest from "@/assets/soil/IMG_20260610_104931.jpg.asset.json";
-import packaged from "@/assets/soil/IMG_20260611_184000.jpg.asset.json";
-import shelves from "@/assets/soil/IMG_20260609_190110.jpg.asset.json";
+import harvest from "@/assets/soil/soil-harvest-bowl.jpg.asset.json";
+import packaged from "@/assets/soil/soil-packaged-coffee.jpg.asset.json";
+import shelves from "@/assets/soil/soil-rack.jpg.asset.json";
 
 const WA_ORDER =
   "https://wa.me/917027029889?text=Hi%2C%20I%27d%20like%20to%20order%20fresh%20microgreens%20from%20Seeker%27s%20Soil.";
@@ -49,7 +49,7 @@ const SEQUENCE = [
   { src: matureTray.url, alt: "Dense mature tray of microgreens under grow light", c: "Mature — dense, ready, still growing." },
   { src: canopyTop.url, alt: "Dense green canopy of microgreens seen from above", c: "Above — the tray closes over itself." },
   { src: rootMat.url, alt: "Root mat of a microgreens tray viewed from underneath", c: "Beneath — the part no one sees." },
-  { src: harvest.url, alt: "A freshly harvested tray of microgreens held in hand", c: "Harvest — cut the morning it is eaten." },
+  { src: harvest.url, alt: "A bowl of freshly harvested microgreens on the railing, seen from above", c: "Harvest — cut the morning it is eaten." },
 ] as const;
 
 const LESSONS = [
@@ -97,9 +97,8 @@ function Soil() {
       <section className="relative min-h-[80svh] overflow-hidden border-b border-rule/70">
         <img
           src={hero.url}
-          alt="Garnet red radish microgreens flourishing under the grow light"
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ filter: "saturate(0.92) contrast(1.02) sepia(0.06)" }}
+          alt="A mature tray of microgreens resting on a railing, the garden soft behind it"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_55%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/40 to-ink/80" />
         <div className="relative z-10 mx-auto flex min-h-[80svh] max-w-5xl items-end px-6 py-14 lg:px-10 lg:py-24">
@@ -140,14 +139,14 @@ function Soil() {
       <section className="border-b border-rule/70">
         <img
           src={shelves.url}
-          alt="The indoor growing shelves lined with trays under grow lights"
+          alt="A three-level growing rack with trays of microgreens on the balcony"
           loading="lazy"
-          className="h-[52svh] w-full object-cover md:h-[74svh]"
+          className="mx-auto h-auto w-full max-w-md pt-14 md:pt-20 px-6"
         />
         <div className="mx-auto max-w-3xl px-6 py-12 text-center md:py-16 lg:px-10">
           <p className="eyebrow mb-4">The growing space</p>
           <p className="font-serif text-[1.25rem] leading-[1.6] text-ink md:text-[1.5rem]">
-            A single rack in a corner of the house — three shelves, a few lights, enough to learn almost everything.
+            A single rack on the balcony — three shelves, a few lights, enough to learn almost everything.
           </p>
         </div>
       </section>
@@ -174,9 +173,9 @@ function Soil() {
           <figure>
             <img
               src={packaged.url}
-              alt="Two bags of Seekers Soil microgreens with a hand-stamped kraft card"
+              alt="Two bags of Seekers Soil microgreens with a kraft card beside a cup of coffee"
               loading="lazy"
-              className="aspect-[4/5] w-full object-cover md:aspect-[4/3]"
+              className="h-auto w-full"
             />
           </figure>
           <div>
