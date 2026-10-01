@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MessageCircle, Check } from "lucide-react";
 import { Page } from "@/components/site-layout";
-import hero from "@/assets/soil/IMG_20260616_100131.jpg.asset.json";
+import hero from "@/assets/soil/soil-hero-railing.jpg.asset.json";
 import seedTray from "@/assets/soil/IMG_20260607_084113.jpg.asset.json";
 import germination from "@/assets/soil/IMG_20260607_084158.jpg.asset.json";
 import youngSprouts from "@/assets/soil/IMG_20260607_230604.jpg.asset.json";
@@ -10,9 +10,9 @@ import canopyYoung from "@/assets/soil/IMG_20260607_171010.jpg.asset.json";
 import canopyTop from "@/assets/soil/IMG_20260610_105004.jpg.asset.json";
 import matureTray from "@/assets/soil/IMG_20260616_100135.jpg.asset.json";
 import rootMat from "@/assets/soil/IMG_20260612_083112.jpg.asset.json";
-import harvest from "@/assets/soil/IMG_20260610_104931.jpg.asset.json";
-import packaged from "@/assets/soil/IMG_20260611_184000.jpg.asset.json";
-import shelves from "@/assets/soil/IMG_20260609_190110.jpg.asset.json";
+import harvest from "@/assets/soil/soil-harvest-bowl.jpg.asset.json";
+import packaged from "@/assets/soil/soil-packaged-coffee.jpg.asset.json";
+import shelves from "@/assets/soil/soil-rack.jpg.asset.json";
 
 const WA_ORDER =
   "https://wa.me/917027029889?text=Hi%2C%20I%27d%20like%20to%20order%20fresh%20microgreens%20from%20Seeker%27s%20Soil.";

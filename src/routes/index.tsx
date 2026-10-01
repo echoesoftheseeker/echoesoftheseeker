@@ -100,7 +100,13 @@ function Home() {
           </p>
           <div className="mt-10 flex animate-[fade-in_1.4s_ease-out_0.9s_both] flex-col items-center gap-3 motion-reduce:animate-none sm:flex-row sm:justify-center">
             <Link to="/learn-bansuri" className={heroPrimaryClass}>Book a Bansuri lesson</Link>
-            <Link to="/seekers-stay" className={heroSecondaryClass}>Stay in Ashwem</Link>
+            <Link
+              to="/seekers-stay"
+              className="inline-flex items-center px-4 py-2 font-serif text-[0.95rem] text-paper/90 underline decoration-paper/40 underline-offset-[6px] transition-colors duration-300 hover:text-paper hover:decoration-bamboo"
+              style={{ textShadow: "0 1px 12px rgba(0,0,0,0.4)" }}
+            >
+              Stay in Ashwem
+            </Link>
           </div>
           <Link
             to="/about"

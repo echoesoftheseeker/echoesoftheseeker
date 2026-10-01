@@ -94,12 +94,12 @@ export function SiteFooter() {
     { to: "/about", label: "About" },
     { to: "/journal", label: "Journal" },
     { to: "/learn-bansuri", label: "Learn Bansuri" },
+    { to: "/bansuris", label: "Bansuris" },
   ] as const;
   const more = [
     { to: "/seekers-stay", label: "Seekers Stay" },
     { to: "/seekers-soil", label: "Seekers Soil" },
     { to: "/the-book", label: "The Book" },
-    { to: "/bansuris", label: "Bansuris" },
     { to: "/seeker-letter", label: "Seeker Letter" },
     { to: "/contact", label: "Contact" },
   ] as const;
