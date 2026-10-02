@@ -5,6 +5,7 @@ import heroImg from "@/assets/bansuri-tree-hero.jpg.asset.json";
 import treeImg from "@/assets/learning-tree.jpg.asset.json";
 import cloudsImg from "@/assets/gallery-clouds.jpg.asset.json";
 import detailImg from "@/assets/gallery-flute-detail.jpg.asset.json";
+import bansurisImg from "@/assets/bansuri-bag.jpg.asset.json";
 
 const WHATSAPP_URL =
   "https://wa.me/917027029889?text=Hi%2C%20I%27d%20like%20to%20learn%20the%20bansuri.%20Could%20you%20share%20timings%20and%20beginner%20flute%20guidance%3F";
@@ -75,6 +76,14 @@ const FAQS = [
   },
 ] as const;
 
+const CHECKS = [
+  "Tonal Quality",
+  "Tuning",
+  "Playability",
+  "Overall Condition",
+  "Suitability for the student",
+];
+
 function SectionHead({ index, title }: { index: string; title: string }) {
   return (
     <>
@@ -118,11 +127,11 @@ function Learn() {
             Learn the bansuri through patient, step-by-step guidance — whether you are holding the
             instrument for the first time or returning after years.
           </p>
-          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
-            <a href="#learning" className={heroPrimaryClass}>
+          <div className="mt-9 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
+            <a href="#learning" className={`${heroPrimaryClass} w-full max-w-xs sm:w-64`}>
               Begin Learning
             </a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={heroSecondaryClass}>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={`${heroSecondaryClass} w-full max-w-xs sm:w-64`}>
               <MessageCircle size={16} strokeWidth={1.6} />
               Message on WhatsApp
             </a>
@@ -242,6 +251,73 @@ function Learn() {
           </p>
         </div>
       </section>
+
+      {/* Bansuris — instrument guidance (from the former Bansuris page) */}
+      <div id="bansuris">
+      <section className="mx-auto max-w-5xl px-6 py-16 lg:px-10">
+        <img
+          src={bansurisImg.url}
+          alt="A handcrafted bansuri resting on its bag before a quiet green field"
+          loading="lazy"
+          className="aspect-[16/10] w-full object-cover"
+        />
+      </section>
+
+      <Section eyebrow="Categories" title="By stage of journey.">
+        <div className="grid gap-8 md:grid-cols-3">
+          {[
+            { t: "Beginner Bansuris", d: "Comfortable to hold, forgiving on breath. Bamboo that builds confidence." },
+            { t: "Intermediate Bansuris", d: "Greater range and tonal nuance for students moving into ragas." },
+            { t: "Recommended Keys", d: "Suggested keys based on your hand size, breath capacity, and intended use." },
+          ].map((c) => (
+            <div key={c.t} className="border-t-2 border-ink pt-5">
+              <h3 className="font-serif text-2xl">{c.t}</h3>
+              <p className="mt-2 text-ink/75">{c.d}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <section className="border-t border-rule/70 bg-secondary/40">
+        <div className="mx-auto max-w-4xl px-6 py-20 lg:px-10">
+          <p className="eyebrow mb-4">Personal Quality Check</p>
+          <h2 className="serif-display text-3xl md:text-4xl">Before any bansuri leaves my hands.</h2>
+          <p className="mt-4 max-w-2xl text-ink/75">Before recommending or sending a bansuri, I personally check:</p>
+          <ul className="mt-8 grid gap-3 md:grid-cols-2">
+            {CHECKS.map((c) => (
+              <li key={c} className="flex items-center gap-3 border-b border-rule/70 py-3">
+                <span className="font-serif text-xl text-bamboo">✓</span>
+                <span className="text-ink/80">{c}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 italic text-ink/70">I only recommend instruments I would feel comfortable practicing with myself.</p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-6 py-24 lg:px-10">
+        <p className="eyebrow mb-4">Inquiry</p>
+        <h2 className="serif-display text-4xl">Find your bansuri.</h2>
+        <form className="mt-10 grid gap-6" onSubmit={(e) => e.preventDefault()}>
+          {[
+            ["Name", "text"],
+            ["WhatsApp", "tel"],
+            ["Experience Level", "text"],
+            ["Preferred Key", "text"],
+          ].map(([l, t]) => (
+            <label key={l} className="block">
+              <span className="eyebrow">{l}</span>
+              <input type={t} className="mt-2 w-full border-b border-ink/30 bg-transparent py-3 outline-none focus:border-bamboo" />
+            </label>
+          ))}
+          <label className="block">
+            <span className="eyebrow">Message</span>
+            <textarea rows={5} className="mt-2 w-full border-b border-ink/30 bg-transparent py-3 outline-none focus:border-bamboo" />
+          </label>
+          <button className="self-start rounded-full bg-ink px-6 py-3 text-xs uppercase tracking-[0.22em] text-paper hover:bg-forest">Send inquiry</button>
+        </form>
+      </section>
+      </div>
 
       {/* 8 — FAQ */}
       <section className="border-b border-rule/70">
