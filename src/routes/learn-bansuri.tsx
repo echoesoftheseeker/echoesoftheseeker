@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Page, heroOverlay, heroPrimaryClass, heroSecondaryClass } from "@/components/site-layout";
+import { Page, Section, heroOverlay, heroPrimaryClass, heroSecondaryClass } from "@/components/site-layout";
 import { MessageCircle } from "lucide-react";
 import heroImg from "@/assets/bansuri-tree-hero.jpg.asset.json";
 import treeImg from "@/assets/learning-tree.jpg.asset.json";
