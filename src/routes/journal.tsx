@@ -70,6 +70,7 @@ const FIELD_NOTES = [
     body: "The climb ended somewhere above the weather.\n\nCold, quiet, and worth every hour of the dark.\n\nSome journeys are difficult to explain once they are over.",
   },
   {
+    wide: true,
     img: vstromAsset.url,
     alt: "Akash seen from behind on a loaded V-Strom, looking down a winding mountain road under a cloudy sky",
     title: "Pilgrimage II",
@@ -93,14 +94,28 @@ function Journal() {
           <p className="eyebrow">Photographs & short reflections</p>
         </div>
         <div className="grid items-start gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-          {FIELD_NOTES.map((n) => (
-            <article key={n.title} className="flex flex-col">
-              {n.img ? <img src={n.img} alt={n.alt} loading="lazy" className="h-auto w-full" /> : <div className="h-px w-10 bg-bamboo/70" aria-hidden />}
-              {n.caption && <p className="eyebrow mt-3 mb-1.5 whitespace-pre-line leading-relaxed sm:mt-5 sm:mb-2">{n.caption}</p>}
-              <h3 className={`font-serif text-[1.2rem] leading-snug text-ink md:text-[1.35rem] ${n.caption ? "" : "mt-3 sm:mt-5"}`}>{n.title}</h3>
-              <p className="mt-3 max-w-prose whitespace-pre-line text-[0.95rem] leading-[1.75] text-ink/70">{n.body}</p>
-            </article>
-          ))}
+          {FIELD_NOTES.map((n) =>
+            n.wide ? (
+              <article
+                key={n.title}
+                className="grid gap-8 sm:col-span-2 md:items-start md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-12 lg:col-span-3"
+              >
+                <img src={n.img} alt={n.alt} loading="lazy" className="h-auto w-full max-w-sm self-start md:max-w-none" />
+                <div className="flex flex-col">
+                  {n.caption && <p className="eyebrow mb-1.5 whitespace-pre-line leading-relaxed sm:mb-2">{n.caption}</p>}
+                  <h3 className="font-serif text-[1.2rem] leading-snug text-ink md:text-[1.35rem]">{n.title}</h3>
+                  <p className="mt-3 max-w-prose whitespace-pre-line text-[0.95rem] leading-[1.75] text-ink/70">{n.body}</p>
+                </div>
+              </article>
+            ) : (
+              <article key={n.title} className="flex flex-col">
+                {n.img ? <img src={n.img} alt={n.alt} loading="lazy" className="h-auto w-full" /> : <div className="h-px w-10 bg-bamboo/70" aria-hidden />}
+                {n.caption && <p className="eyebrow mt-3 mb-1.5 whitespace-pre-line leading-relaxed sm:mt-5 sm:mb-2">{n.caption}</p>}
+                <h3 className={`font-serif text-[1.2rem] leading-snug text-ink md:text-[1.35rem] ${n.caption ? "" : "mt-3 sm:mt-5"}`}>{n.title}</h3>
+                <p className="mt-3 max-w-prose whitespace-pre-line text-[0.95rem] leading-[1.75] text-ink/70">{n.body}</p>
+              </article>
+            ),
+          )}
         </div>
       </section>
 
