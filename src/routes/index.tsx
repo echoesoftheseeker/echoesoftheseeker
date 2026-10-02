@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page, heroPrimaryClass, heroSecondaryClass } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
-import hero from "@/assets/hero-golden-hour-bansuri.png.asset.json";
+import hero from "@/assets/hero-beach-dawn.jpg.asset.json";
 import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
 import stayAsset from "@/assets/stay/living-room-open.jpg.asset.json";
 import soilAsset from "@/assets/soil-packaged-microgreens.png.asset.json";
 import journalAsset from "@/assets/journal-desk.jpg.asset.json";
-import aboutAsset from "@/assets/intro-bansuri.jpg.asset.json";
+import aboutAsset from "@/assets/hero-golden-hour-bansuri.png.asset.json";
 import bookAsset from "@/assets/book-chai-bansuri.jpg.asset.json";
 
 const stayImg = stayAsset.url;
@@ -74,8 +74,8 @@ function Home() {
       <section className="relative h-[100svh] min-h-[620px] w-full overflow-hidden">
         <img
           src={hero.url}
-          alt="Akash playing the bansuri on sunlit stone steps at golden hour"
-          className="absolute inset-0 h-full w-full animate-[scale-in_2.4s_ease-out] object-cover object-[45%_40%] motion-reduce:animate-none"
+          alt="A seeker walking barefoot along a quiet Goa shoreline at dawn, flute bag over one shoulder"
+          className="absolute inset-0 h-full w-full animate-[scale-in_2.4s_ease-out] object-cover object-[58%_42%] motion-reduce:animate-none"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/20 to-ink/45" />
 
@@ -133,9 +133,9 @@ function Home() {
             <Reveal className="lg:col-span-6">
               <img
                 src={aboutImg}
-                alt="Akash sitting on stone steps playing the bansuri in a pink kurta"
+                alt="Akash playing the bansuri on carved stone steps in warm golden-hour light"
                 loading="lazy"
-                className="mx-auto aspect-[4/5] w-[88%] object-cover object-[50%_38%] sm:w-3/4 md:w-2/3 lg:w-full"
+                className="mx-auto aspect-[4/5] w-[88%] object-cover sm:w-3/4 md:w-2/3 lg:w-full"
               />
             </Reveal>
             <Reveal delay={150} className="lg:col-span-6 lg:pt-10">
