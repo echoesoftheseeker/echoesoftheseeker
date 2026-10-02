@@ -9,6 +9,7 @@ import lookingOutAsset from "@/assets/journal/journal-looking-out.jpg.asset.json
 import pilgrimageAsset from "@/assets/journal/journal-pilgrimage.jpg.asset.json";
 import afterRainAsset from "@/assets/journal/journal-after-rain.jpg.asset.json";
 import roadsAsset from "@/assets/journal/roads-ive-ridden.png.asset.json";
+import vstromAsset from "@/assets/stay/vstrom-gurgaon-goa.jpg.asset.json";
 const journalImg = journalAsset.url;
 
 export const Route = createFileRoute("/journal")({
@@ -69,8 +70,8 @@ const FIELD_NOTES = [
     body: "The climb ended somewhere above the weather.\n\nCold, quiet, and worth every hour of the dark.\n\nSome journeys are difficult to explain once they are over.",
   },
   {
-    img: "",
-    alt: "",
+    img: vstromAsset.url,
+    alt: "Akash seen from behind on a loaded V-Strom, looking down a winding mountain road under a cloudy sky",
     title: "Pilgrimage II",
     caption: "Gurgaon → Goa · by motorcycle\n2026",
     body: "More than 3,000 km alone on the V-Strom, from Gurgaon down to Goa.\n\nMaheshwar, then Omkareshwar. Ellora, then Grishneshwar. Trimbakeshwar. Bhimashankar. Then the long descent through Amboli towards the sea.\n\nFive Jyotirlingas along the way — Mahakaleshwar at Ujjain, Omkareshwar, Grishneshwar near Ellora, Trimbakeshwar near Nashik, and Bhimashankar.\n\nThe temples were the reason for leaving.\n\nThe road in between was where most of the pilgrimage happened.",
