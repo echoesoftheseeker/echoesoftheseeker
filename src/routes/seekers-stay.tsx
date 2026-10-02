@@ -13,8 +13,8 @@ import stayHero from "@/assets/stay-hero.jpg";
 import stayBeach from "@/assets/stay-beach.jpg";
 import hostAkash from "@/assets/host-beach-walk.jpg.asset.json";
 import bansuriImg from "@/assets/bansuri-hero-playing.jpg.asset.json";
-import microgreensImg from "@/assets/soil/IMG_20260616_100131.jpg.asset.json";
-import echoesImg from "@/assets/seeker-clouds.jpg.asset.json";
+import microgreensImg from "@/assets/stay/stay-microgreens-closeup.jpg.asset.json";
+import echoesImg from "@/assets/stay/vstrom-gurgaon-goa.jpg.asset.json";
 
 import exteriorSide from "@/assets/stay/exterior-side.jpg.asset.json";
 void exteriorSide;
@@ -414,7 +414,7 @@ function Stay() {
             <Reveal delay={100}>
               <ExperienceCard
                 img={microgreensImg.url}
-                imgAlt="Trays of fresh microgreens growing"
+                imgAlt="Close-up of fresh green and purple microgreens"
                 title="🌱 Microgreen Workshop"
                 body="Discover how fresh nutrient-rich microgreens are grown from seed to harvest through Seekers Soil."
                 cta="Explore Seekers Soil"
@@ -424,7 +424,7 @@ function Stay() {
             <Reveal delay={200}>
               <ExperienceCard
                 img={echoesImg.url}
-                imgAlt="Clouds drifting over a quiet mountain"
+                imgAlt="Akash on his loaded V-Strom on a winding mountain road during the Gurgaon to Goa journey"
                 title="🌿 Echoes of the Seeker"
                 body="Explore reflections on music, nature, mindful living and slow travel."
                 cta="Visit Echoes of the Seeker"

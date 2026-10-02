@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page, heroPrimaryClass, heroSecondaryClass } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
-import hero from "@/assets/hero-beach-dawn.jpg.asset.json";
+import hero from "@/assets/hero-golden-hour-bansuri.png.asset.json";
 import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
 import stayAsset from "@/assets/stay/living-room-open.jpg.asset.json";
 import soilAsset from "@/assets/soil-packaged-microgreens.png.asset.json";
@@ -74,8 +74,8 @@ function Home() {
       <section className="relative h-[100svh] min-h-[620px] w-full overflow-hidden">
         <img
           src={hero.url}
-          alt="A seeker walking barefoot along a quiet Goa shoreline at dawn, flute bag over one shoulder"
-          className="absolute inset-0 h-full w-full animate-[scale-in_2.4s_ease-out] object-cover object-[58%_42%] motion-reduce:animate-none"
+          alt="Akash playing the bansuri on sunlit stone steps at golden hour"
+          className="absolute inset-0 h-full w-full animate-[scale-in_2.4s_ease-out] object-cover object-[45%_40%] motion-reduce:animate-none"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/20 to-ink/45" />
 
@@ -98,15 +98,9 @@ function Home() {
           >
             Bansuri teacher, host, and grower in Ashwem, Goa — sharing music, simple stays, growing, and a book in the making.
           </p>
-          <div className="mt-10 flex animate-[fade-in_1.4s_ease-out_0.9s_both] flex-col items-center gap-3 motion-reduce:animate-none sm:flex-row sm:justify-center">
-            <Link to="/learn-bansuri" className={heroPrimaryClass}>Book a Bansuri lesson</Link>
-            <Link
-              to="/seekers-stay"
-              className="inline-flex items-center px-4 py-2 font-serif text-[0.95rem] text-paper/90 underline decoration-paper/40 underline-offset-[6px] transition-colors duration-300 hover:text-paper hover:decoration-bamboo"
-              style={{ textShadow: "0 1px 12px rgba(0,0,0,0.4)" }}
-            >
-              Stay in Ashwem
-            </Link>
+          <div className="mt-10 flex w-full animate-[fade-in_1.4s_ease-out_0.9s_both] flex-col items-center gap-3 motion-reduce:animate-none sm:w-auto sm:flex-row sm:justify-center">
+            <Link to="/learn-bansuri" className={`${heroPrimaryClass} w-full max-w-xs sm:w-60`}>Book a Bansuri lesson</Link>
+            <Link to="/seekers-stay" className={`${heroPrimaryClass} w-full max-w-xs sm:w-60`}>Stay in Ashwem</Link>
           </div>
           <Link
             to="/about"
