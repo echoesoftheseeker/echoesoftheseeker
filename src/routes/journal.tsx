@@ -26,7 +26,16 @@ export const Route = createFileRoute("/journal")({
   component: Journal,
 });
 
-const FIELD_NOTES = [
+type FieldNote = {
+  wide?: boolean;
+  img: string;
+  alt: string;
+  title: string;
+  caption: string;
+  body: string;
+};
+
+const FIELD_NOTES: FieldNote[] = [
   {
     img: walkAsset.url,
     alt: "A figure walking along the wet edge of a beach at low sun, a line of footprints behind him",
@@ -101,7 +110,7 @@ function Journal() {
                 className="grid gap-8 sm:col-span-2 md:items-start md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-12 lg:col-span-3"
               >
                 <img src={n.img} alt={n.alt} loading="lazy" className="h-auto w-full max-w-sm self-start md:max-w-none" />
-                <div className="flex flex-col">
+                <div className="flex min-w-0 flex-col">
                   {n.caption && <p className="eyebrow mb-1.5 whitespace-pre-line leading-relaxed sm:mb-2">{n.caption}</p>}
                   <h3 className="font-serif text-[1.2rem] leading-snug text-ink md:text-[1.35rem]">{n.title}</h3>
                   <p className="mt-3 max-w-prose whitespace-pre-line text-[0.95rem] leading-[1.75] text-ink/70">{n.body}</p>
