@@ -26,7 +26,16 @@ export const Route = createFileRoute("/journal")({
   component: Journal,
 });
 
-const FIELD_NOTES = [
+type FieldNote = {
+  wide?: boolean;
+  img: string;
+  alt: string;
+  title: string;
+  caption: string;
+  body: string;
+};
+
+const FIELD_NOTES: FieldNote[] = [
   {
     img: walkAsset.url,
     alt: "A figure walking along the wet edge of a beach at low sun, a line of footprints behind him",
