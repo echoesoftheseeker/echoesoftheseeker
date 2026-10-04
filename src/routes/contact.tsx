@@ -38,7 +38,7 @@ function Contact() {
           </div>
           <div>
             <p className="eyebrow mb-2">Instagram</p>
-            <a href="https://instagram.com/" target="_blank" rel="noreferrer" className="font-serif text-2xl text-ink hover:text-bamboo">@echoesoftheseeker</a>
+            <a href="https://www.instagram.com/echoesoftheseeker" target="_blank" rel="noopener noreferrer" className="font-serif text-2xl text-ink hover:text-bamboo">@echoesoftheseeker</a>
           </div>
           <div>
             <p className="eyebrow mb-2">Where</p>
