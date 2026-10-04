@@ -424,6 +424,7 @@ function Stay() {
             <Reveal delay={200}>
               <ExperienceCard
                 img={echoesImg.url}
+                position="object-[50%_85%]"
                 imgAlt="Yellow V-Strom motorcycle parked on a quiet rural road under monsoon clouds"
                 title="🌿 Echoes of the Seeker"
                 body="Explore reflections on music, nature, mindful living and slow travel."
@@ -587,9 +588,9 @@ function Stay() {
 }
 
 function ExperienceCard({
-  img, imgAlt, title, body, cta, to,
+  img, imgAlt, title, body, cta, to, position = "object-center",
 }: {
-  img: string; imgAlt: string; title: string; body: string; cta: string;
+  img: string; imgAlt: string; title: string; body: string; cta: string; position?: string;
   to: "/learn-bansuri" | "/seekers-soil" | "/";
 }) {
   return (
@@ -599,7 +600,7 @@ function ExperienceCard({
           src={img}
           alt={imgAlt}
           loading="lazy"
-          className="aspect-[4/3] w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
+          className={`aspect-[4/3] w-full object-cover ${position} transition-transform duration-[1200ms] ease-out hover:scale-[1.02]`}
         />
       </figure>
       <h3 className="mt-6 font-serif text-[1.3rem] text-ink">{title}</h3>
@@ -650,7 +651,7 @@ function StayCard({
           src={img}
           alt={imgAlt}
           loading="lazy"
-          className="aspect-[4/3] w-full object-cover transition-transform duration-[900ms] ease-out hover:scale-[1.02]"
+          className="aspect-[4/3] w-full object-cover ${position} transition-transform duration-[900ms] ease-out hover:scale-[1.02]"
         />
       </figure>
       <p className="eyebrow">{name}</p>

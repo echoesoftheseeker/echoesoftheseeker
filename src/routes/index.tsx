@@ -98,17 +98,10 @@ function Home() {
           >
             Bansuri teacher, host, and grower in Ashwem, Goa — sharing music, simple stays, growing, and a book in the making.
           </p>
-          <div className="mt-10 flex animate-[fade-in_1.4s_ease-out_0.9s_both] flex-col items-center gap-3 motion-reduce:animate-none sm:w-auto sm:flex-row sm:justify-center">
+          <div className="mt-14 flex animate-[fade-in_1.4s_ease-out_0.9s_both] flex-col items-center gap-3 md:mt-16 motion-reduce:animate-none sm:w-auto sm:flex-row sm:justify-center">
             <Link to="/learn-bansuri" className={`${heroPrimaryClass}`}>Book a Bansuri lesson</Link>
             <Link to="/seekers-stay" className={`${heroPrimaryClass}`}>Stay in Ashwem</Link>
           </div>
-          <Link
-            to="/about"
-            className="mt-8 inline-flex animate-[fade-in_1.4s_ease-out_1s_both] items-center gap-3 border-b border-paper/50 pb-1.5 font-serif text-sm tracking-wide text-paper/90 transition-colors duration-500 hover:border-bamboo hover:text-bamboo motion-reduce:animate-none md:text-base"
-          >
-            Begin the Journey
-            <span aria-hidden>→</span>
-          </Link>
         </div>
       </section>
 
