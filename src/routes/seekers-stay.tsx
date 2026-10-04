@@ -7,7 +7,7 @@ import {
   MapPin, Car, ShowerHead, Check, X, MessageCircle, Map as MapIcon,
   Instagram, Mail, UtensilsCrossed as Dining,
 } from "lucide-react";
-import { Page } from "@/components/site-layout";
+import { Page, heroBtnBase, heroPrimaryClass } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
 import stayHero from "@/assets/stay-hero.jpg";
 import stayBeach from "@/assets/stay-beach.jpg";
