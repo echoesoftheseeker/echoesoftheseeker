@@ -651,7 +651,7 @@ function StayCard({
           src={img}
           alt={imgAlt}
           loading="lazy"
-          className="aspect-[4/3] w-full object-cover ${position} transition-transform duration-[900ms] ease-out hover:scale-[1.02]"
+          className="aspect-[4/3] w-full object-cover transition-transform duration-[900ms] ease-out hover:scale-[1.02]"
         />
       </figure>
       <p className="eyebrow">{name}</p>
