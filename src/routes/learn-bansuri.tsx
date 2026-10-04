@@ -127,11 +127,11 @@ function Learn() {
             Learn the bansuri through patient, step-by-step guidance — whether you are holding the
             instrument for the first time or returning after years.
           </p>
-          <div className="mt-9 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
-            <a href="#learning" className={`${heroPrimaryClass} w-full max-w-xs sm:w-64`}>
+          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+            <a href="#learning" className={`${heroPrimaryClass}`}>
               Begin Learning
             </a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={`${heroSecondaryClass} w-full max-w-xs sm:w-64`}>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={`${heroSecondaryClass}`}>
               <MessageCircle size={16} strokeWidth={1.6} />
               Message on WhatsApp
             </a>

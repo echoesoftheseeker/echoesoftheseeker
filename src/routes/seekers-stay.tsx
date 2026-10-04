@@ -7,14 +7,14 @@ import {
   MapPin, Car, ShowerHead, Check, X, MessageCircle, Map as MapIcon,
   Instagram, Mail, UtensilsCrossed as Dining,
 } from "lucide-react";
-import { Page } from "@/components/site-layout";
+import { Page, heroBtnBase, heroPrimaryClass } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
 import stayHero from "@/assets/stay-hero.jpg";
 import stayBeach from "@/assets/stay-beach.jpg";
 import hostAkash from "@/assets/host-beach-walk.jpg.asset.json";
 import bansuriImg from "@/assets/bansuri-hero-playing.jpg.asset.json";
 import microgreensImg from "@/assets/stay/stay-microgreens-closeup.jpg.asset.json";
-import echoesImg from "@/assets/stay/vstrom-gurgaon-goa.jpg.asset.json";
+import echoesImg from "@/assets/stay/vstrom-monsoon-road.jpg.asset.json";
 
 import exteriorSide from "@/assets/stay/exterior-side.jpg.asset.json";
 void exteriorSide;
@@ -152,7 +152,7 @@ function PrimaryButton({ children, href }: { children: React.ReactNode; href: st
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 font-serif text-[0.95rem] text-paper shadow-[0_6px_24px_rgba(0,0,0,0.28)] transition-colors duration-300 hover:bg-forest"
+      className={heroPrimaryClass}
     >
       {children}
     </a>
@@ -165,7 +165,7 @@ function SecondaryButton({ children, href, onLight = false }: { children: React.
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full border px-7 py-3.5 font-serif text-[0.95rem] transition-colors duration-300 ${
+      className={`${heroBtnBase} border ${
         onLight
           ? "border-ink/25 text-ink hover:border-bamboo hover:text-forest"
           : "border-paper/60 bg-paper/15 text-paper backdrop-blur-sm hover:border-paper hover:bg-paper/25"
@@ -424,7 +424,7 @@ function Stay() {
             <Reveal delay={200}>
               <ExperienceCard
                 img={echoesImg.url}
-                imgAlt="Akash on his loaded V-Strom on a winding mountain road during the Gurgaon to Goa journey"
+                imgAlt="Yellow V-Strom motorcycle parked on a quiet rural road under monsoon clouds"
                 title="🌿 Echoes of the Seeker"
                 body="Explore reflections on music, nature, mindful living and slow travel."
                 cta="Visit Echoes of the Seeker"

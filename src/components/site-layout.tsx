@@ -157,8 +157,8 @@ export function SiteFooter() {
 /** Unified hero overlay used on every page hero image. */
 export const heroOverlay = "absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/40 to-ink/80";
 
-const heroBtnBase =
-  "inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 py-3.5 font-serif text-[0.95rem] transition-colors duration-300";
+export const heroBtnBase =
+  "inline-flex h-12 w-[230px] max-w-[240px] items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 font-serif text-[0.875rem] transition-colors duration-300 sm:w-[210px] sm:text-[0.9rem]";
 
 export const heroPrimaryClass = `${heroBtnBase} bg-ink text-paper shadow-[0_6px_24px_rgba(0,0,0,0.28)] hover:bg-forest`;
 
