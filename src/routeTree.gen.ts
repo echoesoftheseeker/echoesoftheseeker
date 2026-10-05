@@ -9,62 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as BansurisRouteImport } from './routes/bansuris'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as JournalRouteImport } from './routes/journal'
-import { Route as LearnBansuriRouteImport } from './routes/learn-bansuri'
-import { Route as SeekerLetterRouteImport } from './routes/seeker-letter'
-import { Route as SeekersSoilRouteImport } from './routes/seekers-soil'
-import { Route as SeekersStayRouteImport } from './routes/seekers-stay'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TheBookRouteImport } from './routes/the-book'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SeekersStayRouteImport } from './routes/seekers-stay'
+import { Route as SeekersSoilRouteImport } from './routes/seekers-soil'
+import { Route as SeekerLetterRouteImport } from './routes/seeker-letter'
+import { Route as LearnBansuriRouteImport } from './routes/learn-bansuri'
+import { Route as JournalRouteImport } from './routes/journal'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BansurisRouteImport } from './routes/bansuris'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as EssaysSlugRouteImport } from './routes/essays.$slug'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BansurisRoute = BansurisRouteImport.update({
-  id: '/bansuris',
-  path: '/bansuris',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JournalRoute = JournalRouteImport.update({
-  id: '/journal',
-  path: '/journal',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LearnBansuriRoute = LearnBansuriRouteImport.update({
-  id: '/learn-bansuri',
-  path: '/learn-bansuri',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SeekerLetterRoute = SeekerLetterRouteImport.update({
-  id: '/seeker-letter',
-  path: '/seeker-letter',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SeekersSoilRoute = SeekersSoilRouteImport.update({
-  id: '/seekers-soil',
-  path: '/seekers-soil',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SeekersStayRoute = SeekersStayRouteImport.update({
-  id: '/seekers-stay',
-  path: '/seekers-stay',
+const TheBookRoute = TheBookRouteImport.update({
+  id: '/the-book',
+  path: '/the-book',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -72,9 +32,49 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TheBookRoute = TheBookRouteImport.update({
-  id: '/the-book',
-  path: '/the-book',
+const SeekersStayRoute = SeekersStayRouteImport.update({
+  id: '/seekers-stay',
+  path: '/seekers-stay',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeekersSoilRoute = SeekersSoilRouteImport.update({
+  id: '/seekers-soil',
+  path: '/seekers-soil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeekerLetterRoute = SeekerLetterRouteImport.update({
+  id: '/seeker-letter',
+  path: '/seeker-letter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnBansuriRoute = LearnBansuriRouteImport.update({
+  id: '/learn-bansuri',
+  path: '/learn-bansuri',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalRoute = JournalRouteImport.update({
+  id: '/journal',
+  path: '/journal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BansurisRoute = BansurisRouteImport.update({
+  id: '/bansuris',
+  path: '/bansuris',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EssaysSlugRoute = EssaysSlugRouteImport.update({
@@ -188,67 +188,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/bansuris': {
-      id: '/bansuris'
-      path: '/bansuris'
-      fullPath: '/bansuris'
-      preLoaderRoute: typeof BansurisRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/journal': {
-      id: '/journal'
-      path: '/journal'
-      fullPath: '/journal'
-      preLoaderRoute: typeof JournalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/learn-bansuri': {
-      id: '/learn-bansuri'
-      path: '/learn-bansuri'
-      fullPath: '/learn-bansuri'
-      preLoaderRoute: typeof LearnBansuriRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/seeker-letter': {
-      id: '/seeker-letter'
-      path: '/seeker-letter'
-      fullPath: '/seeker-letter'
-      preLoaderRoute: typeof SeekerLetterRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/seekers-soil': {
-      id: '/seekers-soil'
-      path: '/seekers-soil'
-      fullPath: '/seekers-soil'
-      preLoaderRoute: typeof SeekersSoilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/seekers-stay': {
-      id: '/seekers-stay'
-      path: '/seekers-stay'
-      fullPath: '/seekers-stay'
-      preLoaderRoute: typeof SeekersStayRouteImport
+    '/the-book': {
+      id: '/the-book'
+      path: '/the-book'
+      fullPath: '/the-book'
+      preLoaderRoute: typeof TheBookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -258,11 +202,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/the-book': {
-      id: '/the-book'
-      path: '/the-book'
-      fullPath: '/the-book'
-      preLoaderRoute: typeof TheBookRouteImport
+    '/seekers-stay': {
+      id: '/seekers-stay'
+      path: '/seekers-stay'
+      fullPath: '/seekers-stay'
+      preLoaderRoute: typeof SeekersStayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seekers-soil': {
+      id: '/seekers-soil'
+      path: '/seekers-soil'
+      fullPath: '/seekers-soil'
+      preLoaderRoute: typeof SeekersSoilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seeker-letter': {
+      id: '/seeker-letter'
+      path: '/seeker-letter'
+      fullPath: '/seeker-letter'
+      preLoaderRoute: typeof SeekerLetterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn-bansuri': {
+      id: '/learn-bansuri'
+      path: '/learn-bansuri'
+      fullPath: '/learn-bansuri'
+      preLoaderRoute: typeof LearnBansuriRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal': {
+      id: '/journal'
+      path: '/journal'
+      fullPath: '/journal'
+      preLoaderRoute: typeof JournalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bansuris': {
+      id: '/bansuris'
+      path: '/bansuris'
+      fullPath: '/bansuris'
+      preLoaderRoute: typeof BansurisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/essays/$slug': {
