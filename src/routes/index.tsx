@@ -5,7 +5,7 @@ import hero from "@/assets/hero-beach-dawn.jpg.asset.json";
 import learnImg from "@/assets/gallery-river-bansuri.jpg.asset.json";
 import stayAsset from "@/assets/stay/living-room-open.jpg.asset.json";
 import soilAsset from "@/assets/soil-packaged-microgreens.png.asset.json";
-import journalAsset from "@/assets/journal-desk.jpg.asset.json";
+import journalAsset from "@/assets/journal/journal-river-ghat.jpg.asset.json";
 import aboutAsset from "@/assets/hero-golden-hour-bansuri.png.asset.json";
 import bookAsset from "@/assets/book-chai-bansuri.jpg.asset.json";
 
@@ -203,7 +203,7 @@ function Home() {
           <Reveal>
             <img
               src={journalImg}
-              alt="A journal open on a wooden desk beside a cup of tea"
+              alt="Akash seated at a river ghat with his bansuri beside him, looking out over the water"
               loading="lazy"
               className="h-auto w-full"
             />
