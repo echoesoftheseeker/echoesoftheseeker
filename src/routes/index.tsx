@@ -205,7 +205,7 @@ function Home() {
               src={journalImg}
               alt="Akash seated at a river ghat with his bansuri beside him, looking out over the water"
               loading="lazy"
-              className="h-auto w-full"
+              className="mx-auto aspect-[3/4] w-full max-w-sm object-cover object-[50%_52.5%] sm:max-w-md lg:max-w-lg"
             />
           </Reveal>
           <Reveal delay={120}>
