@@ -106,12 +106,12 @@ function Home() {
       </section>
 
       {/* Why Echoes */}
-      <section className="mx-auto max-w-2xl px-6 py-24 text-center md:py-32 lg:px-10 lg:py-36">
+      <section className="mx-auto max-w-2xl px-6 py-20 text-center md:py-32 lg:px-10 lg:py-36">
         <Reveal>
           <h2 className="serif-display text-[1.85rem] tracking-[-0.005em] text-ink md:text-[2.6rem]">Why Echoes?</h2>
         </Reveal>
         <Reveal delay={150}>
-          <div className="mt-10 space-y-7 font-serif text-[1.3rem] leading-[1.8] text-ink/85 md:mt-12 md:text-[1.5rem] md:leading-[1.8]">
+          <div className="mt-8 space-y-5 font-serif text-[1.3rem] leading-[1.75] text-ink/85 md:mt-12 md:space-y-7 md:text-[1.5rem] md:leading-[1.8]">
             <p>An echo begins with a sound sent into the unknown.</p>
             <p>Whether it returns is never certain.</p>
             <p>This project is an attempt to keep listening.</p>
@@ -121,8 +121,8 @@ function Home() {
 
       {/* Introduction */}
       <section>
-        <div className="mx-auto max-w-6xl px-6 pb-28 md:pb-40 lg:px-10 lg:pb-48">
-          <div className="grid gap-16 lg:grid-cols-12 lg:gap-24">
+        <div className="mx-auto max-w-6xl px-6 pb-20 md:pb-40 lg:px-10 lg:pb-48">
+          <div className="grid gap-11 md:gap-16 lg:grid-cols-12 lg:gap-24">
             <Reveal className="lg:col-span-6">
               <img
                 src={aboutImg}
@@ -135,7 +135,7 @@ function Home() {
               <h2 className="serif-display text-[1.85rem] tracking-[-0.005em] text-ink md:text-[2.6rem]">
                 An Introduction
               </h2>
-              <div className="mt-10 max-w-[34rem] space-y-6 text-[1.05rem] leading-[1.85] text-ink/85 md:text-[1.15rem] md:leading-[1.9]">
+              <div className="mt-7 max-w-[34rem] space-y-5 text-[1.05rem] leading-[1.8] text-ink/85 md:mt-10 md:space-y-6 md:text-[1.15rem] md:leading-[1.9]">
                 <p>Echoes of the Seeker brings together music, land, place, and practice.</p>
                 <p>It is an ongoing exploration of what happens when attention is given to the things that matter.</p>
                 <p>
@@ -151,25 +151,25 @@ function Home() {
 
       {/* Four paths */}
       <section>
-        <div className="mx-auto max-w-6xl px-6 pb-28 md:pb-40 lg:px-10 lg:pb-48">
+        <div className="mx-auto max-w-6xl px-6 pb-20 md:pb-40 lg:px-10 lg:pb-48">
           <Reveal>
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="serif-display text-[2rem] tracking-[-0.005em] text-ink md:text-[2.9rem]">
                 Four Interconnected Paths
               </h2>
-              <div className="mt-12 flex flex-col items-center gap-2.5 font-serif text-xl text-ink/85 md:text-2xl">
+              <div className="mt-8 flex flex-col items-center gap-2 font-serif text-xl text-ink/85 md:mt-12 md:gap-2.5 md:text-2xl">
                 <p>Music.</p>
                 <p>Place.</p>
                 <p>Land.</p>
                 <p>Reflection.</p>
               </div>
-              <p className="mt-12 font-serif text-base italic leading-relaxed text-ink/70 md:text-lg">
+              <p className="mt-8 font-serif text-base italic leading-relaxed text-ink/70 md:mt-12 md:text-lg">
                 Different expressions of the same journey.
               </p>
             </div>
           </Reveal>
 
-          <div className="mt-24 grid grid-cols-1 gap-x-24 gap-y-24 md:grid-cols-2 lg:mt-32 lg:gap-y-36">
+          <div className="mt-16 grid grid-cols-1 gap-x-24 gap-y-20 md:mt-24 md:grid-cols-2 md:gap-y-24 lg:mt-32 lg:gap-y-36">
             {PATHS.map((p, i) => (
               <Reveal key={p.to} delay={(i % 2) * 120}>
                 <Link to={p.to} className="group block">
@@ -181,13 +181,13 @@ function Home() {
                       className={`aspect-[4/5] w-full object-cover ${p.position} transition-transform duration-[1600ms] ease-out group-hover:scale-[1.035]`}
                     />
                   </div>
-                  <div className="mt-8 flex items-baseline gap-4">
+                  <div className="mt-6 flex items-baseline gap-4 md:mt-8">
                     <span className="font-serif text-sm text-ink/45">{String(i + 1).padStart(2, "0")}</span>
                     <h3 className="font-serif text-[1.55rem] leading-tight text-ink transition-colors duration-500 group-hover:text-forest md:text-[1.9rem]">
                       {p.title}
                     </h3>
                   </div>
-                  <p className="mt-4 max-w-[26rem] pl-10 text-[1rem] leading-[1.8] text-ink/75 md:text-[1.05rem]">
+                  <p className="mt-3 max-w-[26rem] pl-10 text-[1rem] leading-[1.75] text-ink/75 md:mt-4 md:text-[1.05rem] md:leading-[1.8]">
                     {p.desc}
                   </p>
                 </Link>
@@ -199,7 +199,7 @@ function Home() {
 
       {/* Journal */}
       <section className="border-t border-rule/60">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:gap-16 md:py-32 lg:px-10 lg:py-36">
+        <div className="mx-auto grid max-w-6xl items-center gap-9 px-6 py-20 md:grid-cols-2 md:gap-16 md:py-32 lg:px-10 lg:py-36">
           <Reveal>
             <img
               src={journalImg}
@@ -210,11 +210,11 @@ function Home() {
           </Reveal>
           <Reveal delay={120}>
             <p className="eyebrow">The Journal</p>
-            <h2 className="serif-display mt-5 text-[2rem] text-ink md:text-[2.9rem]">Notes from the path.</h2>
-            <p className="mt-7 max-w-md text-[1.02rem] leading-[1.85] text-ink/75 md:text-[1.1rem]">
+            <h2 className="serif-display mt-4 text-[2rem] text-ink md:mt-5 md:text-[2.9rem]">Notes from the path.</h2>
+            <p className="mt-5 max-w-md text-[1.02rem] leading-[1.8] text-ink/75 md:mt-7 md:text-[1.1rem] md:leading-[1.85]">
               Reflections, observations, essays, and field notes from a life still unfolding.
             </p>
-            <Link to="/journal" className="eyebrow mt-8 inline-block text-bamboo transition-colors hover:text-forest">
+            <Link to="/journal" className="eyebrow mt-6 inline-block text-bamboo transition-colors hover:text-forest md:mt-8">
               Enter the Journal →
             </Link>
           </Reveal>
@@ -223,7 +223,7 @@ function Home() {
 
       {/* Closing + Letter */}
       <section className="border-t border-rule/60">
-        <div className="mx-auto max-w-3xl px-6 py-28 text-center md:py-40 lg:px-10 lg:py-48">
+        <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-40 lg:px-10 lg:py-48">
           <Reveal>
             <p className="serif-display text-[1.45rem] italic leading-[1.6] text-ink/85 md:text-[1.8rem] md:leading-[1.55]">
               The journey continues one note, one step, and one season at a time.
@@ -231,15 +231,15 @@ function Home() {
           </Reveal>
 
           <Reveal delay={150}>
-            <div className="mt-28 lg:mt-36">
+            <div className="mt-20 md:mt-28 lg:mt-36">
               <h2 className="serif-display text-[1.85rem] tracking-[-0.005em] text-ink md:text-[2.6rem]">
                 The Seeker Letter
               </h2>
-              <p className="mx-auto mt-8 max-w-xl text-[1.05rem] leading-[1.85] text-ink/80 md:text-[1.15rem]">
+              <p className="mx-auto mt-6 max-w-xl text-[1.05rem] leading-[1.8] text-ink/80 md:mt-8 md:text-[1.15rem] md:leading-[1.85]">
                 Occasional reflections, journey updates, book progress, bansuri insights, and notes from the path.
               </p>
               <form
-                className="mx-auto mt-14 flex max-w-md flex-col gap-5 sm:flex-row"
+                className="mx-auto mt-10 flex max-w-md flex-col gap-5 sm:flex-row md:mt-14"
                 onSubmit={(e) => e.preventDefault()}
               >
                 <input
